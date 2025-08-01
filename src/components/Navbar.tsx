@@ -11,8 +11,12 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 premium-gradient rounded-full flex items-center justify-center shadow-lg">
-              <span className="text-slate-900 font-bold text-lg">1</span>
+            <div className="w-8 h-8 rounded-full overflow-hidden shadow-lg">
+              <img 
+                src="/pics/logo1.png" 
+                alt="The HIVE Logo" 
+                className="w-full h-full object-cover"
+              />
             </div>
             <div>
               <h1 className="text-white font-bold text-xl">The HIVE</h1>
