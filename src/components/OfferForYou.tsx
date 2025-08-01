@@ -229,7 +229,7 @@ const OfferForYou = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="text-center">
                 <h3 className="text-2xl font-bold text-white mb-4">Investment</h3>
-                <div className="text-5xl font-bold text-red-400 mb-2">50K DA</div>
+                <div className="text-5xl font-bold text-red-400 mb-2">500K DA</div>
                 <div className="text-gray-400">Initial payment (10% upfront)</div>
                 <div className="text-sm text-gray-500 mt-2">Remaining 450K DA after your SaaS generates revenue</div>
               </div>
@@ -237,7 +237,7 @@ const OfferForYou = () => {
                 <h3 className="text-2xl font-bold text-white mb-4">Potential Return</h3>
                 <div className="text-5xl font-bold premium-text mb-2">600M DA</div>
                 <div className="text-gray-400">Annual revenue potential</div>
-                <div className="text-sm text-gray-500 mt-2">(12,000x return on initial investment)</div>
+                <div className="text-sm text-gray-500 mt-2">(1,200x return on initial investment)</div>
               </div>
             </div>
             <div className="mt-6 p-4 bg-green-500/10 border border-green-500/30 rounded-2xl">
