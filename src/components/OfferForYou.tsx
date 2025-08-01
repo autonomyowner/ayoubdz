@@ -169,7 +169,7 @@ const OfferForYou = () => {
             </div>
             <div className="mt-8 p-6 bg-yellow-500/10 border border-yellow-500/30 rounded-2xl">
               <div className="text-center">
-                <div className="text-5xl font-bold premium-text mb-2">50M DA</div>
+                <div className="text-5xl font-bold premium-text mb-2">600M DA</div>
                 <div className="text-gray-300 text-lg">Annual Revenue Potential</div>
                 <div className="text-gray-400 text-sm mt-2">(25K subscribers × 2000 DA/month × 12 months)</div>
               </div>
@@ -235,9 +235,9 @@ const OfferForYou = () => {
               </div>
               <div className="text-center">
                 <h3 className="text-2xl font-bold text-white mb-4">Potential Return</h3>
-                <div className="text-5xl font-bold premium-text mb-2">50M DA</div>
+                <div className="text-5xl font-bold premium-text mb-2">600M DA</div>
                 <div className="text-gray-400">Annual revenue potential</div>
-                <div className="text-sm text-gray-500 mt-2">(1000x return on initial investment)</div>
+                <div className="text-sm text-gray-500 mt-2">(12,000x return on initial investment)</div>
               </div>
             </div>
             <div className="mt-6 p-4 bg-green-500/10 border border-green-500/30 rounded-2xl">
