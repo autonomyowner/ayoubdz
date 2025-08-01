@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-hive-yellow text-slate-900 font-semibold px-6 py-3 rounded-lg hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-hive-yellow text-hive-yellow font-semibold px-6 py-3 rounded-lg hover:bg-hive-yellow hover:text-slate-900 transition-all duration-300 shadow-lg hover:shadow-xl;
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .premium-card {
+    @apply bg-slate-800/30 backdrop-blur-md border border-yellow-500/30 rounded-2xl shadow-2xl hover:shadow-yellow-500/20 transition-all duration-300 hover:border-yellow-500/50;
+  }
+
+  .premium-gradient {
+    @apply bg-gradient-to-br from-yellow-500 to-yellow-400 text-slate-900;
+  }
+
+  .glass-effect {
+    @apply bg-slate-900/20 backdrop-blur-md border border-yellow-500/20;
+  }
+
+  .premium-text {
+    @apply text-yellow-400 font-semibold;
+  }
+
+  .premium-border {
+    @apply border-yellow-500/30;
+  }
+}
