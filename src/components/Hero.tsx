@@ -69,11 +69,11 @@ const Hero = () => {
               Start Your Project
             </a>
             <a 
-              href="#services" 
+              href="/pricing" 
               className="btn-secondary text-lg px-8 py-4"
             >
-              <span className="mr-2">💼</span>
-              View Our Services
+              <span className="mr-2">💰</span>
+              View Pricing
             </a>
           </div>
         </div>

@@ -96,35 +96,19 @@ const About = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="premium-card p-6 text-center">
-              <div className="w-20 h-20 premium-gradient rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <span className="text-slate-900 text-2xl">👨‍💼</span>
-              </div>
               <h4 className="text-xl font-bold text-white mb-2">Azeddine Zellag</h4>
-              <p className="text-gray-400 text-sm">Manager & Lead Developer</p>
             </div>
 
             <div className="premium-card p-6 text-center">
-              <div className="w-20 h-20 premium-gradient rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <span className="text-slate-900 text-2xl">👨‍💻</span>
-              </div>
               <h4 className="text-xl font-bold text-white mb-2">Mohammad Mosbahi</h4>
-              <p className="text-gray-400 text-sm">Full-Stack Developer</p>
             </div>
 
             <div className="premium-card p-6 text-center">
-              <div className="w-20 h-20 premium-gradient rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <span className="text-slate-900 text-2xl">👨‍🎨</span>
-              </div>
               <h4 className="text-xl font-bold text-white mb-2">Islam Zellag</h4>
-              <p className="text-gray-400 text-sm">UI/UX Designer</p>
             </div>
 
             <div className="premium-card p-6 text-center">
-              <div className="w-20 h-20 premium-gradient rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <span className="text-slate-900 text-2xl">👨‍🔧</span>
-              </div>
               <h4 className="text-xl font-bold text-white mb-2">Belkasm Islam</h4>
-              <p className="text-gray-400 text-sm">Backend Developer</p>
             </div>
           </div>
         </div>

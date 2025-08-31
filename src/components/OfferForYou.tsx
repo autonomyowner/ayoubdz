@@ -206,11 +206,11 @@ const Services = () => {
                 🚀 Start Your Project
               </a>
               <a 
-                href="mailto:autonomy.owner@gmail.com" 
+                href="/pricing" 
                 className="btn-secondary text-lg px-8 py-4"
               >
-                <span className="mr-2">📧</span>
-                Get Free Quote
+                <span className="mr-2">💰</span>
+                View Pricing
               </a>
             </div>
           </div>

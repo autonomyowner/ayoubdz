@@ -11,13 +11,6 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-full overflow-hidden shadow-lg">
-              <img 
-                src="/pics/logo1.png" 
-                alt="SITEDZ Logo" 
-                className="w-full h-full object-cover"
-              />
-            </div>
             <div>
               <h1 className="text-white font-bold text-xl">SITEDZ</h1>
               <p className="premium-text text-xs">Web Development Agency</p>
@@ -37,6 +30,12 @@ const Navbar = () => {
               className={`transition-colors ${location.pathname === '/services' ? 'text-yellow-400' : 'text-white hover:text-yellow-400'}`}
             >
               Services
+            </Link>
+            <Link 
+              to="/pricing" 
+              className={`transition-colors ${location.pathname === '/pricing' ? 'text-yellow-400' : 'text-white hover:text-yellow-400'}`}
+            >
+              Pricing
             </Link>
             <a 
               href="#contact" 
@@ -78,6 +77,13 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
+              </Link>
+              <Link 
+                to="/pricing" 
+                className={`block px-3 py-2 transition-colors ${location.pathname === '/pricing' ? 'text-yellow-400' : 'text-white hover:text-yellow-400'}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Pricing
               </Link>
               <a 
                 href="#contact" 
