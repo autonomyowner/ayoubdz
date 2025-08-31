@@ -4,11 +4,11 @@ const About = () => {
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            About <span className="premium-text">The HIVE</span>
+            About <span className="premium-text">Our Agency</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            We're more than just an English speaking club - we're a community of passionate learners 
-            dedicated to personal growth and cultural exchange.
+            We're a team of passionate developers dedicated to creating premium websites that drive business growth 
+            and deliver exceptional user experiences for our clients across Algeria.
           </p>
         </div>
 
@@ -23,8 +23,8 @@ const About = () => {
                 <h3 className="text-2xl font-bold text-white">Our Mission</h3>
               </div>
               <p className="text-gray-300 leading-relaxed">
-                To create an inclusive environment where young Algerians can develop their English 
-                speaking skills through meaningful conversations, debates, and cultural exchange.
+                To empower Algerian businesses with cutting-edge web solutions that enhance their digital presence, 
+                drive customer engagement, and accelerate business growth through innovative technology.
               </p>
             </div>
 
@@ -36,8 +36,8 @@ const About = () => {
                 <h3 className="text-2xl font-bold text-white">Our Vision</h3>
               </div>
               <p className="text-gray-300 leading-relaxed">
-                To become Algeria's leading platform for English language development, 
-                fostering a community of confident speakers and global citizens.
+                To become Algeria's leading web development agency, known for delivering premium quality websites 
+                that set new standards in design, functionality, and user experience.
               </p>
             </div>
           </div>
@@ -45,40 +45,86 @@ const About = () => {
           {/* Right Content */}
           <div className="space-y-6">
             <div className="premium-gradient p-8 rounded-2xl shadow-2xl">
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Why Choose The HIVE?</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Why Choose Our Agency?</h3>
               <ul className="space-y-3 text-slate-900">
                 <li className="flex items-center">
                   <span className="mr-3">✓</span>
-                  Interactive debate sessions with real-world topics
+                  Expert team of 4 professional developers
                 </li>
                 <li className="flex items-center">
                   <span className="mr-3">✓</span>
-                  Networking opportunities with like-minded individuals
+                  Specialized in multiple business sectors
                 </li>
                 <li className="flex items-center">
                   <span className="mr-3">✓</span>
-                  Professional development and leadership skills
+                  Modern, responsive design approach
                 </li>
                 <li className="flex items-center">
                   <span className="mr-3">✓</span>
-                  Cultural exchange and global perspectives
+                  Complete project management and support
                 </li>
                 <li className="flex items-center">
                   <span className="mr-3">✓</span>
-                  Supportive community of 500K+ members
+                  Competitive pricing with premium quality
                 </li>
               </ul>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div className="premium-card p-6 text-center">
-                <div className="text-3xl font-bold premium-text mb-2">17-35</div>
-                <div className="text-gray-400 text-sm">Age Range</div>
+                <div className="text-3xl font-bold premium-text mb-2">4</div>
+                <div className="text-gray-400 text-sm">Expert Developers</div>
               </div>
               <div className="premium-card p-6 text-center">
-                <div className="text-3xl font-bold premium-text mb-2">Intermediate+</div>
-                <div className="text-gray-400 text-sm">English Level</div>
+                <div className="text-3xl font-bold premium-text mb-2">50+</div>
+                <div className="text-gray-400 text-sm">Projects Delivered</div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Team Section */}
+        <div className="mt-16">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Meet <span className="premium-text">Our Team</span>
+            </h3>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              The talented professionals behind every successful project
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="premium-card p-6 text-center">
+              <div className="w-20 h-20 premium-gradient rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <span className="text-slate-900 text-2xl">👨‍💼</span>
+              </div>
+              <h4 className="text-xl font-bold text-white mb-2">Azeddine Zellag</h4>
+              <p className="text-gray-400 text-sm">Manager & Lead Developer</p>
+            </div>
+
+            <div className="premium-card p-6 text-center">
+              <div className="w-20 h-20 premium-gradient rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <span className="text-slate-900 text-2xl">👨‍💻</span>
+              </div>
+              <h4 className="text-xl font-bold text-white mb-2">Mohammad Mosbahi</h4>
+              <p className="text-gray-400 text-sm">Full-Stack Developer</p>
+            </div>
+
+            <div className="premium-card p-6 text-center">
+              <div className="w-20 h-20 premium-gradient rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <span className="text-slate-900 text-2xl">👨‍🎨</span>
+              </div>
+              <h4 className="text-xl font-bold text-white mb-2">Islam Zellag</h4>
+              <p className="text-gray-400 text-sm">UI/UX Designer</p>
+            </div>
+
+            <div className="premium-card p-6 text-center">
+              <div className="w-20 h-20 premium-gradient rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <span className="text-slate-900 text-2xl">👨‍🔧</span>
+              </div>
+              <h4 className="text-xl font-bold text-white mb-2">Belkasm Islam</h4>
+              <p className="text-gray-400 text-sm">Backend Developer</p>
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
-import OfferForYou from './components/OfferForYou'
+import Services from './components/OfferForYou'
 import Footer from './components/Footer'
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/offer-for-you" element={<OfferForYou />} />
+          <Route path="/services" element={<Services />} />
         </Routes>
         <Footer />
       </div>

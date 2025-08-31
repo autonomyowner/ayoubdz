@@ -1,7 +1,6 @@
 import Hero from './Hero'
 import About from './About'
-import Services from './Services'
-import Locations from './Locations'
+import Services from './OfferForYou'
 import Contact from './Contact'
 
 const Home = () => {
@@ -10,7 +9,6 @@ const Home = () => {
       <Hero />
       <About />
       <Services />
-      <Locations />
       <Contact />
     </>
   )

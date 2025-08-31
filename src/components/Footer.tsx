@@ -7,25 +7,31 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 premium-gradient rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-slate-900 font-bold text-lg">1</span>
+                <span className="text-slate-900 font-bold text-lg">S</span>
               </div>
               <div>
-                <h3 className="text-white font-bold text-xl">The HIVE</h3>
-                <p className="premium-text text-sm">Speaking Club</p>
+                <h3 className="text-white font-bold text-xl">SITEDZ</h3>
+                <p className="premium-text text-sm">Web Development Agency</p>
               </div>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              Algeria's premier English speaking club, fostering a community of confident speakers 
-              and global citizens through interactive debates and networking.
+              Premier web development agency in Algeria, specializing in creating stunning websites 
+              for clinics, travel agencies, real estate, and e-commerce businesses.
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://www.instagram.com/thehivespeakingclub/" 
+                href="mailto:autonomy.owner@gmail.com" 
+                className="premium-text hover:text-yellow-300 transition-colors"
+              >
+                <span className="text-2xl">📧</span>
+              </a>
+              <a 
+                href="https://wa.me/+213797339451" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="premium-text hover:text-yellow-300 transition-colors"
               >
-                <span className="text-2xl">📸</span>
+                <span className="text-2xl">💬</span>
               </a>
             </div>
           </div>
@@ -44,9 +50,6 @@ const Footer = () => {
                 <a href="#services" className="text-gray-300 hover:text-yellow-400 transition-colors">Services</a>
               </li>
               <li>
-                <a href="#locations" className="text-gray-300 hover:text-yellow-400 transition-colors">Locations</a>
-              </li>
-              <li>
                 <a href="#contact" className="text-gray-300 hover:text-yellow-400 transition-colors">Contact</a>
               </li>
             </ul>
@@ -58,19 +61,19 @@ const Footer = () => {
             <ul className="space-y-2 text-gray-300">
               <li className="flex items-center">
                 <span className="mr-2">📍</span>
-                Algiers & Tlemcen
+                Algeria
               </li>
               <li className="flex items-center">
-                <span className="mr-2">⏰</span>
-                Saturdays
+                <span className="mr-2">📧</span>
+                autonomy.owner@gmail.com
               </li>
               <li className="flex items-center">
-                <span className="mr-2">💰</span>
-                500 DA/session
+                <span className="mr-2">📞</span>
+                0797339451
               </li>
               <li className="flex items-center">
-                <span className="mr-2">📸</span>
-                500K+ followers
+                <span className="mr-2">👥</span>
+                4 Expert Developers
               </li>
             </ul>
           </div>
@@ -79,24 +82,22 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-yellow-500/30 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
-            © 2024 The HIVE Speaking Club. All rights reserved.
+            © 2024 SITEDZ Web Development Agency. All rights reserved.
           </div>
           <div className="flex space-x-6">
             <a 
-              href="https://docs.google.com/forms/d/e/1FAIpQLSf2VuR-BR-i3TWiM1E8ePIPlGjMVWy3bthaUTKx8N29YtVRBw/viewform" 
-              target="_blank" 
-              rel="noopener noreferrer"
+              href="mailto:autonomy.owner@gmail.com" 
               className="premium-text hover:text-yellow-300 transition-colors text-sm"
             >
-              Register Now
+              Get Free Quote
             </a>
             <a 
-              href="https://www.instagram.com/thehivespeakingclub/" 
+              href="https://wa.me/+213797339451" 
               target="_blank" 
               rel="noopener noreferrer"
               className="premium-text hover:text-yellow-300 transition-colors text-sm"
             >
-              Follow on Instagram
+              WhatsApp Us
             </a>
           </div>
         </div>

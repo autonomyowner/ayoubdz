@@ -14,13 +14,13 @@ const Navbar = () => {
             <div className="w-8 h-8 rounded-full overflow-hidden shadow-lg">
               <img 
                 src="/pics/logo1.png" 
-                alt="The HIVE Logo" 
+                alt="SITEDZ Logo" 
                 className="w-full h-full object-cover"
               />
             </div>
             <div>
-              <h1 className="text-white font-bold text-xl">The HIVE</h1>
-              <p className="premium-text text-xs">Speaking Club</p>
+              <h1 className="text-white font-bold text-xl">SITEDZ</h1>
+              <p className="premium-text text-xs">Web Development Agency</p>
             </div>
           </div>
 
@@ -33,18 +33,16 @@ const Navbar = () => {
               Home
             </Link>
             <Link 
-              to="/offer-for-you" 
-              className={`transition-colors ${location.pathname === '/offer-for-you' ? 'text-yellow-400' : 'text-white hover:text-yellow-400'}`}
+              to="/services" 
+              className={`transition-colors ${location.pathname === '/services' ? 'text-yellow-400' : 'text-white hover:text-yellow-400'}`}
             >
-              Offer for You
+              Services
             </Link>
             <a 
-              href="https://docs.google.com/forms/d/e/1FAIpQLSf2VuR-BR-i3TWiM1E8ePIPlGjMVWy3bthaUTKx8N29YtVRBw/viewform" 
-              target="_blank" 
-              rel="noopener noreferrer"
+              href="#contact" 
               className="btn-primary"
             >
-              Join Now
+              Get Quote
             </a>
           </div>
 
@@ -75,19 +73,17 @@ const Navbar = () => {
                 Home
               </Link>
               <Link 
-                to="/offer-for-you" 
-                className={`block px-3 py-2 transition-colors ${location.pathname === '/offer-for-you' ? 'text-yellow-400' : 'text-white hover:text-yellow-400'}`}
+                to="/services" 
+                className={`block px-3 py-2 transition-colors ${location.pathname === '/services' ? 'text-yellow-400' : 'text-white hover:text-yellow-400'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Offer for You
+                Services
               </Link>
               <a 
-                href="https://docs.google.com/forms/d/e/1FAIpQLSf2VuR-BR-i3TWiM1E8ePIPlGjMVWy3bthaUTKx8N29YtVRBw/viewform" 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href="#contact" 
                 className="block px-3 py-2 btn-primary text-center"
               >
-                Join Now
+                Get Quote
               </a>
             </div>
           </div>

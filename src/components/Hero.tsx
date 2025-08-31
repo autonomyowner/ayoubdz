@@ -28,56 +28,52 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 glass-effect border border-yellow-500/30 rounded-full premium-text text-sm font-medium mb-8">
-            <span className="mr-2">🐝</span>
-            Join 500K+ Members on Instagram
+            <span className="mr-2">🚀</span>
+            Premier Web Development Agency in Algeria
           </div>
 
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            Master English
-            <span className="block premium-text">Through Debate</span>
+            We Build
+            <span className="block premium-text">Premium Websites</span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Join The HIVE Speaking Club in Algeria's premier English conversation community. 
-            Develop your skills through engaging debates, networking, and personal growth.
+            Specialized in creating stunning websites for clinics, travel agencies, real estate, 
+            and e-commerce businesses. We transform your digital presence into a powerful business tool.
           </p>
 
           {/* Stats */}
           <div className="flex flex-wrap justify-center gap-8 mb-12">
             <div className="text-center premium-card p-6">
-              <div className="text-3xl font-bold premium-text">500K+</div>
-              <div className="text-gray-400">Instagram Followers</div>
+              <div className="text-3xl font-bold premium-text">50+</div>
+              <div className="text-gray-400">Projects Completed</div>
             </div>
             <div className="text-center premium-card p-6">
-              <div className="text-3xl font-bold premium-text">17-35</div>
-              <div className="text-gray-400">Age Range</div>
+              <div className="text-3xl font-bold premium-text">4</div>
+              <div className="text-gray-400">Expert Developers</div>
             </div>
             <div className="text-center premium-card p-6">
-              <div className="text-3xl font-bold premium-text">500 DA</div>
-              <div className="text-gray-400">Per Session</div>
+              <div className="text-3xl font-bold premium-text">100%</div>
+              <div className="text-gray-400">Client Satisfaction</div>
             </div>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="https://docs.google.com/forms/d/e/1FAIpQLSf2VuR-BR-i3TWiM1E8ePIPlGjMVWy3bthaUTKx8N29YtVRBw/viewform" 
-              target="_blank" 
-              rel="noopener noreferrer"
+              href="#contact" 
               className="btn-primary text-lg px-8 py-4"
             >
-              Join The HIVE Now
+              Start Your Project
             </a>
             <a 
-              href="https://www.instagram.com/thehivespeakingclub/" 
-              target="_blank" 
-              rel="noopener noreferrer"
+              href="#services" 
               className="btn-secondary text-lg px-8 py-4"
             >
-              <span className="mr-2">📸</span>
-              Follow on Instagram
+              <span className="mr-2">💼</span>
+              View Our Services
             </a>
           </div>
         </div>

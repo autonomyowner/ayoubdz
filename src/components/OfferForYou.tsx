@@ -1,6 +1,61 @@
-const OfferForYou = () => {
+const Services = () => {
+  const services = [
+    {
+      icon: "🏥",
+      title: "Clinic Websites",
+      description: "Professional medical websites with integrated booking systems, patient portals, and appointment management.",
+      features: [
+        "Online appointment booking",
+        "Patient registration forms",
+        "Doctor profiles and schedules",
+        "Medical service listings",
+        "Secure patient portal",
+        "Mobile-responsive design"
+      ]
+    },
+    {
+      icon: "✈️",
+      title: "Travel Agency Websites",
+      description: "Dynamic travel websites with booking engines, tour packages, and customer management systems.",
+      features: [
+        "Tour package listings",
+        "Online booking system",
+        "Customer reviews and ratings",
+        "Payment integration",
+        "Travel blog integration",
+        "Multi-language support"
+      ]
+    },
+    {
+      icon: "🏠",
+      title: "Real Estate Websites",
+      description: "Comprehensive property websites with listing management, search filters, and lead generation tools.",
+      features: [
+        "Property listings with search",
+        "Advanced filtering options",
+        "Virtual tour integration",
+        "Lead capture forms",
+        "Agent profiles",
+        "Property comparison tools"
+      ]
+    },
+    {
+      icon: "🛒",
+      title: "E-commerce Websites",
+      description: "Full-featured online stores with payment processing, inventory management, and customer accounts.",
+      features: [
+        "Product catalog management",
+        "Secure payment processing",
+        "Shopping cart functionality",
+        "Order tracking system",
+        "Customer account management",
+        "Inventory management"
+      ]
+    }
+  ]
+
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="services" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -28,272 +83,134 @@ const OfferForYou = () => {
         <div className="max-w-6xl mx-auto">
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 glass-effect border border-yellow-500/30 rounded-full premium-text text-sm font-medium mb-8">
-            <span className="mr-2">🚀</span>
-            Exclusive Business Opportunity for Billel Madani
+            <span className="mr-2">💼</span>
+            Our Premium Services
           </div>
 
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            Billel Madani
-            <span className="block premium-text">Scale Your Empire</span>
+            Web Development
+            <span className="block premium-text">Services</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-            Transform The HIVE from a local speaking club into a 50M DA/year digital empire. 
-            We've identified the exact bottleneck holding you back from 10x growth.
+          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+            We specialize in creating custom websites for various business sectors. 
+            Each project is crafted with attention to detail and modern web standards.
           </p>
 
-          {/* Pain Point Section */}
-          <div className="bg-red-900/20 border border-red-500/30 rounded-3xl p-8 mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">The Problem You're Facing</h2>
-            <div className="grid md:grid-cols-2 gap-6 text-left">
-              <div className="space-y-4">
-                <div className="flex items-start space-x-4">
-                  <div className="text-red-400 text-xl">❌</div>
+          {/* Services Grid */}
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            {services.map((service, index) => (
+              <div key={index} className="premium-card p-8 text-left">
+                <div className="flex items-center mb-6">
+                  <div className="text-4xl mr-4">{service.icon}</div>
                   <div>
-                    <h4 className="text-white font-semibold">Geographic Limitation</h4>
-                    <p className="text-gray-300 text-sm">You're capped by physical location capacity. Only so many people can attend in-person sessions.</p>
+                    <h3 className="text-2xl font-bold text-white">{service.title}</h3>
+                    <p className="text-gray-300 text-sm">{service.description}</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4">
-                  <div className="text-red-400 text-xl">❌</div>
-                  <div>
-                    <h4 className="text-white font-semibold">Intimidation Barrier</h4>
-                    <p className="text-gray-300 text-sm">70% of your 500K followers are too intimidated by public speaking to join in-person.</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="text-red-400 text-xl">❌</div>
-                  <div>
-                    <h4 className="text-white font-semibold">Revenue Ceiling</h4>
-                    <p className="text-gray-300 text-sm">You're leaving millions on the table by not monetizing your massive online audience.</p>
-                  </div>
-                </div>
+                <ul className="space-y-3">
+                  {service.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center text-gray-300">
+                      <span className="text-green-400 mr-3">✓</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-4">
-                  <div className="text-red-400 text-xl">❌</div>
-                  <div>
-                    <h4 className="text-white font-semibold">Time Constraints</h4>
-                    <p className="text-gray-300 text-sm">You can only be in one place at one time. Your impact is limited by your physical presence.</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="text-red-400 text-xl">❌</div>
-                  <div>
-                    <h4 className="text-white font-semibold">Scalability Issues</h4>
-                    <p className="text-gray-300 text-sm">Growing physical locations requires massive capital and operational complexity.</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="text-red-400 text-xl">❌</div>
-                  <div>
-                    <h4 className="text-white font-semibold">Competition Risk</h4>
-                    <p className="text-gray-300 text-sm">Someone else will solve this problem and capture your market if you don't act now.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
 
-          {/* Solution Section */}
-          <div className="bg-green-900/20 border border-green-500/30 rounded-3xl p-8 mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">The Solution: Digital Transformation</h2>
-            <div className="grid md:grid-cols-2 gap-6 text-left">
-              <div className="space-y-4">
-                <div className="flex items-start space-x-4">
-                  <div className="text-green-400 text-xl">✅</div>
-                  <div>
-                    <h4 className="text-white font-semibold">Global Reach</h4>
-                    <p className="text-gray-300 text-sm">Tap into your 500K followers worldwide. No geographic limitations.</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="text-green-400 text-xl">✅</div>
-                  <div>
-                    <h4 className="text-white font-semibold">Reduced Intimidation</h4>
-                    <p className="text-gray-300 text-sm">Online environment makes public speaking less intimidating for beginners.</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="text-green-400 text-xl">✅</div>
-                  <div>
-                    <h4 className="text-white font-semibold">Automated Revenue</h4>
-                    <p className="text-gray-300 text-sm">Recurring monthly subscriptions create predictable, scalable income.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-4">
-                  <div className="text-green-400 text-xl">✅</div>
-                  <div>
-                    <h4 className="text-white font-semibold">24/7 Availability</h4>
-                    <p className="text-gray-300 text-sm">Your brand works for you even when you're sleeping.</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="text-green-400 text-xl">✅</div>
-                  <div>
-                    <h4 className="text-white font-semibold">Data-Driven Growth</h4>
-                    <p className="text-gray-300 text-sm">Track user behavior and optimize for maximum conversion.</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="text-green-400 text-xl">✅</div>
-                  <div>
-                    <h4 className="text-white font-semibold">Partnership Opportunities</h4>
-                    <p className="text-gray-300 text-sm">Collaborate with English schools, brands, and educational institutions.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Revenue Projection */}
+          {/* Process Section */}
           <div className="bg-slate-800/30 backdrop-blur-md border border-yellow-500/30 rounded-3xl p-8 mb-12">
-            <h2 className="text-3xl font-bold text-white text-center mb-8">Revenue Projection: The Numbers</h2>
-            <div className="grid md:grid-cols-3 gap-8">
+            <h2 className="text-3xl font-bold text-white text-center mb-8">Our Development Process</h2>
+            <div className="grid md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-4xl font-bold premium-text mb-2">500K</div>
-                <div className="text-gray-400">Instagram Followers</div>
+                <div className="w-16 h-16 premium-gradient rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <span className="text-slate-900 text-2xl">📋</span>
+                </div>
+                <h4 className="text-white font-semibold mb-2">Discovery</h4>
+                <p className="text-gray-300 text-sm">Understanding your business needs and requirements</p>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold premium-text mb-2">5%</div>
-                <div className="text-gray-400">Conservative Conversion Rate</div>
+                <div className="w-16 h-16 premium-gradient rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <span className="text-slate-900 text-2xl">🎨</span>
+                </div>
+                <h4 className="text-white font-semibold mb-2">Design</h4>
+                <p className="text-gray-300 text-sm">Creating stunning, user-friendly designs</p>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold premium-text mb-2">25K</div>
-                <div className="text-gray-400">Potential Subscribers</div>
+                <div className="w-16 h-16 premium-gradient rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <span className="text-slate-900 text-2xl">💻</span>
+                </div>
+                <h4 className="text-white font-semibold mb-2">Development</h4>
+                <p className="text-gray-300 text-sm">Building your website with modern technologies</p>
               </div>
-            </div>
-            <div className="mt-8 p-6 bg-yellow-500/10 border border-yellow-500/30 rounded-2xl">
               <div className="text-center">
-                <div className="text-5xl font-bold premium-text mb-2">600M DA</div>
-                <div className="text-gray-300 text-lg">Annual Revenue Potential</div>
-                <div className="text-gray-400 text-sm mt-2">(25K subscribers × 2000 DA/month × 12 months)</div>
+                <div className="w-16 h-16 premium-gradient rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <span className="text-slate-900 text-2xl">🚀</span>
+                </div>
+                <h4 className="text-white font-semibold mb-2">Launch</h4>
+                <p className="text-gray-300 text-sm">Deploying and maintaining your website</p>
               </div>
             </div>
           </div>
 
-          {/* Our Offer */}
+          {/* Technologies Section */}
           <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 rounded-3xl p-8 mb-12">
-            <h2 className="text-3xl font-bold text-white text-center mb-8">What We're Offering You</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div className="premium-card p-6">
-                  <h3 className="text-2xl font-bold text-white mb-4">🎯 Complete SaaS Platform</h3>
-                  <ul className="text-gray-300 space-y-2">
-                    <li>• Modern subscription management system</li>
-                    <li>• Automated payment processing with Baridimob</li>
-                    <li>• User dashboard and progress tracking</li>
-                    <li>• Mobile-responsive design</li>
-                  </ul>
-                </div>
-                <div className="premium-card p-6">
-                  <h3 className="text-2xl font-bold text-white mb-4">🎤 Discord Community Setup</h3>
-                  <ul className="text-gray-300 space-y-2">
-                    <li>• Private Discord server with role management</li>
-                    <li>• Automated onboarding system</li>
-                    <li>• Integration with your existing brand</li>
-                    <li>• Moderation tools and analytics</li>
-                  </ul>
-                </div>
+            <h2 className="text-3xl font-bold text-white text-center mb-8">Technologies We Use</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="premium-card p-6">
+                <h3 className="text-2xl font-bold text-white mb-4">Frontend</h3>
+                <ul className="text-gray-300 space-y-2">
+                  <li>• React.js & Next.js</li>
+                  <li>• TypeScript</li>
+                  <li>• Tailwind CSS</li>
+                  <li>• Responsive Design</li>
+                </ul>
               </div>
-              <div className="space-y-6">
-                <div className="premium-card p-6">
-                  <h3 className="text-2xl font-bold text-white mb-4">📈 Marketing Strategy</h3>
-                  <ul className="text-gray-300 space-y-2">
-                    <li>• Conversion-optimized landing pages</li>
-                    <li>• Email marketing automation</li>
-                    <li>• Social media campaign strategy</li>
-                    <li>• Partnership outreach framework</li>
-                  </ul>
-                </div>
-                <div className="premium-card p-6">
-                  <h3 className="text-2xl font-bold text-white mb-4">🚀 Launch Support</h3>
-                  <ul className="text-gray-300 space-y-2">
-                    <li>• 3 months of technical support</li>
-                    <li>• Performance optimization</li>
-                    <li>• Analytics and reporting setup</li>
-                    <li>• Training for your team</li>
-                  </ul>
-                </div>
+              <div className="premium-card p-6">
+                <h3 className="text-2xl font-bold text-white mb-4">Backend</h3>
+                <ul className="text-gray-300 space-y-2">
+                  <li>• Node.js & Express</li>
+                  <li>• Python & Django</li>
+                  <li>• Database Design</li>
+                  <li>• API Development</li>
+                </ul>
               </div>
-            </div>
-          </div>
-
-          {/* Investment Section */}
-          <div className="bg-slate-800/30 backdrop-blur-md border border-yellow-500/30 rounded-3xl p-8 mb-12">
-            <h2 className="text-3xl font-bold text-white text-center mb-8">Your Investment vs. Return</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-white mb-4">Investment</h3>
-                <div className="text-5xl font-bold text-red-400 mb-2">500K DA</div>
-                <div className="text-gray-400">Initial payment (10% upfront)</div>
-                <div className="text-sm text-gray-500 mt-2">Remaining 450K DA after your SaaS generates revenue</div>
-              </div>
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-white mb-4">Potential Return</h3>
-                <div className="text-5xl font-bold premium-text mb-2">600M DA</div>
-                <div className="text-gray-400">Annual revenue potential</div>
-                <div className="text-sm text-gray-500 mt-2">(1,200x return on initial investment)</div>
-              </div>
-            </div>
-            <div className="mt-6 p-4 bg-green-500/10 border border-green-500/30 rounded-2xl">
-              <div className="text-center">
-                <div className="text-lg font-bold text-green-400 mb-2">🎯 Risk-Free Investment</div>
-                <div className="text-gray-300 text-sm">Pay only 10% upfront. Complete payment only after your SaaS starts generating revenue.</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Urgency Section */}
-          <div className="bg-red-900/20 border border-red-500/30 rounded-3xl p-8 mb-12">
-            <h2 className="text-3xl font-bold text-white text-center mb-6">Why You Must Act Now</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="text-4xl mb-4">⏰</div>
-                <h4 className="text-white font-semibold mb-2">First-Mover Advantage</h4>
-                <p className="text-gray-300 text-sm">Be the first to capture this market. Others will follow.</p>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl mb-4">📈</div>
-                <h4 className="text-white font-semibold mb-2">Market Opportunity</h4>
-                <p className="text-gray-300 text-sm">Your 500K followers are waiting for this solution.</p>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl mb-4">💰</div>
-                <h4 className="text-white font-semibold mb-2">Revenue Loss</h4>
-                <p className="text-gray-300 text-sm">Every day you wait, you're losing potential revenue.</p>
+              <div className="premium-card p-6">
+                <h3 className="text-2xl font-bold text-white mb-4">Tools</h3>
+                <ul className="text-gray-300 space-y-2">
+                  <li>• Git & GitHub</li>
+                  <li>• Docker</li>
+                  <li>• AWS & Vercel</li>
+                  <li>• CI/CD Pipelines</li>
+                </ul>
               </div>
             </div>
           </div>
 
           {/* CTA Section */}
           <div className="text-center">
-            <h3 className="text-3xl font-bold text-white mb-6">Ready to Scale Your Empire?</h3>
+            <h3 className="text-3xl font-bold text-white mb-6">Ready to Start Your Project?</h3>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Join the elite 1% of entrepreneurs who take action. 
-              Your 500K followers are waiting for this transformation.
+              Let's discuss your website needs and create something amazing together. 
+              Our team is ready to bring your vision to life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="https://docs.google.com/forms/d/e/1FAIpQLSf2VuR-BR-i3TWiM1E8ePIPlGjMVWy3bthaUTKx8N29YtVRBw/viewform" 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href="#contact" 
                 className="btn-primary text-lg px-8 py-4"
               >
-                🚀 Start Your Digital Transformation
+                🚀 Start Your Project
               </a>
               <a 
-                href="https://wa.me/+213797339451" 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href="mailto:autonomy.owner@gmail.com" 
                 className="btn-secondary text-lg px-8 py-4"
               >
-                <span className="mr-2">📞</span>
-                WhatsApp Me
+                <span className="mr-2">📧</span>
+                Get Free Quote
               </a>
             </div>
           </div>
@@ -303,4 +220,4 @@ const OfferForYou = () => {
   )
 }
 
-export default OfferForYou 
+export default Services 

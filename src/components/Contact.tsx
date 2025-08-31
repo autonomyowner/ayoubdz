@@ -1,18 +1,25 @@
 const Contact = () => {
-  const socialLinks = [
+  const contactInfo = [
     {
-      name: "Instagram",
-      url: "https://www.instagram.com/thehivespeakingclub/",
-      icon: "📸",
-      followers: "500K+",
-      description: "Follow us for latest updates and community highlights"
+      name: "Email",
+      value: "autonomy.owner@gmail.com",
+      icon: "📧",
+      link: "mailto:autonomy.owner@gmail.com",
+      description: "Send us your project requirements"
     },
     {
-      name: "Registration Form",
-      url: "https://docs.google.com/forms/d/e/1FAIpQLSf2VuR-BR-i3TWiM1E8ePIPlGjMVWy3bthaUTKx8N29YtVRBw/viewform",
-      icon: "📝",
-      followers: "Join Now",
-      description: "Register for upcoming sessions and join our community"
+      name: "Phone",
+      value: "0797339451",
+      icon: "📞",
+      link: "tel:+213797339451",
+      description: "Call us for immediate consultation"
+    },
+    {
+      name: "WhatsApp",
+      value: "0797339451",
+      icon: "💬",
+      link: "https://wa.me/+213797339451",
+      description: "Quick chat about your project"
     }
   ]
 
@@ -24,7 +31,7 @@ const Contact = () => {
             Get in <span className="premium-text">Touch</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Ready to join The HIVE? Connect with us and start your English speaking journey today.
+            Ready to start your web development project? Contact our team and let's create something amazing together.
           </p>
         </div>
 
@@ -40,9 +47,9 @@ const Contact = () => {
                     <span className="text-slate-900 text-lg">📍</span>
                   </div>
                   <div>
-                    <h4 className="text-white font-semibold mb-1">Locations</h4>
+                    <h4 className="text-white font-semibold mb-1">Location</h4>
                     <p className="text-gray-300 text-sm">
-                      Algiers Centre & Tlemcen, Algeria
+                      Algeria - Serving clients nationwide
                     </p>
                   </div>
                 </div>
@@ -52,21 +59,21 @@ const Contact = () => {
                     <span className="text-slate-900 text-lg">⏰</span>
                   </div>
                   <div>
-                    <h4 className="text-white font-semibold mb-1">Session Times</h4>
+                    <h4 className="text-white font-semibold mb-1">Business Hours</h4>
                     <p className="text-gray-300 text-sm">
-                      Saturdays: 1:00 PM - 3:00 PM & 3:30 PM - 5:30 PM
+                      Monday - Friday: 9:00 AM - 6:00 PM
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
                   <div className="w-10 h-10 premium-gradient rounded-full flex items-center justify-center mr-4 flex-shrink-0 shadow-lg">
-                    <span className="text-slate-900 text-lg">💰</span>
+                    <span className="text-slate-900 text-lg">💼</span>
                   </div>
                   <div>
-                    <h4 className="text-white font-semibold mb-1">Pricing</h4>
+                    <h4 className="text-white font-semibold mb-1">Services</h4>
                     <p className="text-gray-300 text-sm">
-                      500 DA per session
+                      Custom websites, E-commerce, Booking systems
                     </p>
                   </div>
                 </div>
@@ -76,9 +83,9 @@ const Contact = () => {
                     <span className="text-slate-900 text-lg">🎯</span>
                   </div>
                   <div>
-                    <h4 className="text-white font-semibold mb-1">Requirements</h4>
+                    <h4 className="text-white font-semibold mb-1">Response Time</h4>
                     <p className="text-gray-300 text-sm">
-                      Age 17-35, Intermediate or Advanced English
+                      Within 24 hours for all inquiries
                     </p>
                   </div>
                 </div>
@@ -86,66 +93,64 @@ const Contact = () => {
             </div>
 
             <div className="premium-gradient p-8 rounded-2xl shadow-2xl">
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Why Join The HIVE?</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Why Choose Our Agency?</h3>
               <ul className="space-y-3 text-slate-900">
                 <li className="flex items-center">
                   <span className="mr-3">✓</span>
-                  Improve English speaking skills
+                  Expert team of 4 professional developers
                 </li>
                 <li className="flex items-center">
                   <span className="mr-3">✓</span>
-                  Build professional network
+                  Modern, responsive design approach
                 </li>
                 <li className="flex items-center">
                   <span className="mr-3">✓</span>
-                  Develop critical thinking
+                  Complete project management
                 </li>
                 <li className="flex items-center">
                   <span className="mr-3">✓</span>
-                  Join 500K+ member community
+                  Ongoing support and maintenance
                 </li>
               </ul>
             </div>
           </div>
 
-          {/* Social Links */}
+          {/* Contact Links */}
           <div className="space-y-6">
-            {socialLinks.map((social, index) => (
+            {contactInfo.map((contact, index) => (
               <a
                 key={index}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={contact.link}
+                target={contact.link.startsWith('http') ? "_blank" : undefined}
+                rel={contact.link.startsWith('http') ? "noopener noreferrer" : undefined}
                 className="block premium-card p-6 hover:transform hover:scale-105"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">
-                    <div className="text-3xl mr-4">{social.icon}</div>
+                    <div className="text-3xl mr-4">{contact.icon}</div>
                     <div>
-                      <h3 className="text-xl font-bold text-white mb-1">{social.name}</h3>
-                      <p className="text-gray-300 text-sm">{social.description}</p>
+                      <h3 className="text-xl font-bold text-white mb-1">{contact.name}</h3>
+                      <p className="text-gray-300 text-sm">{contact.description}</p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="premium-text font-bold text-lg">{social.followers}</div>
-                    <div className="text-gray-400 text-sm">followers</div>
+                    <div className="premium-text font-bold text-lg">{contact.value}</div>
+                    <div className="text-gray-400 text-sm">contact</div>
                   </div>
                 </div>
               </a>
             ))}
 
             <div className="premium-card p-6">
-              <h3 className="text-xl font-bold text-white mb-4">Quick Registration</h3>
+              <h3 className="text-xl font-bold text-white mb-4">Start Your Project</h3>
               <p className="text-gray-300 mb-4">
-                Ready to join? Fill out our registration form and we'll get back to you with all the details.
+                Ready to build your website? Contact us for a free consultation and quote.
               </p>
               <a 
-                href="https://docs.google.com/forms/d/e/1FAIpQLSf2VuR-BR-i3TWiM1E8ePIPlGjMVWy3bthaUTKx8N29YtVRBw/viewform" 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href="mailto:autonomy.owner@gmail.com" 
                 className="btn-primary w-full text-center"
               >
-                Register Now
+                Get Free Quote
               </a>
             </div>
           </div>
@@ -153,27 +158,26 @@ const Contact = () => {
 
         {/* CTA Section */}
         <div className="mt-16 premium-card p-8 text-center">
-          <h3 className="text-3xl font-bold text-white mb-4">Ready to Transform Your English Skills?</h3>
+          <h3 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Business Online?</h3>
           <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-            Join The HIVE Speaking Club today and become part of Algeria's premier English conversation community. 
-            Don't miss out on this opportunity to develop your skills and network with like-minded individuals.
+            Let our expert team create a stunning website that will elevate your business and drive results. 
+            Contact us today to discuss your project requirements.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="https://docs.google.com/forms/d/e/1FAIpQLSf2VuR-BR-i3TWiM1E8ePIPlGjMVWy3bthaUTKx8N29YtVRBw/viewform" 
-              target="_blank" 
-              rel="noopener noreferrer"
+              href="mailto:autonomy.owner@gmail.com" 
               className="btn-primary text-lg px-8 py-4"
             >
-              Join The HIVE Now
+              Start Your Project
             </a>
             <a 
-              href="https://www.instagram.com/thehivespeakingclub/" 
+              href="https://wa.me/+213797339451" 
               target="_blank" 
               rel="noopener noreferrer"
               className="btn-secondary text-lg px-8 py-4"
             >
-              Follow on Instagram
+              <span className="mr-2">💬</span>
+              WhatsApp Us
             </a>
           </div>
         </div>
