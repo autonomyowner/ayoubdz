@@ -37,8 +37,14 @@ const Navbar = () => {
             >
               Pricing
             </Link>
+            <Link 
+              to="/contact" 
+              className={`transition-colors ${location.pathname === '/contact' ? 'text-yellow-400' : 'text-white hover:text-yellow-400'}`}
+            >
+              Contact
+            </Link>
             <a 
-              href="#contact" 
+              href="mailto:autonomy.owner@gmail.com" 
               className="btn-primary"
             >
               Get Quote
@@ -85,8 +91,15 @@ const Navbar = () => {
               >
                 Pricing
               </Link>
+              <Link 
+                to="/contact" 
+                className={`block px-3 py-2 transition-colors ${location.pathname === '/contact' ? 'text-yellow-400' : 'text-white hover:text-yellow-400'}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
               <a 
-                href="#contact" 
+                href="mailto:autonomy.owner@gmail.com" 
                 className="block px-3 py-2 btn-primary text-center"
               >
                 Get Quote

@@ -63,7 +63,7 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="#contact" 
+              href="/contact" 
               className="btn-primary text-lg px-8 py-4"
             >
               Start Your Project
