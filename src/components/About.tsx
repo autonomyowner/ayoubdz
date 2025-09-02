@@ -49,7 +49,7 @@ const About = () => {
               <ul className="space-y-3 text-slate-900">
                 <li className="flex items-center">
                   <span className="mr-3">✓</span>
-                  Expert team of 4 professional developers
+                  Expert team of professional developers
                 </li>
                 <li className="flex items-center">
                   <span className="mr-3">✓</span>
@@ -70,11 +70,7 @@ const About = () => {
               </ul>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <div className="premium-card p-6 text-center">
-                <div className="text-3xl font-bold premium-text mb-2">4</div>
-                <div className="text-gray-400 text-sm">Expert Developers</div>
-              </div>
+            <div className="grid grid-cols-1 gap-4">
               <div className="premium-card p-6 text-center">
                 <div className="text-3xl font-bold premium-text mb-2">50+</div>
                 <div className="text-gray-400 text-sm">Projects Delivered</div>
@@ -83,35 +79,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Team Section */}
-        <div className="mt-16">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Meet <span className="premium-text">Our Team</span>
-            </h3>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              The talented professionals behind every successful project
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="premium-card p-6 text-center">
-              <h4 className="text-xl font-bold text-white mb-2">Azeddine Zellag</h4>
-            </div>
-
-            <div className="premium-card p-6 text-center">
-              <h4 className="text-xl font-bold text-white mb-2">Mohammad Mosbahi</h4>
-            </div>
-
-            <div className="premium-card p-6 text-center">
-              <h4 className="text-xl font-bold text-white mb-2">Islam Zellag</h4>
-            </div>
-
-            <div className="premium-card p-6 text-center">
-              <h4 className="text-xl font-bold text-white mb-2">Belkasm Islam</h4>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )

@@ -71,10 +71,6 @@ const Footer = () => {
                 <span className="mr-2">📞</span>
                 0797339451
               </li>
-              <li className="flex items-center">
-                <span className="mr-2">👥</span>
-                4 Expert Developers
-              </li>
             </ul>
           </div>
         </div>

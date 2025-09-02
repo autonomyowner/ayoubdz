@@ -34,28 +34,6 @@ const ContactPage = () => {
     }
   ]
 
-  const teamMembers = [
-    {
-      name: "Azeddine Zellag",
-      role: "Manager & Lead Developer",
-      contact: "autonomy.owner@gmail.com"
-    },
-    {
-      name: "Mohammad Mosbahi",
-      role: "Full-Stack Developer",
-      contact: "autonomy.owner@gmail.com"
-    },
-    {
-      name: "Islam Zellag",
-      role: "UI/UX Designer",
-      contact: "autonomy.owner@gmail.com"
-    },
-    {
-      name: "Belkasm Islam",
-      role: "Backend Developer",
-      contact: "autonomy.owner@gmail.com"
-    }
-  ]
 
   return (
     <section id="contact-page" className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -77,15 +55,15 @@ const ContactPage = () => {
 
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10 z-5">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-yellow-500 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-yellow-500 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-yellow-500 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-blue-500 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-blue-500 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container-custom text-center relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 glass-effect border border-yellow-500/30 rounded-full premium-text text-sm font-medium mb-8">
+          <div className="inline-flex items-center px-4 py-2 glass-effect border border-blue-500/30 rounded-full premium-text text-sm font-medium mb-8">
             <span className="mr-2">📞</span>
             Get In Touch - We're Here to Help
           </div>
@@ -93,12 +71,12 @@ const ContactPage = () => {
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             Contact
-            <span className="block premium-text">Our Team</span>
+            <span className="block premium-text">Our Agency</span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Ready to start your web development project? Get in touch with our expert team. 
+            Ready to start your web development project? Get in touch with our agency. 
             We're here to discuss your needs and bring your vision to life.
           </p>
 
@@ -131,7 +109,7 @@ const ContactPage = () => {
                     <label className="block text-white font-semibold mb-2">First Name</label>
                     <input
                       type="text"
-                      className="w-full px-4 py-3 bg-slate-800/50 border border-yellow-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-yellow-500"
+                      className="w-full px-4 py-3 bg-slate-800/50 border border-blue-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
                       placeholder="Your first name"
                     />
                   </div>
@@ -139,7 +117,7 @@ const ContactPage = () => {
                     <label className="block text-white font-semibold mb-2">Last Name</label>
                     <input
                       type="text"
-                      className="w-full px-4 py-3 bg-slate-800/50 border border-yellow-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-yellow-500"
+                      className="w-full px-4 py-3 bg-slate-800/50 border border-blue-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
                       placeholder="Your last name"
                     />
                   </div>
@@ -149,7 +127,7 @@ const ContactPage = () => {
                   <label className="block text-white font-semibold mb-2">Email Address</label>
                   <input
                     type="email"
-                    className="w-full px-4 py-3 bg-slate-800/50 border border-yellow-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-yellow-500"
+                    className="w-full px-4 py-3 bg-slate-800/50 border border-blue-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -158,14 +136,14 @@ const ContactPage = () => {
                   <label className="block text-white font-semibold mb-2">Phone Number</label>
                   <input
                     type="tel"
-                    className="w-full px-4 py-3 bg-slate-800/50 border border-yellow-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-yellow-500"
+                    className="w-full px-4 py-3 bg-slate-800/50 border border-blue-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
                     placeholder="Your phone number"
                   />
                 </div>
 
                 <div>
                   <label className="block text-white font-semibold mb-2">Project Type</label>
-                  <select className="w-full px-4 py-3 bg-slate-800/50 border border-yellow-500/30 rounded-lg text-white focus:outline-none focus:border-yellow-500">
+                  <select className="w-full px-4 py-3 bg-slate-800/50 border border-blue-500/30 rounded-lg text-white focus:outline-none focus:border-blue-500">
                     <option value="">Select project type</option>
                     <option value="clinic">Clinic Website</option>
                     <option value="travel">Travel Agency Website</option>
@@ -178,7 +156,7 @@ const ContactPage = () => {
 
                 <div>
                   <label className="block text-white font-semibold mb-2">Budget Range</label>
-                  <select className="w-full px-4 py-3 bg-slate-800/50 border border-yellow-500/30 rounded-lg text-white focus:outline-none focus:border-yellow-500">
+                  <select className="w-full px-4 py-3 bg-slate-800/50 border border-blue-500/30 rounded-lg text-white focus:outline-none focus:border-blue-500">
                     <option value="">Select budget range</option>
                     <option value="100k-200k">100,000 - 200,000 DA</option>
                     <option value="200k-400k">200,000 - 400,000 DA</option>
@@ -192,7 +170,7 @@ const ContactPage = () => {
                   <label className="block text-white font-semibold mb-2">Project Description</label>
                   <textarea
                     rows={4}
-                    className="w-full px-4 py-3 bg-slate-800/50 border border-yellow-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-yellow-500"
+                    className="w-full px-4 py-3 bg-slate-800/50 border border-blue-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
                     placeholder="Tell us about your project requirements, goals, and any specific features you need..."
                   ></textarea>
                 </div>
@@ -267,7 +245,7 @@ const ContactPage = () => {
                 <ul className="space-y-3 text-slate-900">
                   <li className="flex items-center">
                     <span className="mr-3">✓</span>
-                    Expert team of 4 professional developers
+                    Expert team of professional developers
                   </li>
                   <li className="flex items-center">
                     <span className="mr-3">✓</span>
@@ -286,32 +264,9 @@ const ContactPage = () => {
             </div>
           </div>
 
-          {/* Team Section */}
-          <div className="bg-slate-800/30 backdrop-blur-md border border-yellow-500/30 rounded-3xl p-8 mb-12">
-            <h2 className="text-3xl font-bold text-white text-center mb-8">Meet Our Team</h2>
-            <p className="text-gray-300 mb-8 max-w-3xl mx-auto text-center">
-              Our expert team is ready to help you bring your vision to life. 
-              Each member brings unique skills and experience to every project.
-            </p>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {teamMembers.map((member, index) => (
-                <div key={index} className="premium-card p-6 text-center">
-                  <h4 className="text-xl font-bold text-white mb-2">{member.name}</h4>
-                  <p className="text-gray-400 text-sm mb-3">{member.role}</p>
-                  <a 
-                    href={`mailto:${member.contact}`}
-                    className="text-yellow-400 hover:text-yellow-300 text-sm"
-                  >
-                    Contact
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
 
           {/* Quick Contact Section */}
-          <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 rounded-3xl p-8 mb-12">
+          <div className="bg-gradient-to-r from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded-3xl p-8 mb-12">
             <h2 className="text-3xl font-bold text-white text-center mb-8">Quick Contact Options</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <a 
@@ -331,7 +286,7 @@ const ContactPage = () => {
               >
                 <div className="text-3xl mb-4">💬</div>
                 <h3 className="text-xl font-bold text-white mb-2">WhatsApp</h3>
-                <p className="text-gray-300 text-sm">Quick chat with our team</p>
+                <p className="text-gray-300 text-sm">Quick chat with us</p>
               </a>
               
               <a 
