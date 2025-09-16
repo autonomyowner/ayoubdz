@@ -44,9 +44,9 @@ const ContactPage = () => {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover transform scale-x-[-1] sm:rotate-45"
+          className="w-full h-full object-cover"
         >
-          <source src="/pics/fliphero.mp4" type="video/mp4" />
+          <source src="/hero1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         {/* Video overlay for better text readability */}
