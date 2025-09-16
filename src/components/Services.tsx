@@ -21,7 +21,7 @@ const Services = () => {
   ]
 
   return (
-    <section id="services" className="section-padding">
+    <section id="services" className="section-padding overflow-hidden">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -33,12 +33,12 @@ const Services = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12 md:mb-16">
           {services.map((service, index) => (
-            <div key={index} className="premium-card p-8 hover:transform hover:scale-105">
-              <div className="text-4xl mb-4">{service.icon}</div>
-              <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
-              <p className="text-gray-300 mb-6 leading-relaxed">{service.description}</p>
+            <div key={index} className="premium-card p-4 sm:p-6 md:p-8 hover:transform hover:scale-105">
+              <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">{service.icon}</div>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3 md:mb-4">{service.title}</h3>
+              <p className="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 leading-relaxed">{service.description}</p>
               <ul className="space-y-2">
                 {service.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center text-gray-300">
@@ -58,11 +58,11 @@ const Services = () => {
             <p className="text-gray-300">No hidden fees, no long-term commitments</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
             {/* Pricing Card */}
-            <div className="premium-gradient p-8 rounded-2xl text-center shadow-2xl">
-              <div className="text-6xl font-bold text-slate-900 mb-2">500 DA</div>
-              <div className="text-slate-900 text-lg mb-6">Per Session</div>
+            <div className="premium-gradient p-4 sm:p-6 md:p-8 rounded-2xl text-center shadow-2xl">
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-2">500 DA</div>
+              <div className="text-slate-900 text-base sm:text-lg mb-4 sm:mb-6">Per Session</div>
               <ul className="space-y-3 text-slate-900 text-left">
                 <li className="flex items-center">
                   <span className="mr-3">✓</span>
@@ -88,15 +88,15 @@ const Services = () => {
               <div className="premium-card p-6">
                 <h4 className="text-xl font-bold text-white mb-4">Requirements to Join</h4>
                 <div className="space-y-3">
-                  <div className="flex items-center text-gray-300">
+                  <div className="flex items-center text-gray-300 text-sm sm:text-base">
                     <span className="premium-text mr-3">🎯</span>
                     Age: 17-35 years old
                   </div>
-                  <div className="flex items-center text-gray-300">
+                  <div className="flex items-center text-gray-300 text-sm sm:text-base">
                     <span className="premium-text mr-3">📚</span>
                     English Level: Intermediate or Advanced
                   </div>
-                  <div className="flex items-center text-gray-300">
+                  <div className="flex items-center text-gray-300 text-sm sm:text-base">
                     <span className="premium-text mr-3">💬</span>
                     Willingness to participate actively
                   </div>

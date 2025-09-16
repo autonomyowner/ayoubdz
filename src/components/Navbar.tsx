@@ -12,13 +12,13 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div>
-              <h1 className="text-white font-bold text-xl">SITEDZ</h1>
-              <p className="premium-text text-xs">Web Development Agency</p>
+              <h1 className="text-white font-bold text-lg sm:text-xl">SITEDZ</h1>
+              <p className="premium-text text-xs hidden sm:block">Web Development Agency</p>
             </div>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
             <Link 
               to="/" 
               className={`transition-colors ${location.pathname === '/' ? 'text-yellow-400' : 'text-white hover:text-yellow-400'}`}
@@ -100,7 +100,7 @@ const Navbar = () => {
               </Link>
               <a 
                 href="mailto:autonomy.owner@gmail.com" 
-                className="block px-3 py-2 btn-primary text-center"
+                className="block mx-3 my-2 btn-primary text-center"
               >
                 Get Quote
               </a>

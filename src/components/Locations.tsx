@@ -34,12 +34,12 @@ const Locations = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
           {locations.map((location, index) => (
-            <div key={index} className="premium-card p-8 hover:transform hover:scale-105">
+            <div key={index} className="premium-card p-4 sm:p-6 md:p-8 hover:transform hover:scale-105">
               {/* Header */}
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-2xl font-bold text-white">{location.city}</h3>
+              <div className="flex items-center justify-between mb-4 sm:mb-6">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white">{location.city}</h3>
                 <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                   location.status === "Active" 
                     ? "bg-green-500/20 text-green-400 border border-green-400/30"
@@ -50,13 +50,13 @@ const Locations = () => {
               </div>
 
               {/* Description */}
-              <p className="text-gray-300 mb-6 leading-relaxed">
+              <p className="text-gray-300 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">
                 {location.description}
               </p>
 
               {/* Schedules */}
-              <div className="mb-6">
-                <h4 className="text-lg font-semibold text-white mb-3">Available Sessions:</h4>
+              <div className="mb-4 sm:mb-6">
+                <h4 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">Available Sessions:</h4>
                 <div className="space-y-2">
                   {location.schedules.map((schedule, scheduleIndex) => (
                     <div key={scheduleIndex} className={`flex items-center justify-between p-3 rounded-lg ${
@@ -64,7 +64,7 @@ const Locations = () => {
                         ? "bg-green-500/10 border border-green-400/20" 
                         : "bg-gray-500/10 border border-gray-400/20"
                     }`}>
-                      <span className={`text-sm ${
+                      <span className={`text-xs sm:text-sm ${
                         schedule.available ? "text-green-400" : "text-gray-400"
                       }`}>
                         {schedule.time}
@@ -99,10 +99,10 @@ const Locations = () => {
         </div>
 
         {/* Additional Info */}
-        <div className="mt-12 premium-card p-8">
+        <div className="mt-8 sm:mt-12 premium-card p-4 sm:p-6 md:p-8">
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Join?</h3>
-            <p className="text-gray-300 mb-6">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4">Ready to Join?</h3>
+            <p className="text-gray-300 text-sm sm:text-base mb-4 sm:mb-6">
               Choose your preferred location and time slot when registering. 
               We'll send you a confirmation email with all the details.
             </p>

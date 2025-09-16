@@ -44,7 +44,7 @@ const ContactPage = () => {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover transform scale-x-[-1] rotate-45"
+          className="w-full h-full object-cover transform scale-x-[-1] sm:rotate-45"
         >
           <source src="/pics/fliphero.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -63,46 +63,46 @@ const ContactPage = () => {
       <div className="container-custom text-center relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 glass-effect border border-blue-500/30 rounded-full premium-text text-sm font-medium mb-8">
+          <div className="inline-flex items-center px-3 sm:px-4 py-2 glass-effect border border-blue-500/30 rounded-full premium-text text-xs sm:text-sm font-medium mb-6 sm:mb-8">
             <span className="mr-2">📞</span>
-            Get In Touch - We're Here to Help
+            <span className="text-center">Get In Touch - We're Here to Help</span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
             Contact
             <span className="block premium-text">Our Agency</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0">
             Ready to start your web development project? Get in touch with our agency. 
             We're here to discuss your needs and bring your vision to life.
           </p>
 
           {/* Contact Methods Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-12 md:mb-16">
             {contactMethods.map((method, index) => (
               <a
                 key={index}
                 href={method.link}
                 target={method.link.startsWith('http') ? "_blank" : undefined}
                 rel={method.link.startsWith('http') ? "noopener noreferrer" : undefined}
-                className={`premium-card p-6 text-center hover:transform hover:scale-105 transition-all duration-300 ${method.color}`}
+                className={`premium-card p-4 sm:p-6 text-center hover:transform hover:scale-105 transition-all duration-300 ${method.color}`}
               >
-                <div className="text-4xl mb-4">{method.icon}</div>
-                <h3 className="text-xl font-bold text-white mb-2">{method.title}</h3>
-                <p className="text-gray-300 text-sm mb-2">{method.description}</p>
-                <div className="premium-text font-semibold">{method.value}</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-3 md:mb-4">{method.icon}</div>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-white mb-1 sm:mb-2">{method.title}</h3>
+                <p className="text-gray-300 text-xs sm:text-sm mb-1 sm:mb-2">{method.description}</p>
+                <div className="premium-text font-semibold text-sm sm:text-base">{method.value}</div>
               </a>
             ))}
           </div>
 
           {/* Contact Form Section */}
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-12 md:mb-16">
             {/* Contact Form */}
-            <div className="premium-card p-8">
-              <h2 className="text-3xl font-bold text-white mb-6 text-center">Send Us a Message</h2>
+            <div className="premium-card p-4 sm:p-6 md:p-8">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6 text-center">Send Us a Message</h2>
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
@@ -177,7 +177,7 @@ const ContactPage = () => {
 
                 <button
                   type="submit"
-                  className="btn-primary w-full text-lg py-4"
+                  className="btn-primary w-full text-base sm:text-lg py-3 sm:py-4"
                 >
                   🚀 Send Message
                 </button>
@@ -186,53 +186,53 @@ const ContactPage = () => {
 
             {/* Contact Information */}
             <div className="space-y-8">
-              <div className="premium-card p-8">
-                <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
+              <div className="premium-card p-4 sm:p-6 md:p-8">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-4 sm:mb-6">Contact Information</h3>
                 
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <div className="w-12 h-12 premium-gradient rounded-full flex items-center justify-center mr-4 flex-shrink-0 shadow-lg">
-                      <span className="text-slate-900 text-xl">📍</span>
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 premium-gradient rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 shadow-lg">
+                      <span className="text-slate-900 text-base sm:text-lg md:text-xl">📍</span>
                     </div>
                     <div>
-                      <h4 className="text-white font-semibold mb-1">Location</h4>
-                      <p className="text-gray-300 text-sm">
+                      <h4 className="text-white font-semibold mb-1 text-sm sm:text-base">Location</h4>
+                      <p className="text-gray-300 text-xs sm:text-sm">
                         Algeria - Serving clients nationwide
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start">
-                    <div className="w-12 h-12 premium-gradient rounded-full flex items-center justify-center mr-4 flex-shrink-0 shadow-lg">
-                      <span className="text-slate-900 text-xl">⏰</span>
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 premium-gradient rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 shadow-lg">
+                      <span className="text-slate-900 text-base sm:text-lg md:text-xl">⏰</span>
                     </div>
                     <div>
-                      <h4 className="text-white font-semibold mb-1">Business Hours</h4>
-                      <p className="text-gray-300 text-sm">
+                      <h4 className="text-white font-semibold mb-1 text-sm sm:text-base">Business Hours</h4>
+                      <p className="text-gray-300 text-xs sm:text-sm">
                         Monday - Friday: 9:00 AM - 6:00 PM
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start">
-                    <div className="w-12 h-12 premium-gradient rounded-full flex items-center justify-center mr-4 flex-shrink-0 shadow-lg">
-                      <span className="text-slate-900 text-xl">💼</span>
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 premium-gradient rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 shadow-lg">
+                      <span className="text-slate-900 text-base sm:text-lg md:text-xl">💼</span>
                     </div>
                     <div>
-                      <h4 className="text-white font-semibold mb-1">Services</h4>
-                      <p className="text-gray-300 text-sm">
+                      <h4 className="text-white font-semibold mb-1 text-sm sm:text-base">Services</h4>
+                      <p className="text-gray-300 text-xs sm:text-sm">
                         Custom websites, E-commerce, Booking systems
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start">
-                    <div className="w-12 h-12 premium-gradient rounded-full flex items-center justify-center mr-4 flex-shrink-0 shadow-lg">
-                      <span className="text-slate-900 text-xl">🎯</span>
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 premium-gradient rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 shadow-lg">
+                      <span className="text-slate-900 text-base sm:text-lg md:text-xl">🎯</span>
                     </div>
                     <div>
-                      <h4 className="text-white font-semibold mb-1">Response Time</h4>
-                      <p className="text-gray-300 text-sm">
+                      <h4 className="text-white font-semibold mb-1 text-sm sm:text-base">Response Time</h4>
+                      <p className="text-gray-300 text-xs sm:text-sm">
                         Within 24 hours for all inquiries
                       </p>
                     </div>
@@ -240,9 +240,9 @@ const ContactPage = () => {
                 </div>
               </div>
 
-              <div className="premium-gradient p-8 rounded-2xl shadow-2xl">
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">Why Choose Our Agency?</h3>
-                <ul className="space-y-3 text-slate-900">
+              <div className="premium-gradient p-4 sm:p-6 md:p-8 rounded-2xl shadow-2xl">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 mb-3 sm:mb-4">Why Choose Our Agency?</h3>
+                <ul className="space-y-2 sm:space-y-3 text-slate-900 text-sm sm:text-base">
                   <li className="flex items-center">
                     <span className="mr-3">✓</span>
                     Expert team of professional developers
@@ -266,56 +266,56 @@ const ContactPage = () => {
 
 
           {/* Quick Contact Section */}
-          <div className="bg-gradient-to-r from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded-3xl p-8 mb-12">
-            <h2 className="text-3xl font-bold text-white text-center mb-8">Quick Contact Options</h2>
-            <div className="grid md:grid-cols-3 gap-6">
+          <div className="bg-gradient-to-r from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded-3xl p-4 sm:p-6 md:p-8 mb-8 sm:mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white text-center mb-6 sm:mb-8">Quick Contact Options</h2>
+            <div className="grid sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
               <a 
                 href="mailto:autonomy.owner@gmail.com?subject=Project Inquiry" 
-                className="premium-card p-6 text-center hover:transform hover:scale-105 transition-all duration-300"
+                className="premium-card p-4 sm:p-6 text-center hover:transform hover:scale-105 transition-all duration-300"
               >
-                <div className="text-3xl mb-4">📧</div>
-                <h3 className="text-xl font-bold text-white mb-2">Email Us</h3>
-                <p className="text-gray-300 text-sm">Send us your project details</p>
+                <div className="text-2xl sm:text-3xl mb-2 sm:mb-4">📧</div>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-white mb-1 sm:mb-2">Email Us</h3>
+                <p className="text-gray-300 text-xs sm:text-sm">Send us your project details</p>
               </a>
               
               <a 
                 href="https://wa.me/+213797339451?text=Hi! I'm interested in your web development services. Can you tell me more?" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="premium-card p-6 text-center hover:transform hover:scale-105 transition-all duration-300"
+                className="premium-card p-4 sm:p-6 text-center hover:transform hover:scale-105 transition-all duration-300"
               >
-                <div className="text-3xl mb-4">💬</div>
-                <h3 className="text-xl font-bold text-white mb-2">WhatsApp</h3>
-                <p className="text-gray-300 text-sm">Quick chat with us</p>
+                <div className="text-2xl sm:text-3xl mb-2 sm:mb-4">💬</div>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-white mb-1 sm:mb-2">WhatsApp</h3>
+                <p className="text-gray-300 text-xs sm:text-sm">Quick chat with us</p>
               </a>
               
               <a 
                 href="tel:+213797339451" 
-                className="premium-card p-6 text-center hover:transform hover:scale-105 transition-all duration-300"
+                className="premium-card p-4 sm:p-6 text-center hover:transform hover:scale-105 transition-all duration-300"
               >
-                <div className="text-3xl mb-4">📞</div>
-                <h3 className="text-xl font-bold text-white mb-2">Call Us</h3>
-                <p className="text-gray-300 text-sm">Speak directly with us</p>
+                <div className="text-2xl sm:text-3xl mb-2 sm:mb-4">📞</div>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-white mb-1 sm:mb-2">Call Us</h3>
+                <p className="text-gray-300 text-xs sm:text-sm">Speak directly with us</p>
               </a>
             </div>
           </div>
 
           {/* CTA Section */}
           <div className="text-center">
-            <h3 className="text-3xl font-bold text-white mb-6">Ready to Start Your Project?</h3>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6">Ready to Start Your Project?</h3>
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto">
               Don't wait to bring your vision to life. Contact us today and let's create something amazing together.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
               <a 
                 href="mailto:autonomy.owner@gmail.com?subject=Project Inquiry" 
-                className="btn-primary text-lg px-8 py-4"
+                className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
               >
                 🚀 Start Your Project
               </a>
               <a 
                 href="/pricing" 
-                className="btn-secondary text-lg px-8 py-4"
+                className="btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
               >
                 <span className="mr-2">💰</span>
                 View Pricing

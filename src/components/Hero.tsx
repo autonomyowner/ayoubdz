@@ -8,7 +8,7 @@ const Hero = () => {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover transform scale-x-[-1] rotate-45"
+          className="w-full h-full object-cover transform scale-x-[-1] sm:rotate-45"
         >
           <source src="/pics/fliphero.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -27,50 +27,50 @@ const Hero = () => {
       <div className="container-custom text-center relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 glass-effect border border-yellow-500/30 rounded-full premium-text text-sm font-medium mb-8">
+          <div className="inline-flex items-center px-3 sm:px-4 py-2 glass-effect border border-yellow-500/30 rounded-full premium-text text-xs sm:text-sm font-medium mb-6 sm:mb-8">
             <span className="mr-2">🚀</span>
-            Premier Web Development Agency in Algeria
+            <span className="text-center">Premier Web Development Agency in Algeria</span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
             We Build
             <span className="block premium-text">Premium Websites</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
             Specialized in creating stunning websites for clinics, travel agencies, real estate, 
             and e-commerce businesses. We transform your digital presence into a powerful business tool.
           </p>
 
           {/* Stats */}
-          <div className="flex flex-wrap justify-center gap-8 mb-12">
-            <div className="text-center premium-card p-6">
-              <div className="text-3xl font-bold premium-text">50+</div>
-              <div className="text-gray-400">Projects Completed</div>
+          <div className="grid grid-cols-3 sm:flex sm:flex-wrap justify-center gap-2 sm:gap-4 md:gap-8 mb-8 sm:mb-12">
+            <div className="text-center premium-card p-3 sm:p-4 md:p-6">
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold premium-text">50+</div>
+              <div className="text-gray-400 text-xs sm:text-sm md:text-base">Projects Completed</div>
             </div>
-            <div className="text-center premium-card p-6">
-              <div className="text-3xl font-bold premium-text">4</div>
-              <div className="text-gray-400">Expert Developers</div>
+            <div className="text-center premium-card p-3 sm:p-4 md:p-6">
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold premium-text">4</div>
+              <div className="text-gray-400 text-xs sm:text-sm md:text-base">Expert Developers</div>
             </div>
-            <div className="text-center premium-card p-6">
-              <div className="text-3xl font-bold premium-text">100%</div>
-              <div className="text-gray-400">Client Satisfaction</div>
+            <div className="text-center premium-card p-3 sm:p-4 md:p-6">
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold premium-text">100%</div>
+              <div className="text-gray-400 text-xs sm:text-sm md:text-base">Client Satisfaction</div>
             </div>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
             <a 
               href="/contact" 
-              className="btn-primary text-lg px-8 py-4"
+              className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
             >
               Start Your Project
             </a>
             <a 
               href="/pricing" 
-              className="btn-secondary text-lg px-8 py-4"
+              className="btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
             >
               <span className="mr-2">💰</span>
               View Pricing

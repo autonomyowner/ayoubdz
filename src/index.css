@@ -5,20 +5,27 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   
   body {
     font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+  
+  img, video {
+    max-width: 100%;
+    height: auto;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-hive-blue text-white font-semibold px-6 py-3 rounded-lg hover:bg-hive-blue-light transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+    @apply bg-hive-blue text-white font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-hive-blue-light transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm sm:text-base;
   }
   
   .btn-secondary {
-    @apply border-2 border-hive-blue text-hive-blue font-semibold px-6 py-3 rounded-lg hover:bg-hive-blue hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl;
+    @apply border-2 border-hive-blue text-hive-blue font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-hive-blue hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base;
   }
   
   .section-padding {
@@ -26,7 +33,7 @@
   }
   
   .container-custom {
-    @apply max-w-7xl mx-auto;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .premium-card {
