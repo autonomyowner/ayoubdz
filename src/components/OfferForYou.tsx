@@ -3,53 +3,53 @@ const Services = () => {
     {
       icon: "🏥",
       title: "Clinic Websites",
-      description: "Professional medical websites with integrated booking systems, patient portals, and appointment management.",
+      description: "Attract more patients and reduce phone calls with online booking and clear service pages.",
       features: [
-        "Online appointment booking",
-        "Patient registration forms",
-        "Doctor profiles and schedules",
-        "Medical service listings",
-        "Secure patient portal",
-        "Mobile-responsive design"
+        "Let patients book appointments 24/7",
+        "Streamline intake with online registration forms",
+        "Showcase doctors with profiles and schedules",
+        "Present services clearly to build trust",
+        "Secure portal to protect patient data",
+        "Mobile-first experience for every visitor"
       ]
     },
     {
       icon: "✈️",
       title: "Travel Agency Websites",
-      description: "Dynamic travel websites with booking engines, tour packages, and customer management systems.",
+      description: "Convert browsers into bookings with irresistible packages and easy online checkout.",
       features: [
-        "Tour package listings",
-        "Online booking system",
-        "Customer reviews and ratings",
-        "Payment integration",
-        "Travel blog integration",
-        "Multi-language support"
+        "Convert more with engaging tour package pages",
+        "Accept bookings online — reduce phone calls",
+        "Build trust with real customer reviews",
+        "Collect payments securely",
+        "Drive SEO with a travel blog",
+        "Serve travelers in multiple languages"
       ]
     },
     {
       icon: "🏠",
       title: "Real Estate Websites",
-      description: "Comprehensive property websites with listing management, search filters, and lead generation tools.",
+      description: "Generate qualified leads with powerful search, filters, and compelling property pages.",
       features: [
-        "Property listings with search",
-        "Advanced filtering options",
-        "Virtual tour integration",
-        "Lead capture forms",
-        "Agent profiles",
-        "Property comparison tools"
+        "Help buyers find homes faster with powerful search",
+        "Guide prospects with intuitive filters",
+        "Increase engagement with virtual tours",
+        "Capture more leads with smart forms",
+        "Build credibility with agent profiles",
+        "Boost decisions with side-by-side comparisons"
       ]
     },
     {
       icon: "🛒",
       title: "E-commerce Websites",
-      description: "Full-featured online stores with payment processing, inventory management, and customer accounts.",
+      description: "Increase sales with a fast, trustworthy store and frictionless checkout.",
       features: [
-        "Product catalog management",
-        "Secure payment processing",
-        "Shopping cart functionality",
-        "Order tracking system",
-        "Customer account management",
-        "Inventory management"
+        "Showcase products to boost conversions",
+        "Accept secure payments with ease",
+        "Reduce abandonment with a smooth checkout",
+        "Let customers track orders easily",
+        "Increase repeat purchases with accounts",
+        "Stay organized with inventory tracking"
       ]
     }
   ]
@@ -203,14 +203,22 @@ const Services = () => {
                 href="/contact" 
                 className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
               >
-                🚀 Start Your Project
+                🚀 Launch My Website
               </a>
               <a 
                 href="/pricing" 
                 className="btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
               >
-                <span className="mr-2">💰</span>
-                View Pricing
+                <span className="mr-2">📈</span>
+                Grow My Business
+              </a>
+            </div>
+            <div className="mt-4">
+              <a 
+                href="/contact" 
+                className="inline-block text-yellow-300 text-sm underline"
+              >
+                Book a Free Demo
               </a>
             </div>
           </div>

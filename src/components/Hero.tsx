@@ -66,15 +66,25 @@ const Hero = () => {
               href="/contact" 
               className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
             >
-              Start Your Project
+              🚀 Launch My Website
             </a>
             <a 
               href="/pricing" 
               className="btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
             >
-              <span className="mr-2">💰</span>
-              View Pricing
+              <span className="mr-2">📈</span>
+              Grow My Business
             </a>
+          </div>
+
+          {/* Speed & Support Promises */}
+          <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+            <div className="inline-flex items-center px-3 py-1 glass-effect border border-green-400/30 rounded-full text-green-300 text-xs sm:text-sm">
+              <span className="mr-1">⏱</span> Delivered in 5 days
+            </div>
+            <div className="inline-flex items-center px-3 py-1 glass-effect border border-blue-400/30 rounded-full text-blue-300 text-xs sm:text-sm">
+              <span className="mr-1">💬</span> 24/7 WhatsApp Support
+            </div>
           </div>
         </div>
       </div>

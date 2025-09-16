@@ -304,23 +304,24 @@ const ContactPage = () => {
           <div className="text-center">
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6">Ready to Start Your Project?</h3>
             <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto">
-              Don't wait to bring your vision to life. Contact us today and let's create something amazing together.
+              Not sure yet? Get a free 30-minute consultation — no obligation.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
               <a 
-                href="mailto:autonomy.owner@gmail.com?subject=Project Inquiry" 
+                href="mailto:autonomy.owner@gmail.com?subject=Free Consultation Request" 
                 className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
               >
-                🚀 Start Your Project
+                🚀 Book Free Consultation
               </a>
               <a 
                 href="/pricing" 
                 className="btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
               >
-                <span className="mr-2">💰</span>
-                View Pricing
+                <span className="mr-2">📈</span>
+                Grow My Business
               </a>
             </div>
+            <div className="mt-3 text-gray-400 text-xs">⏱ Delivered in 5 days · 💬 24/7 WhatsApp Support</div>
           </div>
         </div>
       </div>

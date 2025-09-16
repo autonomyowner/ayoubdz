@@ -5,18 +5,18 @@ const Pricing = () => {
       price: "150,000",
       currency: "DA",
       period: "one-time",
-      description: "Perfect for small businesses and startups",
+      description: "For new businesses testing the waters",
       features: [
-        "Responsive website design",
+        "Modern, responsive design that builds trust",
         "Up to 5 pages",
-        "Contact form",
-        "Basic SEO optimization",
-        "Mobile-friendly design",
-        "1 month of support",
-        "Basic analytics setup"
+        "Let customers contact you easily",
+        "Be discoverable on Google locally",
+        "Mobile-friendly on all devices",
+        "Basic analytics to see who's visiting",
+        "1 month of support"
       ],
       popular: false,
-      cta: "Get Started",
+      cta: "Launch My Website",
       color: "border-blue-500"
     },
     {
@@ -28,16 +28,16 @@ const Pricing = () => {
       features: [
         "Everything in Starter",
         "Up to 10 pages",
-        "Booking system integration",
-        "Advanced SEO optimization",
-        "Social media integration",
-        "3 months of support",
-        "Google Analytics setup",
-        "Performance optimization",
-        "Content management system"
+        "Let clients book you 24/7 and never miss a sale",
+        "Get found on Google & attract more customers",
+        "Bring traffic from Facebook & Instagram",
+        "Track what's working with Google Analytics",
+        "Lightning-fast performance to reduce bounce",
+        "Update content yourself with an easy CMS",
+        "3 months of support"
       ],
       popular: true,
-      cta: "Most Popular",
+      cta: "Grow My Business",
       color: "border-yellow-500"
     },
     {
@@ -49,18 +49,18 @@ const Pricing = () => {
       features: [
         "Everything in Professional",
         "Unlimited pages",
-        "E-commerce functionality",
-        "Custom booking system",
-        "Multi-language support",
-        "6 months of support",
-        "Advanced security features",
-        "Custom integrations",
-        "Priority support",
-        "Performance monitoring",
-        "Backup & maintenance"
+        "Sell online and accept payments securely",
+        "Custom booking system for complex schedules",
+        "Serve customers in multiple languages",
+        "Advanced security to protect customer data",
+        "Custom integrations with your tools",
+        "Performance monitoring & optimization",
+        "Automatic backups & maintenance",
+        "Priority support — get help fast",
+        "6 months of support"
       ],
       popular: false,
-      cta: "Get Enterprise",
+      cta: "Dominate My Market",
       color: "border-purple-500"
     }
   ]
@@ -69,25 +69,25 @@ const Pricing = () => {
     {
       name: "SEO Package",
       price: "50,000",
-      description: "Advanced SEO optimization and keyword research",
+      description: "Get found on Google and attract more customers",
       features: ["Keyword research", "On-page SEO", "Technical SEO audit", "3 months monitoring"]
     },
     {
       name: "E-commerce Setup",
       price: "200,000",
-      description: "Complete online store with payment processing",
+      description: "Start selling online with secure payment processing",
       features: ["Product catalog", "Payment integration", "Order management", "Inventory system"]
     },
     {
       name: "Booking System",
       price: "100,000",
-      description: "Custom appointment booking and scheduling",
+      description: "Let clients book you 24/7 and reduce no-shows",
       features: ["Online booking", "Calendar integration", "Email notifications", "Admin dashboard"]
     },
     {
       name: "Maintenance Plan",
       price: "25,000",
-      description: "Monthly maintenance and updates",
+      description: "Keep your site fast, secure, and up-to-date",
       features: ["Security updates", "Performance monitoring", "Backup management", "24/7 support"]
     }
   ]
@@ -153,7 +153,7 @@ const Pricing = () => {
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <span className="bg-yellow-500 text-slate-900 px-4 py-2 rounded-full text-sm font-bold">
-                      ⭐ Most Popular
+                      🏆 Best Value
                     </span>
                   </div>
                 )}
@@ -167,6 +167,16 @@ const Pricing = () => {
                     <span className="text-gray-300 text-base sm:text-lg ml-2">{plan.currency}</span>
                   </div>
                   <p className="text-gray-400 text-xs sm:text-sm">{plan.period}</p>
+                  {plan.name === 'Professional' && (
+                    <div className="mt-2 inline-flex items-center px-3 py-1 rounded-full bg-green-500/10 text-green-300 border border-green-400/30 text-xs font-medium">
+                      <span className="mr-1">💸</span>
+                      Save 400,000 DA vs Enterprise
+                    </div>
+                  )}
+                  <div className="mt-3 grid grid-cols-1 gap-1">
+                    <div className="text-green-300 text-xs sm:text-sm">⏱ Delivered in 5 days</div>
+                    <div className="text-green-300 text-xs sm:text-sm">💬 24/7 WhatsApp Support</div>
+                  </div>
                 </div>
 
                 <ul className="space-y-2 sm:space-y-3 md:space-y-4 mb-6 sm:mb-8">
@@ -179,11 +189,24 @@ const Pricing = () => {
                 </ul>
 
                 <a 
-                  href="mailto:autonomy.owner@gmail.com?subject=Interested in Pricing Plan - {plan.name}" 
+                  href={`mailto:autonomy.owner@gmail.com?subject=Interested in Pricing Plan - ${plan.name}`}
                   className={`btn-primary w-full text-center ${plan.popular ? 'bg-yellow-500 hover:bg-yellow-600' : ''}`}
                 >
                   {plan.cta}
                 </a>
+                <div className="mt-3">
+                  <a 
+                    href="/contact" 
+                    className="btn-secondary w-full text-center text-xs sm:text-sm"
+                  >
+                    Book a Free Demo
+                  </a>
+                </div>
+
+                <div className="mt-4 text-gray-400 text-xs sm:text-sm">
+                  <div>Pay once. Lifetime ownership. No hidden fees.</div>
+                  <div>Not sure? Get a free 30-minute consultation before committing.</div>
+                </div>
               </div>
             ))}
           </div>
@@ -194,6 +217,12 @@ const Pricing = () => {
             <p className="text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto text-sm sm:text-base">
               Enhance your website with these powerful add-ons. Perfect for businesses that need extra functionality.
             </p>
+            <div className="text-center mb-6">
+              <div className="inline-flex items-center px-3 sm:px-4 py-2 glass-effect border border-orange-400/30 rounded-full text-orange-300 text-xs sm:text-sm font-medium">
+                <span className="mr-2">⏳</span>
+                Lock 2025 rates — prices increase in 2026
+              </div>
+            </div>
             
             <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {addons.map((addon, index) => (
@@ -217,10 +246,10 @@ const Pricing = () => {
                     ))}
                   </ul>
                   <a 
-                    href="mailto:autonomy.owner@gmail.com?subject=Interested in Add-on - {addon.name}" 
+                    href={`mailto:autonomy.owner@gmail.com?subject=Interested in Add-on - ${addon.name}`}
                     className="btn-secondary w-full text-center text-xs sm:text-sm"
                   >
-                    Add This Service
+                    Lock In 2025 Rate
                   </a>
                 </div>
               ))}

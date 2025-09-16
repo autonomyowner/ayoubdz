@@ -168,7 +168,7 @@ const Contact = () => {
               href="mailto:autonomy.owner@gmail.com" 
               className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
             >
-              Start Your Project
+              🚀 Launch My Website
             </a>
             <a 
               href="https://wa.me/+213797339451" 
@@ -177,9 +177,10 @@ const Contact = () => {
               className="btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
             >
               <span className="mr-2">💬</span>
-              WhatsApp Us
+              Talk to an Expert
             </a>
           </div>
+          <div className="mt-3 text-gray-400 text-xs">⏱ Delivered in 5 days · 💬 24/7 WhatsApp Support</div>
         </div>
       </div>
     </section>
