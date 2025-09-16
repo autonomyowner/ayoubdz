@@ -93,7 +93,7 @@ const Pricing = () => {
   ]
 
   return (
-    <section id="pricing" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="pricing" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24 md:pt-28">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -123,6 +123,12 @@ const Pricing = () => {
           <div className="inline-flex items-center px-3 sm:px-4 py-2 glass-effect border border-yellow-500/30 rounded-full premium-text text-xs sm:text-sm font-medium mb-6 sm:mb-8">
             <span className="mr-2">💰</span>
             <span className="text-center">Transparent Pricing - No Hidden Fees</span>
+          </div>
+
+          {/* Free First Design Badge */}
+          <div className="inline-flex items-center px-3 sm:px-4 py-2 glass-effect border border-green-400/30 rounded-full text-green-300 text-xs sm:text-sm font-medium mb-6 sm:mb-8">
+            <span className="mr-2">🎨</span>
+            <span className="text-center">First design is free — start risk-free</span>
           </div>
 
           {/* Main Heading */}
