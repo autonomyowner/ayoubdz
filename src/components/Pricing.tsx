@@ -194,6 +194,30 @@ const Pricing = () => {
                 >
                   {plan.cta}
                 </a>
+                {/* PayPal quick deposit (10% to secure project) */}
+                <div className="mt-3">
+                  <div className="text-gray-300 text-xs mb-2">Or pay a 10% deposit now:</div>
+                  {/* Lazy import to avoid SSR issues */}
+                  {/* @ts-expect-error dynamic import in client only */}
+                  {typeof window !== 'undefined' && (
+                    // eslint-disable-next-line @typescript-eslint/no-var-requires
+                    (() => {
+                      const PayPalCheckout = require('./PayPalCheckout').default
+                      const depositMap = { Starter: 1500, Professional: 3500, Enterprise: 7500 } as const
+                      const daToUsdRate = 0.0074 // approx; you may tune or switch to USD prices
+                      const daValue = depositMap[plan.name as keyof typeof depositMap] || 1500
+                      const usdAmount = (daValue * daToUsdRate).toFixed(2)
+                      return (
+                        <PayPalCheckout
+                          amount={usdAmount}
+                          currency="USD"
+                          description={`${plan.name} plan - 10% deposit`}
+                          className="flex justify-center"
+                        />
+                      )
+                    })()
+                  )}
+                </div>
                 <div className="mt-3">
                   <a 
                     href="/contact" 
