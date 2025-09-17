@@ -2,7 +2,7 @@ const Pricing = () => {
   const plans = [
     {
       name: "Starter",
-      price: "150,000",
+      price: "15,000",
       currency: "DA",
       period: "one-time",
       description: "For new businesses testing the waters",
@@ -21,7 +21,7 @@ const Pricing = () => {
     },
     {
       name: "Professional",
-      price: "350,000",
+      price: "35,000",
       currency: "DA",
       period: "one-time",
       description: "Ideal for growing businesses and agencies",
@@ -42,7 +42,7 @@ const Pricing = () => {
     },
     {
       name: "Enterprise",
-      price: "750,000",
+      price: "75,000",
       currency: "DA",
       period: "one-time",
       description: "Complete solution for large businesses",
@@ -68,25 +68,25 @@ const Pricing = () => {
   const addons = [
     {
       name: "SEO Package",
-      price: "50,000",
+      price: "5,000",
       description: "Get found on Google and attract more customers",
       features: ["Keyword research", "On-page SEO", "Technical SEO audit", "3 months monitoring"]
     },
     {
       name: "E-commerce Setup",
-      price: "200,000",
+      price: "20,000",
       description: "Start selling online with secure payment processing",
       features: ["Product catalog", "Payment integration", "Order management", "Inventory system"]
     },
     {
       name: "Booking System",
-      price: "100,000",
+      price: "10,000",
       description: "Let clients book you 24/7 and reduce no-shows",
       features: ["Online booking", "Calendar integration", "Email notifications", "Admin dashboard"]
     },
     {
       name: "Maintenance Plan",
-      price: "25,000",
+      price: "2,500",
       description: "Keep your site fast, secure, and up-to-date",
       features: ["Security updates", "Performance monitoring", "Backup management", "24/7 support"]
     }
@@ -170,7 +170,7 @@ const Pricing = () => {
                   {plan.name === 'Professional' && (
                     <div className="mt-2 inline-flex items-center px-3 py-1 rounded-full bg-green-500/10 text-green-300 border border-green-400/30 text-xs font-medium">
                       <span className="mr-1">💸</span>
-                      Save 400,000 DA vs Enterprise
+                      Save 40,000 DA vs Enterprise
                     </div>
                   )}
                   <div className="mt-3 grid grid-cols-1 gap-1">
