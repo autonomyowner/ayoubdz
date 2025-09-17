@@ -99,6 +99,143 @@ const Services = () => {
             Each project is crafted with attention to detail and modern web standards.
           </p>
 
+          {/* Our Work Portfolio */}
+          <div className="bg-slate-800/30 backdrop-blur-md border border-yellow-500/30 rounded-3xl p-4 sm:p-6 md:p-8 mb-8 sm:mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-6 sm:mb-8">Our Work</h2>
+            <p className="text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto text-sm sm:text-base text-center">
+              Explore our portfolio of premium websites we've created for clients across different industries.
+            </p>
+            
+            {/* Featured Project - Elghella */}
+            <div className="mb-8">
+              <div className="premium-card p-6 sm:p-8 md:p-10 flex flex-col sm:flex-row items-center gap-6 sm:gap-8 hover:scale-105 transition-all duration-300">
+                <div className="text-center sm:text-left flex-1">
+                  <div className="text-6xl mb-4">🌾</div>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3">الغلة</h3>
+                  <h4 className="text-lg sm:text-xl md:text-2xl font-semibold text-yellow-300 mb-4">Elghella</h4>
+                  <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-4 max-w-2xl">
+                    منتجات طبيعية خدمات زراعية و استشارية
+                  </p>
+                  <p className="text-gray-400 text-sm sm:text-base mb-6">
+                    أستكشف موقعنا الغلة - Natural products, agricultural services and consulting
+                  </p>
+                  <div className="inline-flex items-center px-4 py-2 bg-green-500/20 border border-green-400/30 rounded-full text-green-300 text-sm font-medium">
+                    <span className="mr-2">🏆</span>
+                    Featured Project
+                  </div>
+                </div>
+                <div className="flex-shrink-0">
+                  <a 
+                    href="https://www.elghella.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-16 h-16 bg-yellow-500 hover:bg-yellow-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg"
+                  >
+                    <span className="text-slate-900 text-2xl">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              {/* Elite Dental Clinic */}
+              <div className="premium-card p-4 sm:p-6 h-64 flex flex-col hover:scale-105 transition-all duration-300">
+                <div className="text-center mb-4">
+                  <div className="text-4xl mb-2">🦷</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">ELITE DENTAL CLINIC</h3>
+                  <p className="text-gray-300 text-xs sm:text-sm">Cabinet dentaire d'exception offrant des soins de luxe dans un cadre raffiné à Alger.</p>
+                  <p className="text-yellow-300 text-xs font-medium mt-1">L'Excellence Dentaire à l'Algérienne</p>
+                </div>
+                <div className="mt-auto">
+                  <a 
+                    href="https://eliteclinicouledfayet.vercel.app/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-yellow-500 hover:bg-yellow-600 rounded-full flex items-center justify-center mx-auto transition-all duration-300 hover:scale-110"
+                  >
+                    <span className="text-slate-900 text-xl">→</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Golden Dental Clinic */}
+              <div className="premium-card p-4 sm:p-6 h-64 flex flex-col hover:scale-105 transition-all duration-300">
+                <div className="text-center mb-4">
+                  <div className="text-4xl mb-2">✨</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Your Perfect Golden Smile</h3>
+                  <p className="text-gray-300 text-xs sm:text-sm">Dr. Yasser Khenniche provides comprehensive dental care with modern techniques and personalized treatment.</p>
+                </div>
+                <div className="mt-auto">
+                  <a 
+                    href="https://golden-dental-clinic-algiers.vercel.app/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-yellow-500 hover:bg-yellow-600 rounded-full flex items-center justify-center mx-auto transition-all duration-300 hover:scale-110"
+                  >
+                    <span className="text-slate-900 text-xl">→</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Cinou Dental Clinic */}
+              <div className="premium-card p-4 sm:p-6 h-64 flex flex-col hover:scale-105 transition-all duration-300">
+                <div className="text-center mb-4">
+                  <div className="text-4xl mb-2">🏥</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Cinou Dental Clinic H24</h3>
+                  <p className="text-gray-300 text-xs sm:text-sm">Your smile is our priority. Professional dental care available 24/7 for all your dental needs.</p>
+                </div>
+                <div className="mt-auto">
+                  <a 
+                    href="https://24clinic.vercel.app/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-yellow-500 hover:bg-yellow-600 rounded-full flex items-center justify-center mx-auto transition-all duration-300 hover:scale-110"
+                  >
+                    <span className="text-slate-900 text-xl">→</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Fix & Flex Elite */}
+              <div className="premium-card p-4 sm:p-6 h-64 flex flex-col hover:scale-105 transition-all duration-300">
+                <div className="text-center mb-4">
+                  <div className="text-4xl mb-2">💪</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Elite Fitness Coach</h3>
+                  <p className="text-gray-300 text-xs sm:text-sm">Transform Your Life with Sylvester Mkali. 500+ Transformations achieved through personalized coaching.</p>
+                </div>
+                <div className="mt-auto">
+                  <a 
+                    href="https://fixandflex.vercel.app/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-yellow-500 hover:bg-yellow-600 rounded-full flex items-center justify-center mx-auto transition-all duration-300 hover:scale-110"
+                  >
+                    <span className="text-slate-900 text-xl">→</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Spea Cup */}
+              <div className="premium-card p-4 sm:p-6 h-64 flex flex-col hover:scale-105 transition-all duration-300">
+                <div className="text-center mb-4">
+                  <div className="text-4xl mb-2">☕</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Learn English Over Coffee</h3>
+                  <p className="text-gray-300 text-xs sm:text-sm">Join our cozy English conversation sessions in Algiers. Practice real-life English in a relaxed café atmosphere.</p>
+                </div>
+                <div className="mt-auto">
+                  <a 
+                    href="https://spea-cup.vercel.app/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-yellow-500 hover:bg-yellow-600 rounded-full flex items-center justify-center mx-auto transition-all duration-300 hover:scale-110"
+                  >
+                    <span className="text-slate-900 text-xl">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Services Grid */}
           <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12 md:mb-16">
             {services.map((service, index) => (
