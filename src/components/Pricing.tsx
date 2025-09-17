@@ -195,18 +195,25 @@ const Pricing = () => {
                 >
                   {plan.cta}
                 </a>
-                {/* PayPal checkout for Starter only */}
-                {plan.name === 'Starter' && (
-                  <div className="mt-3">
-                    <div className="text-gray-300 text-xs mb-2">Pay Starter now with PayPal (35 USD):</div>
-                    <PayPalCheckout
-                      amount={"35.00"}
-                      currency="USD"
-                      description={`Starter plan - full payment`}
-                      className="flex justify-center"
-                    />
-                  </div>
-                )}
+                {/* PayPal checkout - fixed USD per plan */}
+                <div className="mt-3">
+                  {(() => {
+                    const amountMap = { Starter: '35.00', Professional: '140.00', Enterprise: '280.00' } as const
+                    const amount = amountMap[plan.name as keyof typeof amountMap]
+                    if (!amount) return null
+                    return (
+                      <>
+                        <div className="text-gray-300 text-xs mb-2">Pay {plan.name} with PayPal ({amount} USD):</div>
+                        <PayPalCheckout
+                          amount={amount}
+                          currency="USD"
+                          description={`${plan.name} plan - full payment`}
+                          className="flex justify-center"
+                        />
+                      </>
+                    )
+                  })()}
+                </div>
                 <div className="mt-3">
                   <a 
                     href="/contact" 
