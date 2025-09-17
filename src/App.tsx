@@ -6,6 +6,7 @@ import Services from './components/OfferForYou'
 import Pricing from './components/Pricing'
 import ContactPage from './components/ContactPage'
 import Footer from './components/Footer'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <Footer />
+        <SpeedInsights />
       </div>
     </Router>
   )
