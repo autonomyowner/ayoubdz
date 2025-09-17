@@ -233,6 +233,44 @@ const Services = () => {
                   </a>
                 </div>
               </div>
+
+              {/* Perfect Events */}
+              <div className="premium-card p-4 sm:p-6 h-64 flex flex-col hover:scale-105 transition-all duration-300">
+                <div className="text-center mb-4">
+                  <div className="text-4xl mb-2">❤️</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Perfect Events ❤️</h3>
+                  <p className="text-gray-300 text-xs sm:text-sm">Décoration événementielle à Tlemcen. Transformez vos événements en moments inoubliables avec nos services de décoration personnalisés.</p>
+                </div>
+                <div className="mt-auto">
+                  <a 
+                    href="https://perfe-dun.vercel.app/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-yellow-500 hover:bg-yellow-600 rounded-full flex items-center justify-center mx-auto transition-all duration-300 hover:scale-110"
+                  >
+                    <span className="text-slate-900 text-xl">→</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Gran Turismo */}
+              <div className="premium-card p-4 sm:p-6 h-64 flex flex-col hover:scale-105 transition-all duration-300">
+                <div className="text-center mb-4">
+                  <div className="text-4xl mb-2">🚗</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">GRAN TURISMO</h3>
+                  <p className="text-gray-300 text-xs sm:text-sm">Service premium de chauffeur privé sur la Côte d'Azur et l'Italie du Nord. Discrétion absolue. Confort suprême.</p>
+                </div>
+                <div className="mt-auto">
+                  <a 
+                    href="https://granturismo.vercel.app/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-yellow-500 hover:bg-yellow-600 rounded-full flex items-center justify-center mx-auto transition-all duration-300 hover:scale-110"
+                  >
+                    <span className="text-slate-900 text-xl">→</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
