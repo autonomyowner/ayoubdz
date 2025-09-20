@@ -25,6 +25,11 @@ const Services = () => {
             Our Services
           </h2>
           
+          {/* Professional Mission Statement */}
+          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+            It was a pleasure helping you build a professional, working website that will generate quality leads for your business!
+          </p>
+          
           {/* Awards Winners Badge */}
           <div className="inline-flex items-center px-6 py-3 luxora-card rounded-full luxora-text text-sm font-medium mb-8">
             <span className="text-center">
