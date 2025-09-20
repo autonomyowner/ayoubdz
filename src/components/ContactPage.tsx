@@ -1,11 +1,59 @@
-import { useEffect } from 'react'
-import { trackContact, trackViewContent } from '../utils/facebookPixel'
+import { useEffect, useState } from 'react'
+import { trackContact, trackViewContent, trackFormSubmission, trackSchedule, trackButtonClick } from '../utils/facebookPixel'
 
 const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    projectType: '',
+    budget: '',
+    description: ''
+  })
+
   useEffect(() => {
     // Track that user viewed the contact page
-    trackViewContent('Contact Page')
+    trackViewContent('Contact Page', 'contact_page')
   }, [])
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    // Track form submission
+    trackFormSubmission('Contact Form', {
+      project_type: formData.projectType,
+      budget_range: formData.budget,
+      has_description: formData.description.length > 0
+    })
+    
+    // Track lead generation
+    trackFormSubmission('Lead Generation', {
+      lead_source: 'contact_form',
+      project_type: formData.projectType,
+      budget_range: formData.budget
+    })
+    
+    // Create mailto link with form data
+    const subject = `Project Inquiry - ${formData.projectType || 'General'}`
+    const body = `Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Project Type: ${formData.projectType}
+Budget: ${formData.budget}
+Description: ${formData.description}`
+    
+    const mailtoLink = `mailto:autonomy.owner@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    window.location.href = mailtoLink
+  }
   const contactMethods = [
     {
       title: "Email Us",
@@ -63,7 +111,10 @@ const ContactPage = () => {
                 target={method.link.startsWith('http') ? "_blank" : undefined}
                 rel={method.link.startsWith('http') ? "noopener noreferrer" : undefined}
                 className="luxora-card p-4 sm:p-6 text-center hover:transform hover:scale-105 transition-all duration-300"
-                onClick={() => trackContact({ method: method.title, value: method.value })}
+                onClick={() => {
+                  trackContact({ method: method.title, value: method.value })
+                  trackButtonClick(`Contact ${method.title}`, 'contact_methods_grid')
+                }}
               >
                 <h3 className="text-base sm:text-lg md:text-xl font-bold luxora-text mb-1 sm:mb-2">{method.title}</h3>
                 <p className="text-gray-600 text-xs sm:text-sm mb-1 sm:mb-2">{method.description}</p>
@@ -77,22 +128,30 @@ const ContactPage = () => {
             {/* Contact Form */}
             <div className="luxora-card p-4 sm:p-6 md:p-8">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold luxora-text mb-4 sm:mb-6 text-center">Send Us a Message</h2>
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleFormSubmit}>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block luxora-text font-semibold mb-2">First Name</label>
                     <input
                       type="text"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-400"
                       placeholder="Your first name"
+                      required
                     />
                   </div>
                   <div>
                     <label className="block luxora-text font-semibold mb-2">Last Name</label>
                     <input
                       type="text"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-400"
                       placeholder="Your last name"
+                      required
                     />
                   </div>
                 </div>
@@ -101,8 +160,12 @@ const ContactPage = () => {
                   <label className="block luxora-text font-semibold mb-2">Email Address</label>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-400"
                     placeholder="your.email@example.com"
+                    required
                   />
                 </div>
 
@@ -110,14 +173,24 @@ const ContactPage = () => {
                   <label className="block luxora-text font-semibold mb-2">Phone Number</label>
                   <input
                     type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-400"
                     placeholder="Your phone number"
+                    required
                   />
                 </div>
 
                 <div>
                   <label className="block luxora-text font-semibold mb-2">Project Type</label>
-                  <select className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-gray-400">
+                  <select 
+                    name="projectType"
+                    value={formData.projectType}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-gray-400"
+                    required
+                  >
                     <option value="">Select project type</option>
                     <option value="clinic">Clinic Website</option>
                     <option value="travel">Travel Agency Website</option>
@@ -130,7 +203,13 @@ const ContactPage = () => {
 
                 <div>
                   <label className="block luxora-text font-semibold mb-2">Budget Range</label>
-                  <select className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-gray-400">
+                  <select 
+                    name="budget"
+                    value={formData.budget}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-gray-400"
+                    required
+                  >
                     <option value="">Select budget range</option>
                     <option value="100k-200k">100,000 - 200,000 DA</option>
                     <option value="200k-400k">200,000 - 400,000 DA</option>
@@ -143,6 +222,9 @@ const ContactPage = () => {
                 <div>
                   <label className="block luxora-text font-semibold mb-2">Project Description</label>
                   <textarea
+                    name="description"
+                    value={formData.description}
+                    onChange={handleInputChange}
                     rows={4}
                     className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-400"
                     placeholder="Tell us about your project requirements, goals, and any specific features you need..."
@@ -152,6 +234,7 @@ const ContactPage = () => {
                 <button
                   type="submit"
                   className="luxora-green-button w-full text-base sm:text-lg py-3 sm:py-4"
+                  onClick={() => trackButtonClick('Send Message', 'contact_form')}
                 >
                   🚀 Send Message
                 </button>
@@ -283,6 +366,10 @@ const ContactPage = () => {
               <a 
                 href="mailto:autonomy.owner@gmail.com?subject=Free Consultation Request" 
                 className="luxora-green-button text-base px-8 py-3"
+                onClick={() => {
+                  trackSchedule('Free Consultation')
+                  trackButtonClick('Book Free Consultation', 'cta_section')
+                }}
               >
                 🚀 Book Free Consultation
               </a>

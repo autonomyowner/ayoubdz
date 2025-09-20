@@ -92,8 +92,8 @@ const PayPalCheckout = ({ amount, currency = 'USD', description, onSuccess, onEr
         if (!res.ok) {
           throw new Error(json?.error || 'Payment capture failed')
         }
-        // Track purchase event
-        trackPurchase(parseFloat(amount), currency)
+        // Track purchase event with enhanced data
+        trackPurchase(parseFloat(amount), currency, description)
         onSuccess?.(json)
       },
       onError: (err: unknown) => {

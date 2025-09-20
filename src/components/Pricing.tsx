@@ -1,12 +1,23 @@
 import { useEffect } from 'react'
 import PayPalCheckout from './PayPalCheckout'
-import { trackViewContent } from '../utils/facebookPixel'
+import { trackViewContent, trackAddToCart, trackInitiateCheckout, trackButtonClick, trackSchedule } from '../utils/facebookPixel'
 
 const Pricing = () => {
   useEffect(() => {
     // Track that user viewed the pricing page
-    trackViewContent('Pricing Page')
+    trackViewContent('Pricing Page', 'pricing_page')
   }, [])
+
+  const handlePlanClick = (planName: string, planPrice: string) => {
+    const priceValue = parseFloat(planPrice.replace(',', ''))
+    trackAddToCart(planName, priceValue, 'DZD')
+    trackButtonClick(`Select ${planName} Plan`, 'pricing_plans')
+  }
+
+  const handlePayPalClick = (planName: string, amount: string) => {
+    trackInitiateCheckout(planName, parseFloat(amount), 'USD')
+    trackButtonClick(`PayPal Checkout ${planName}`, 'pricing_plans')
+  }
   const plans = [
     {
       name: "Starter",
@@ -176,6 +187,7 @@ const Pricing = () => {
                 <a 
                   href={`mailto:autonomy.owner@gmail.com?subject=Interested in Pricing Plan - ${plan.name}`}
                   className={`luxora-green-button w-full text-center ${plan.popular ? 'bg-green-600 hover:bg-green-700' : ''}`}
+                  onClick={() => handlePlanClick(plan.name, plan.price)}
                 >
                   {plan.cta}
                 </a>
@@ -193,6 +205,7 @@ const Pricing = () => {
                           currency="USD"
                           description={`${plan.name} plan - full payment`}
                           className="flex justify-center"
+                          onSuccess={() => handlePayPalClick(plan.name, amount)}
                         />
                       </>
                     )
@@ -334,6 +347,10 @@ const Pricing = () => {
               <a 
                 href="mailto:autonomy.owner@gmail.com?subject=Free Consultation Request" 
                 className="luxora-green-button text-base px-8 py-3"
+                onClick={() => {
+                  trackSchedule('Free Consultation')
+                  trackButtonClick('Get Free Consultation', 'pricing_cta')
+                }}
               >
                 🚀 Get Free Consultation
               </a>

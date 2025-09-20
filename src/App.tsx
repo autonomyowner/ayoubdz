@@ -9,6 +9,7 @@ import Footer from './components/Footer'
 import FacebookPixelTracker from './components/FacebookPixelTracker'
 import PixelInitializer from './components/PixelInitializer'
 import PixelDebugger from './components/PixelDebugger'
+import FacebookPixelTest from './components/FacebookPixelTest'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <PixelInitializer />
       <FacebookPixelTracker />
       <PixelDebugger />
+      <FacebookPixelTest />
       <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100">
         <Navbar />
         <Routes>

@@ -36,14 +36,26 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
     
-    // Initialize pixel
-    fbq('init', '2483890865321907');
+    // Initialize pixel with enhanced configuration
+    fbq('init', '2483890865321907', {
+      em: 'hashed_email', // Enable enhanced matching
+      external_id: 'hashed_external_id'
+    });
     
-    // Track initial page view
-    fbq('track', 'PageView');
+    // Track initial page view with enhanced data
+    fbq('track', 'PageView', {
+      content_name: 'Homepage',
+      content_category: 'page_view',
+      content_type: 'website'
+    });
     
     // Make pixel globally available
     window.fbq = fbq;
+    
+    // Enhanced pixel debugging in development
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      console.log('Facebook Pixel initialized for development');
+    }
     </script>
     <!-- End Meta Pixel Code -->
   </head>
