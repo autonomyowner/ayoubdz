@@ -4,18 +4,19 @@
 function doPost(e) {
   try {
     // Log the incoming request for debugging
-    console.log('Received request:', JSON.stringify(e));
+    console.log('Received request:', e ? JSON.stringify(e) : 'Request is undefined');
     
     // Parse the incoming data - handle different request formats
     let data;
-    if (e.postData && e.postData.contents) {
+    if (e && e.postData && e.postData.contents) {
+      console.log('Found postData.contents');
       data = JSON.parse(e.postData.contents);
-    } else if (e.parameter) {
-      // Handle form data
+    } else if (e && e.parameter) {
+      console.log('Found parameter data');
       data = e.parameter;
     } else {
-      console.log('No data found in request');
-      throw new Error('No data received');
+      console.log('No data found in request, using empty object');
+      data = {};
     }
     
     console.log('Parsed data:', JSON.stringify(data));
@@ -52,15 +53,18 @@ function doPost(e) {
     // Send email notification (optional)
     sendEmailNotification(data);
     
-    return ContentService
-      .createTextOutput(JSON.stringify({ success: true, message: 'Data saved successfully' }))
-      .setMimeType(ContentService.MimeType.JSON);
+    // Return with JSONP callback for CORS compatibility
+    const output = ContentService.createTextOutput();
+    output.setMimeType(ContentService.MimeType.JSON);
+    output.setContent(JSON.stringify({ success: true, message: 'Data saved successfully' }));
+    return output;
       
   } catch (error) {
     console.error('Error:', error);
-    return ContentService
-      .createTextOutput(JSON.stringify({ success: false, error: error.toString() }))
-      .setMimeType(ContentService.MimeType.JSON);
+    const output = ContentService.createTextOutput();
+    output.setMimeType(ContentService.MimeType.JSON);
+    output.setContent(JSON.stringify({ success: false, error: error.toString() }));
+    return output;
   }
 }
 
@@ -125,11 +129,12 @@ function testFunction() {
 
 // Simple test function to check if script is working
 function doGet(e) {
-  return ContentService
-    .createTextOutput(JSON.stringify({ 
-      success: true, 
-      message: 'Google Apps Script is working!',
-      timestamp: new Date().toISOString()
-    }))
-    .setMimeType(ContentService.MimeType.JSON);
+  const output = ContentService.createTextOutput();
+  output.setMimeType(ContentService.MimeType.JSON);
+  output.setContent(JSON.stringify({ 
+    success: true, 
+    message: 'Google Apps Script is working!',
+    timestamp: new Date().toISOString()
+  }));
+  return output;
 }

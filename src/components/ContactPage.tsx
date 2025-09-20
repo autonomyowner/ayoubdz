@@ -58,20 +58,26 @@ const ContactPage = () => {
         budget_range: formData.budget
       })
       
-      // Submit directly to Google Apps Script
+      // Submit directly to Google Apps Script using form data (avoids CORS)
       const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxcTJsZzOps9jtqm-fcQS0sEIeofbTht101LwWYhGjtmorVt1a4tQpv-QmhEdHfLiVotg/exec'
       
       console.log('Sending request to:', GOOGLE_SCRIPT_URL)
+      
+      // Create form data to avoid CORS issues
+      const formDataToSend = new FormData()
+      formDataToSend.append('firstName', formData.firstName)
+      formDataToSend.append('lastName', formData.lastName)
+      formDataToSend.append('email', formData.email)
+      formDataToSend.append('phone', formData.phone)
+      formDataToSend.append('projectType', formData.projectType)
+      formDataToSend.append('budget', formData.budget)
+      formDataToSend.append('description', formData.description)
+      formDataToSend.append('timestamp', new Date().toISOString())
+      formDataToSend.append('source', 'website_contact_form')
+      
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...formData,
-          timestamp: new Date().toISOString(),
-          source: 'website_contact_form'
-        })
+        body: formDataToSend
       })
 
       console.log('Response status:', response.status)
