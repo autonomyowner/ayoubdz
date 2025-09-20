@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { trackPurchase } from '../utils/facebookPixel'
 
 type PayPalCheckoutProps = {
   amount: string
@@ -91,6 +92,8 @@ const PayPalCheckout = ({ amount, currency = 'USD', description, onSuccess, onEr
         if (!res.ok) {
           throw new Error(json?.error || 'Payment capture failed')
         }
+        // Track purchase event
+        trackPurchase(parseFloat(amount), currency)
         onSuccess?.(json)
       },
       onError: (err: unknown) => {

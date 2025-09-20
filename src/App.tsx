@@ -6,11 +6,13 @@ import Services from './components/OfferForYou'
 import Pricing from './components/Pricing'
 import ContactPage from './components/ContactPage'
 import Footer from './components/Footer'
+import FacebookPixelTracker from './components/FacebookPixelTracker'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 
 function App() {
   return (
     <Router>
+      <FacebookPixelTracker />
       <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100">
         <Navbar />
         <Routes>

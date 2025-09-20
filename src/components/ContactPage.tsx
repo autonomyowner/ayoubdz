@@ -1,4 +1,11 @@
+import { useEffect } from 'react'
+import { trackContact, trackViewContent } from '../utils/facebookPixel'
+
 const ContactPage = () => {
+  useEffect(() => {
+    // Track that user viewed the contact page
+    trackViewContent('Contact Page')
+  }, [])
   const contactMethods = [
     {
       title: "Email Us",
@@ -56,6 +63,7 @@ const ContactPage = () => {
                 target={method.link.startsWith('http') ? "_blank" : undefined}
                 rel={method.link.startsWith('http') ? "noopener noreferrer" : undefined}
                 className="luxora-card p-4 sm:p-6 text-center hover:transform hover:scale-105 transition-all duration-300"
+                onClick={() => trackContact({ method: method.title, value: method.value })}
               >
                 <h3 className="text-base sm:text-lg md:text-xl font-bold luxora-text mb-1 sm:mb-2">{method.title}</h3>
                 <p className="text-gray-600 text-xs sm:text-sm mb-1 sm:mb-2">{method.description}</p>

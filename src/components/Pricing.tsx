@@ -1,5 +1,12 @@
+import { useEffect } from 'react'
 import PayPalCheckout from './PayPalCheckout'
+import { trackViewContent } from '../utils/facebookPixel'
+
 const Pricing = () => {
+  useEffect(() => {
+    // Track that user viewed the pricing page
+    trackViewContent('Pricing Page')
+  }, [])
   const plans = [
     {
       name: "Starter",
