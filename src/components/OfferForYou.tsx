@@ -24,7 +24,17 @@ const Services = () => {
           <h2 className="text-4xl md:text-5xl font-bold luxora-text mb-6">
             Our Services
           </h2>
+          
+          {/* Awards Winners Badge */}
+          <div className="inline-flex items-center px-6 py-3 luxora-card rounded-full luxora-text text-sm font-medium mb-8">
+            <span className="text-center">
+              🏆 Proud to be part of creation of awards winners startups: 
+              <a href="https://elghella.com" target="_blank" rel="noopener noreferrer" className="luxora-green-text hover:underline mx-1 font-semibold">elghella.com</a>
+              and 
+              <a href="https://reachfood.co" target="_blank" rel="noopener noreferrer" className="luxora-green-text hover:underline mx-1 font-semibold">reachfood.co</a>
+            </span>
           </div>
+        </div>
 
           {/* Services Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
