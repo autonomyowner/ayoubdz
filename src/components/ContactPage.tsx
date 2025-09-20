@@ -30,8 +30,16 @@ const ContactPage = () => {
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submission started')
+    console.log('=== FORM SUBMISSION STARTED ===')
     console.log('Form data:', formData)
+    console.log('All required fields filled:', {
+      firstName: !!formData.firstName,
+      lastName: !!formData.lastName,
+      email: !!formData.email,
+      phone: !!formData.phone,
+      projectType: !!formData.projectType,
+      budget: !!formData.budget
+    })
     setIsSubmitting(true)
     setSubmitStatus('idle')
     
@@ -301,8 +309,9 @@ const ContactPage = () => {
                   type="submit"
                   disabled={isSubmitting}
                   className={`luxora-green-button w-full text-base sm:text-lg py-3 sm:py-4 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
-                  onClick={() => {
+                  onClick={(e) => {
                     console.log('Button clicked!')
+                    console.log('Form data before submit:', formData)
                     trackButtonClick('Send Message', 'contact_form')
                   }}
                 >
@@ -318,19 +327,42 @@ const ContactPage = () => {
                   )}
                 </button>
                 
-                {/* Debug button - remove in production */}
+                {/* Debug buttons - remove in production */}
                 {import.meta.env.DEV && (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      console.log('Debug: Form data:', formData)
-                      console.log('Debug: Is submitting:', isSubmitting)
-                      console.log('Debug: Submit status:', submitStatus)
-                    }}
-                    className="mt-2 w-full bg-gray-500 text-white py-2 px-4 rounded text-sm"
-                  >
-                    🔍 Debug Info (Dev Only)
-                  </button>
+                  <div className="mt-2 space-y-2">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        console.log('Debug: Form data:', formData)
+                        console.log('Debug: Is submitting:', isSubmitting)
+                        console.log('Debug: Submit status:', submitStatus)
+                      }}
+                      className="w-full bg-gray-500 text-white py-2 px-4 rounded text-sm"
+                    >
+                      🔍 Debug Info (Dev Only)
+                    </button>
+                    
+                    <button
+                      type="button"
+                      onClick={() => {
+                        console.log('=== TEST SUBMISSION ===')
+                        // Fill form with test data
+                        setFormData({
+                          firstName: 'Test',
+                          lastName: 'User',
+                          email: 'test@example.com',
+                          phone: '1234567890',
+                          projectType: 'clinic',
+                          budget: '200k-400k',
+                          description: 'Test submission'
+                        })
+                        console.log('Form filled with test data')
+                      }}
+                      className="w-full bg-blue-500 text-white py-2 px-4 rounded text-sm"
+                    >
+                      📝 Fill Test Data
+                    </button>
+                  </div>
                 )}
               </form>
             </div>
