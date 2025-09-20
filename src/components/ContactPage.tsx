@@ -30,6 +30,8 @@ const ContactPage = () => {
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    console.log('Form submission started')
+    console.log('Form data:', formData)
     setIsSubmitting(true)
     setSubmitStatus('idle')
     
@@ -51,6 +53,7 @@ const ContactPage = () => {
       // Submit directly to Google Apps Script
       const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxcTJsZzOps9jtqm-fcQS0sEIeofbTht101LwWYhGjtmorVt1a4tQpv-QmhEdHfLiVotg/exec'
       
+      console.log('Sending request to:', GOOGLE_SCRIPT_URL)
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         headers: {
@@ -63,7 +66,11 @@ const ContactPage = () => {
         })
       })
 
+      console.log('Response status:', response.status)
+      console.log('Response ok:', response.ok)
+      
       if (response.ok) {
+        console.log('Form submitted successfully!')
         setSubmitStatus('success')
         // Reset form
         setFormData({
@@ -76,6 +83,7 @@ const ContactPage = () => {
           description: ''
         })
       } else {
+        console.log('Form submission failed with status:', response.status)
         throw new Error('Failed to submit form')
       }
     } catch (error) {
@@ -293,7 +301,10 @@ const ContactPage = () => {
                   type="submit"
                   disabled={isSubmitting}
                   className={`luxora-green-button w-full text-base sm:text-lg py-3 sm:py-4 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
-                  onClick={() => trackButtonClick('Send Message', 'contact_form')}
+                  onClick={() => {
+                    console.log('Button clicked!')
+                    trackButtonClick('Send Message', 'contact_form')
+                  }}
                 >
                   {isSubmitting ? (
                     <>
@@ -306,6 +317,21 @@ const ContactPage = () => {
                     </>
                   )}
                 </button>
+                
+                {/* Debug button - remove in production */}
+                {import.meta.env.DEV && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      console.log('Debug: Form data:', formData)
+                      console.log('Debug: Is submitting:', isSubmitting)
+                      console.log('Debug: Submit status:', submitStatus)
+                    }}
+                    className="mt-2 w-full bg-gray-500 text-white py-2 px-4 rounded text-sm"
+                  >
+                    🔍 Debug Info (Dev Only)
+                  </button>
+                )}
               </form>
             </div>
 
