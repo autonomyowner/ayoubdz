@@ -6,9 +6,9 @@ This project includes a complete PayPal checkout integration for accepting payme
 ## Features
 - **PayPal Checkout Buttons**: Integrated into pricing cards
 - **Fixed USD Pricing**: 
-  - Starter Plan: $35.00
-  - Professional Plan: $140.00
-  - Enterprise Plan: $280.00
+  - Starter Plan: $1.00
+  - Professional Plan: $3.00
+  - Enterprise Plan: $7.00
 - **Serverless API**: Vercel functions handle PayPal API calls
 - **Secure Environment**: Credentials stored as environment variables
 
@@ -119,7 +119,7 @@ Add these environment variables in Vercel project settings:
    # Test create order
    curl -X POST https://your-domain.vercel.app/api/create-order \
      -H "Content-Type: application/json" \
-     -d '{"amount":"35.00","currency":"USD","description":"Test"}'
+     -d '{"amount":"1.00","currency":"USD","description":"Test"}'
    ```
 
 ## Security Considerations

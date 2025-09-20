@@ -175,7 +175,7 @@ const Pricing = () => {
                 {/* PayPal checkout - fixed USD per plan */}
                 <div className="mt-3">
                   {(() => {
-                    const amountMap = { Starter: '35.00', Professional: '140.00', Enterprise: '280.00' } as const
+                    const amountMap = { Starter: '1.00', Professional: '3.00', Enterprise: '7.00' } as const
                     const amount = amountMap[plan.name as keyof typeof amountMap]
                     if (!amount) return null
                     return (

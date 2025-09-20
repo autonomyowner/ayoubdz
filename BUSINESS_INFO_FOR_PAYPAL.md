@@ -16,9 +16,9 @@
    - Business website creation
 
 2. **Web Development Plans**
-   - **Starter Plan** ($35 USD): Basic business websites (up to 5 pages)
-   - **Professional Plan** ($140 USD): Advanced websites with booking systems (up to 10 pages)
-   - **Enterprise Plan** ($280 USD): Full-featured websites with e-commerce (unlimited pages)
+   - **Starter Plan** ($1 USD): Basic business websites (up to 5 pages)
+   - **Professional Plan** ($3 USD): Advanced websites with booking systems (up to 10 pages)
+   - **Enterprise Plan** ($7 USD): Full-featured websites with e-commerce (unlimited pages)
 
 3. **Additional Services**
    - SEO optimization packages
@@ -63,9 +63,9 @@
 ## Transaction Information
 
 ### Typical Transaction Amounts
-- **Starter Websites**: $35 USD
-- **Professional Websites**: $140 USD
-- **Enterprise Websites**: $280 USD
+- **Starter Websites**: $1 USD
+- **Professional Websites**: $3 USD
+- **Enterprise Websites**: $7 USD
 - **Add-on Services**: $5-$700 USD
 
 ### Transaction Volume
