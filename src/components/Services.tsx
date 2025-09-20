@@ -1,19 +1,16 @@
 const Services = () => {
   const services = [
     {
-      icon: "💬",
       title: "Interactive Debates",
       description: "Engage in thought-provoking discussions on current events, technology, culture, and more.",
       features: ["Real-world topics", "Structured format", "Peer feedback"]
     },
     {
-      icon: "🤝",
       title: "Networking Sessions",
       description: "Connect with like-minded individuals and build professional relationships.",
       features: ["Professional networking", "Cultural exchange", "Community building"]
     },
     {
-      icon: "📈",
       title: "Skill Development",
       description: "Improve your English speaking, listening, and critical thinking skills.",
       features: ["Public speaking", "Critical thinking", "Leadership skills"]
@@ -36,13 +33,12 @@ const Services = () => {
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12 md:mb-16">
           {services.map((service, index) => (
             <div key={index} className="premium-card p-4 sm:p-6 md:p-8 hover:transform hover:scale-105">
-              <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">{service.icon}</div>
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3 md:mb-4">{service.title}</h3>
               <p className="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 leading-relaxed">{service.description}</p>
               <ul className="space-y-2">
                 {service.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center text-gray-300">
-                    <span className="premium-text mr-2">✓</span>
+                    <span className="premium-text mr-2">•</span>
                     {feature}
                   </li>
                 ))}
@@ -65,19 +61,19 @@ const Services = () => {
               <div className="text-slate-900 text-base sm:text-lg mb-4 sm:mb-6">Per Session</div>
               <ul className="space-y-3 text-slate-900 text-left">
                 <li className="flex items-center">
-                  <span className="mr-3">✓</span>
+                  <span className="mr-3">•</span>
                   2-hour interactive session
                 </li>
                 <li className="flex items-center">
-                  <span className="mr-3">✓</span>
+                  <span className="mr-3">•</span>
                   Professional guidance
                 </li>
                 <li className="flex items-center">
-                  <span className="mr-3">✓</span>
+                  <span className="mr-3">•</span>
                   Networking opportunities
                 </li>
                 <li className="flex items-center">
-                  <span className="mr-3">✓</span>
+                  <span className="mr-3">•</span>
                   Skill development materials
                 </li>
               </ul>
@@ -89,15 +85,15 @@ const Services = () => {
                 <h4 className="text-xl font-bold text-white mb-4">Requirements to Join</h4>
                 <div className="space-y-3">
                   <div className="flex items-center text-gray-300 text-sm sm:text-base">
-                    <span className="premium-text mr-3">🎯</span>
+                    <span className="premium-text mr-3">•</span>
                     Age: 17-35 years old
                   </div>
                   <div className="flex items-center text-gray-300 text-sm sm:text-base">
-                    <span className="premium-text mr-3">📚</span>
+                    <span className="premium-text mr-3">•</span>
                     English Level: Intermediate or Advanced
                   </div>
                   <div className="flex items-center text-gray-300 text-sm sm:text-base">
-                    <span className="premium-text mr-3">💬</span>
+                    <span className="premium-text mr-3">•</span>
                     Willingness to participate actively
                   </div>
                 </div>
@@ -107,15 +103,15 @@ const Services = () => {
                 <h4 className="text-xl font-bold text-white mb-4">What You'll Get</h4>
                 <div className="space-y-3">
                   <div className="flex items-center text-gray-300">
-                    <span className="premium-text mr-3">🌟</span>
+                    <span className="premium-text mr-3">•</span>
                     Improved English speaking skills
                   </div>
                   <div className="flex items-center text-gray-300">
-                    <span className="premium-text mr-3">🤝</span>
+                    <span className="premium-text mr-3">•</span>
                     Professional network connections
                   </div>
                   <div className="flex items-center text-gray-300">
-                    <span className="premium-text mr-3">📈</span>
+                    <span className="premium-text mr-3">•</span>
                     Personal development opportunities
                   </div>
                 </div>

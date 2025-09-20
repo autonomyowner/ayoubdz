@@ -53,13 +53,12 @@
 ### Contact Details
 - **Email**: autonomy.owner@gmail.com
 - **WhatsApp**: +213797339451
-- **Website**: [Your deployed website URL]
-- **Business Address**: [Your business address]
+- **Website**: [www.sitedz.store]
+- **Business Address**: [algeria]
 
 ### Business Registration
 - **Business Type**: Freelance/Individual Web Developer
-- **Tax ID**: [If applicable]
-- **Business License**: [If applicable]
+
 
 ## Transaction Information
 
@@ -67,12 +66,12 @@
 - **Starter Websites**: $35 USD
 - **Professional Websites**: $140 USD
 - **Enterprise Websites**: $280 USD
-- **Add-on Services**: $5-$20 USD
+- **Add-on Services**: $5-$700 USD
 
 ### Transaction Volume
-- **Expected Monthly Volume**: [Estimate based on your business]
-- **Average Transaction Size**: $100-150 USD
-- **Peak Seasons**: [Any seasonal variations]
+- **Expected Monthly Volume**: [500$]
+- **Average Transaction Size**: $5-280 USD
+- **Peak Seasons**: 1500$
 
 ### Customer Base
 - **Primary Customers**: Small business owners
@@ -128,6 +127,6 @@
 
 **Contact for Verification**: autonomy.owner@gmail.com  
 **Phone**: +213797339451  
-**Business Website**: [Your website URL]
+**Business Website**: sitedz.store
 
-**Date**: December 2024
+**Date**: sepember 2025

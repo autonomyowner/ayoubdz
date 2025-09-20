@@ -9,9 +9,21 @@ type PayPalCheckoutProps = {
   className?: string
 }
 
+interface PayPalSDK {
+  Buttons: (config: {
+    style: { layout: string; shape: string; color: string }
+    createOrder: () => Promise<string>
+    onApprove: (data: { orderID: string }) => Promise<void>
+    onError: (err: unknown) => void
+  }) => {
+    render: (container: HTMLElement) => void
+    close?: () => void
+  }
+}
+
 declare global {
   interface Window {
-    paypal?: any
+    paypal?: PayPalSDK
   }
 }
 
@@ -69,7 +81,7 @@ const PayPalCheckout = ({ amount, currency = 'USD', description, onSuccess, onEr
         }
         return data.id
       },
-      onApprove: async (data: any) => {
+      onApprove: async (data: { orderID: string }) => {
         const res = await fetch('/api/capture-order', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -81,7 +93,7 @@ const PayPalCheckout = ({ amount, currency = 'USD', description, onSuccess, onEr
         }
         onSuccess?.(json)
       },
-      onError: (err: any) => {
+      onError: (err: unknown) => {
         const error = err instanceof Error ? err : new Error('PayPal error')
         onError?.(error)
       }
@@ -91,7 +103,9 @@ const PayPalCheckout = ({ amount, currency = 'USD', description, onSuccess, onEr
     return () => {
       try {
         Buttons.close?.()
-      } catch {}
+      } catch {
+        // Ignore errors when closing PayPal buttons
+      }
     }
   }, [ready, amount, currency, description, onSuccess, onError])
 
