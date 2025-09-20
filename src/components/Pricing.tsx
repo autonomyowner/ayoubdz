@@ -184,13 +184,15 @@ const Pricing = () => {
                   ))}
                 </ul>
 
-                <a 
-                  href={`mailto:autonomy.owner@gmail.com?subject=Interested in Pricing Plan - ${plan.name}`}
+                <button 
                   className={`luxora-green-button w-full text-center ${plan.popular ? 'bg-green-600 hover:bg-green-700' : ''}`}
-                  onClick={() => handlePlanClick(plan.name, plan.price)}
+                  onClick={() => {
+                    handlePlanClick(plan.name, plan.price)
+                    window.open('/contact', '_self')
+                  }}
                 >
                   {plan.cta}
-                </a>
+                </button>
                 {/* PayPal checkout - fixed USD per plan */}
                 <div className="mt-3">
                   {(() => {
@@ -212,12 +214,12 @@ const Pricing = () => {
                   })()}
                 </div>
                 <div className="mt-3">
-                  <a 
-                    href="/contact" 
+                  <button 
                     className="luxora-button w-full text-center text-sm"
+                    onClick={() => window.open('/contact', '_self')}
                   >
                     Book a Free Demo
-                  </a>
+                  </button>
                 </div>
 
                 <div className="mt-4 text-gray-500 text-xs sm:text-sm">
@@ -262,12 +264,12 @@ const Pricing = () => {
                       </li>
                     ))}
                   </ul>
-                  <a 
-                    href={`mailto:autonomy.owner@gmail.com?subject=Interested in Add-on - ${addon.name}`}
+                  <button 
                     className="luxora-button w-full text-center text-sm"
+                    onClick={() => window.open('/contact', '_self')}
                   >
                     Lock In 2025 Rate
-                  </a>
+                  </button>
                 </div>
               ))}
             </div>
@@ -344,16 +346,16 @@ const Pricing = () => {
               No obligation, just expert advice.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="mailto:autonomy.owner@gmail.com?subject=Free Consultation Request" 
+              <button 
                 className="luxora-green-button text-base px-8 py-3"
                 onClick={() => {
                   trackSchedule('Free Consultation')
                   trackButtonClick('Get Free Consultation', 'pricing_cta')
+                  window.open('/contact', '_self')
                 }}
               >
                 🚀 Get Free Consultation
-              </a>
+              </button>
               <a 
                 href="https://wa.me/+213797339451?text=Hi! I'm interested in your web development services. Can you tell me more about your pricing?" 
                 target="_blank" 
