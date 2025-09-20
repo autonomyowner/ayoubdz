@@ -58,7 +58,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               className="luxora-green-button"
-              onClick={() => window.open('https://wa.me/+213797339451?text=مرحبا! أريد إنشاء موقع ويب لعملي', '_blank')}
+              onClick={() => window.open('/contact', '_self')}
             >
               Start My Project
             </button>

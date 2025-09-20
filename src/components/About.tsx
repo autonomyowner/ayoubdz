@@ -13,7 +13,10 @@ const About = () => {
               Our team combines modern technology with deep understanding of local market needs to deliver 
               websites that drive growth, enhance customer experience, and establish your digital presence.
             </p>
-            <button className="luxora-green-button">
+            <button 
+              className="luxora-green-button"
+              onClick={() => window.open('/contact', '_self')}
+            >
               CONTACT US
             </button>
           </div>

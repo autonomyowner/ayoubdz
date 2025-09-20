@@ -44,7 +44,10 @@ const Services = () => {
               <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
               
               {/* Button */}
-              <button className="luxora-green-button">
+              <button 
+                className="luxora-green-button"
+                onClick={() => window.open('/services', '_self')}
+              >
                 Learn More
               </button>
             </div>

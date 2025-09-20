@@ -10,7 +10,10 @@ const Footer = () => {
           </div>
           <div className="text-center md:text-right">
             <p className="luxora-text mb-4">Monday to Friday 9am to 6pm</p>
-            <button className="maroon-button">
+            <button 
+              className="maroon-button"
+              onClick={() => window.open('/contact', '_self')}
+            >
               GET QUOTE
             </button>
           </div>

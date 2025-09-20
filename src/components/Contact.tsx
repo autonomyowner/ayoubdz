@@ -16,7 +16,10 @@ const Contact = () => {
               We'd love to discuss your project and help you establish a strong digital presence. 
               Get in touch with us today and let's start building your success story together.
             </p>
-            <button className="maroon-button">
+            <button 
+              className="maroon-button"
+              onClick={() => window.open('/contact', '_self')}
+            >
               GET QUOTE
             </button>
           </div>

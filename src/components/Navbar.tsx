@@ -42,7 +42,10 @@ const Navbar = () => {
             >
               Contact
             </Link>
-            <button className="maroon-button">
+            <button 
+              className="maroon-button"
+              onClick={() => window.open('/contact', '_self')}
+            >
               GET QUOTE
             </button>
           </div>
@@ -88,7 +91,13 @@ const Navbar = () => {
               >
                 Contact
               </Link>
-              <button className="block mx-3 my-2 maroon-button w-full text-center">
+              <button 
+                className="block mx-3 my-2 maroon-button w-full text-center"
+                onClick={() => {
+                  window.open('/contact', '_self')
+                  setIsMenuOpen(false)
+                }}
+              >
                 GET QUOTE
               </button>
             </div>
