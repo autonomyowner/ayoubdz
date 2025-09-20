@@ -1,16 +1,13 @@
 import { useEffect, useState } from 'react'
 import { 
   trackPageView, 
-  trackEvent, 
   trackLead, 
   trackContact, 
   trackPurchase, 
   trackViewContent,
   trackInitiateCheckout,
   trackAddToCart,
-  trackCompleteRegistration,
   trackSchedule,
-  trackSearch,
   trackFormSubmission,
   trackButtonClick
 } from '../utils/facebookPixel'

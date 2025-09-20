@@ -315,7 +315,7 @@ const ContactPage = () => {
                   type="submit"
                   disabled={isSubmitting}
                   className={`luxora-green-button w-full text-base sm:text-lg py-3 sm:py-4 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
-                  onClick={(e) => {
+                  onClick={() => {
                     console.log('Button clicked!')
                     console.log('Form data before submit:', formData)
                     trackButtonClick('Send Message', 'contact_form')
