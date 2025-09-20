@@ -3,8 +3,22 @@
 
 function doPost(e) {
   try {
-    // Parse the incoming data
-    const data = JSON.parse(e.postData.contents);
+    // Log the incoming request for debugging
+    console.log('Received request:', JSON.stringify(e));
+    
+    // Parse the incoming data - handle different request formats
+    let data;
+    if (e.postData && e.postData.contents) {
+      data = JSON.parse(e.postData.contents);
+    } else if (e.parameter) {
+      // Handle form data
+      data = e.parameter;
+    } else {
+      console.log('No data found in request');
+      throw new Error('No data received');
+    }
+    
+    console.log('Parsed data:', JSON.stringify(data));
     
     // Get or create the spreadsheet
     const spreadsheet = getOrCreateSpreadsheet();
@@ -107,4 +121,15 @@ function testFunction() {
   
   const result = doPost({ postData: { contents: JSON.stringify(testData) } });
   console.log(result.getContent());
+}
+
+// Simple test function to check if script is working
+function doGet(e) {
+  return ContentService
+    .createTextOutput(JSON.stringify({ 
+      success: true, 
+      message: 'Google Apps Script is working!',
+      timestamp: new Date().toISOString()
+    }))
+    .setMimeType(ContentService.MimeType.JSON);
 }

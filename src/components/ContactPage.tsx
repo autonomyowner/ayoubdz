@@ -49,7 +49,7 @@ const ContactPage = () => {
       })
       
       // Submit directly to Google Apps Script
-      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzzL-7uO_RF_XoETLukj3lEYlEDRBKEH57ieHC_dEZMi3LdOkg5pUvrhE7pRyhBe4HV5A/exec'
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxcTJsZzOps9jtqm-fcQS0sEIeofbTht101LwWYhGjtmorVt1a4tQpv-QmhEdHfLiVotg/exec'
       
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
