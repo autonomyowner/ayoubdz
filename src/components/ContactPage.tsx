@@ -291,10 +291,10 @@ const ContactPage = () => {
                     required
                   >
                     <option value="">Select budget range</option>
-                    <option value="100k-200k">100,000 - 200,000 DA</option>
-                    <option value="200k-400k">200,000 - 400,000 DA</option>
-                    <option value="400k-600k">400,000 - 600,000 DA</option>
-                    <option value="600k+">600,000+ DA</option>
+                    <option value="5k-15k">5,000 - 15,000 DA</option>
+                    <option value="15k-30k">15,000 - 30,000 DA</option>
+                    <option value="30k-100k">30,000 - 100,000 DA</option>
+                    <option value="100k+">100,000+ DA</option>
                     <option value="discuss">Let's discuss</option>
                   </select>
                 </div>
