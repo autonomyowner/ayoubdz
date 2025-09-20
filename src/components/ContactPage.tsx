@@ -25,34 +25,65 @@ const ContactPage = () => {
     }))
   }
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
     
-    // Track form submission
-    trackFormSubmission('Contact Form', {
-      project_type: formData.projectType,
-      budget_range: formData.budget,
-      has_description: formData.description.length > 0
-    })
-    
-    // Track lead generation
-    trackFormSubmission('Lead Generation', {
-      lead_source: 'contact_form',
-      project_type: formData.projectType,
-      budget_range: formData.budget
-    })
-    
-    // Create mailto link with form data
-    const subject = `Project Inquiry - ${formData.projectType || 'General'}`
-    const body = `Name: ${formData.firstName} ${formData.lastName}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Project Type: ${formData.projectType}
-Budget: ${formData.budget}
-Description: ${formData.description}`
-    
-    const mailtoLink = `mailto:autonomy.owner@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-    window.location.href = mailtoLink
+    try {
+      // Track form submission
+      trackFormSubmission('Contact Form', {
+        project_type: formData.projectType,
+        budget_range: formData.budget,
+        has_description: formData.description.length > 0
+      })
+      
+      // Track lead generation
+      trackFormSubmission('Lead Generation', {
+        lead_source: 'contact_form',
+        project_type: formData.projectType,
+        budget_range: formData.budget
+      })
+      
+      // Submit directly to Google Apps Script
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzzL-7uO_RF_XoETLukj3lEYlEDRBKEH57ieHC_dEZMi3LdOkg5pUvrhE7pRyhBe4HV5A/exec'
+      
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          timestamp: new Date().toISOString(),
+          source: 'website_contact_form'
+        })
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          projectType: '',
+          budget: '',
+          description: ''
+        })
+      } else {
+        throw new Error('Failed to submit form')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
   const contactMethods = [
     {
@@ -128,6 +159,33 @@ Description: ${formData.description}`
             {/* Contact Form */}
             <div className="luxora-card p-4 sm:p-6 md:p-8">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold luxora-text mb-4 sm:mb-6 text-center">Send Us a Message</h2>
+              
+              {/* Success Message */}
+              {submitStatus === 'success' && (
+                <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                  <div className="flex items-center">
+                    <span className="text-green-600 text-xl mr-2">✅</span>
+                    <div>
+                      <strong>Message sent successfully!</strong>
+                      <p className="text-sm mt-1">We'll get back to you within 24 hours.</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Error Message */}
+              {submitStatus === 'error' && (
+                <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+                  <div className="flex items-center">
+                    <span className="text-red-600 text-xl mr-2">❌</span>
+                    <div>
+                      <strong>Failed to send message</strong>
+                      <p className="text-sm mt-1">Please try again or contact us directly.</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <form className="space-y-6" onSubmit={handleFormSubmit}>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
@@ -233,10 +291,20 @@ Description: ${formData.description}`
 
                 <button
                   type="submit"
-                  className="luxora-green-button w-full text-base sm:text-lg py-3 sm:py-4"
+                  disabled={isSubmitting}
+                  className={`luxora-green-button w-full text-base sm:text-lg py-3 sm:py-4 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
                   onClick={() => trackButtonClick('Send Message', 'contact_form')}
                 >
-                  🚀 Send Message
+                  {isSubmitting ? (
+                    <>
+                      <span className="animate-spin mr-2">⏳</span>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      🚀 Send Message
+                    </>
+                  )}
                 </button>
               </form>
             </div>
