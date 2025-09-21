@@ -5,6 +5,7 @@ import Home from './components/Home'
 import Services from './components/OfferForYou'
 import Pricing from './components/Pricing'
 import ContactPage from './components/ContactPage'
+import EcommerceTemplate from './components/EcommerceTemplate'
 import Footer from './components/Footer'
 import FacebookPixelTracker from './components/FacebookPixelTracker'
 import PixelInitializer from './components/PixelInitializer'
@@ -26,6 +27,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/ecommerce-template" element={<EcommerceTemplate />} />
         </Routes>
         <Footer />
         <SpeedInsights />
