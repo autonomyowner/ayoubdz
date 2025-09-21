@@ -8,7 +8,7 @@ export const API_CONFIG = {
   // 4. Choose "Web app" as type
   // 5. Set access to "Anyone"
   // 6. Copy the web app URL
-  GOOGLE_APPS_SCRIPT_URL: 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE'
+  GOOGLE_APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbwFd1tAQDUvPUghsp0J6VMHGOmvCiuE7cYyH51VBAyNyDCbMWn2Fl1a0mHvuw3lPI8P/exec'
 }
 
 // Example URL format:
