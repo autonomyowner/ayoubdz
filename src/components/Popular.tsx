@@ -1,28 +1,10 @@
 import { useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { templates } from '../data/templates'
 
 const Popular = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const navigate = useNavigate()
-
-  const templates = [
-    {
-      image: "/pics/templates/template 1.jpg",
-      title: "E-commerce Template"
-    },
-    {
-      image: "/pics/templates/teplate 2.jpg",
-      title: "Business Template"
-    },
-    {
-      image: "/pics/templates/perfum store template clean.jpg",
-      title: "Perfume Store Template"
-    },
-    {
-      image: "/pics/templates/clininc template.png",
-      title: "Clinic Template"
-    }
-  ]
 
   // Create multiple copies for perfect seamless loop
   const duplicatedTemplates = [...templates, ...templates, ...templates, ...templates]
@@ -151,37 +133,33 @@ const Popular = () => {
         >
             {duplicatedTemplates.map((template, index) => (
               <div 
-                key={index} 
+                key={`${template.id}-${index}`} 
                 className="flex-shrink-0 mx-4 md:mx-6 group cursor-pointer"
-                onClick={() => {
-                  if (template.title === "E-commerce Template") {
-                    navigate('/ecommerce-template')
-                  }
-                }}
+                onClick={() => navigate(`/template/${template.id}`)}
               >
                 {/* Image */}
                 <div className="w-80 h-64 rounded-lg overflow-hidden shadow-lg mb-4 group-hover:shadow-xl transition-shadow duration-300">
                   <img 
                     src={template.image} 
-                    alt={template.title}
+                    alt={template.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 
                 {/* Title */}
                 <h3 className="text-lg font-bold luxora-green-text text-center">
-                  {template.title}
+                  {template.name}
                 </h3>
                 
-                {/* Price Badge for E-commerce Template */}
-                {template.title === "E-commerce Template" && (
-                  <div className="text-center mt-2">
-                    <span className="bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-bold">
-                      15,000 DA
-                    </span>
-                    <div className="text-xs text-gray-600 mt-1">خصم 20%</div>
-                  </div>
-                )}
+                {/* Price Badge */}
+                <div className="text-center mt-2">
+                  <span className="bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                    {template.price.toLocaleString()} DA
+                  </span>
+                  {template.discount && (
+                    <div className="text-xs text-gray-600 mt-1">خصم {template.discount}%</div>
+                  )}
+                </div>
               </div>
             ))}
         </div>
