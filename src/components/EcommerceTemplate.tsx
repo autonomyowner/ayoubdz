@@ -81,13 +81,20 @@ Customer Email: ${customerInfo.email}
 Phone: ${customerInfo.phone}`
       }
 
-      // Send to Google Apps Script
+      // Send to Google Apps Script using form data to avoid CORS issues
+      const formData = new FormData()
+      formData.append('timestamp', orderData.timestamp)
+      formData.append('firstName', orderData.firstName)
+      formData.append('lastName', orderData.lastName)
+      formData.append('email', orderData.email)
+      formData.append('phone', orderData.phone)
+      formData.append('projectType', orderData.projectType)
+      formData.append('budget', orderData.budget)
+      formData.append('description', orderData.description)
+
       const response = await fetch(API_CONFIG.GOOGLE_APPS_SCRIPT_URL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(orderData)
+        body: formData
       })
 
       if (response.ok) {

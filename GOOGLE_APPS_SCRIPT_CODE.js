@@ -8,12 +8,12 @@ function doPost(e) {
     
     // Parse the incoming data - handle different request formats
     let data;
-    if (e && e.postData && e.postData.contents) {
-      console.log('Found postData.contents');
-      data = JSON.parse(e.postData.contents);
-    } else if (e && e.parameter) {
-      console.log('Found parameter data');
+    if (e && e.parameter) {
+      console.log('Found parameter data (form data)');
       data = e.parameter;
+    } else if (e && e.postData && e.postData.contents) {
+      console.log('Found postData.contents (JSON)');
+      data = JSON.parse(e.postData.contents);
     } else {
       console.log('No data found in request, using empty object');
       data = {};
@@ -53,7 +53,7 @@ function doPost(e) {
     // Send email notification (optional)
     sendEmailNotification(data);
     
-    // Return with JSONP callback for CORS compatibility
+    // Return with CORS headers
     const output = ContentService.createTextOutput();
     output.setMimeType(ContentService.MimeType.JSON);
     output.setContent(JSON.stringify({ success: true, message: 'Data saved successfully' }));
@@ -67,6 +67,7 @@ function doPost(e) {
     return output;
   }
 }
+
 
 function getOrCreateSpreadsheet() {
   const spreadsheetName = 'SITEDZ Contact Form Submissions';
