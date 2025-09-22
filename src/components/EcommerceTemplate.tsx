@@ -22,26 +22,26 @@ const EcommerceTemplate = () => {
   const packages = [
     {
       id: 'single',
-      name: 'Template واحد',
+      name: 'عطر واحد',
       price: 15000,
       originalPrice: 15000,
-      description: 'قالب واحد كامل'
+      description: 'عطر واحد كامل'
     },
     {
       id: 'double',
-      name: 'Template اثنين',
+      name: 'عطرين',
       price: 24000,
       originalPrice: 30000,
       discount: 20,
-      description: 'قالبين مع خصم 20%'
+      description: 'عطرين مع خصم 20%'
     },
     {
       id: 'triple',
-      name: 'Template ثلاثة',
+      name: 'ثلاثة عطور',
       price: 36000,
       originalPrice: 45000,
       discount: 20,
-      description: 'ثلاثة قوالب مع خصم 20%'
+      description: 'ثلاثة عطور مع خصم 20%'
     }
   ]
 
@@ -168,7 +168,7 @@ Phone: ${customerInfo.phone}`
             {/* Product Title */}
             <div>
               <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
-                قالب متجر إلكتروني احترافي
+                عطر متجر إلكتروني احترافي
               </h1>
               <p className="text-lg text-gray-600">
                 Professional E-commerce Website Template
@@ -202,7 +202,7 @@ Phone: ${customerInfo.phone}`
             <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg">
               <h3 className="text-xl font-bold text-gray-900 mb-3">وصف المنتج</h3>
               <p className="text-gray-700 leading-relaxed">
-                قالب موقع إلكتروني احترافي ومتجاوب مع جميع الأجهزة. يحتوي على تصميم عصري وجذاب 
+                عطر موقع إلكتروني احترافي ومتجاوب مع جميع الأجهزة. يحتوي على تصميم عصري وجذاب 
                 مع إمكانيات متقدمة لإدارة المحتوى. سهل التخصيص والتعديل حسب احتياجاتك. 
                 تسليم فوري بعد الدفع.
               </p>
@@ -232,7 +232,7 @@ Phone: ${customerInfo.phone}`
 
             {/* Package Selection */}
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-gray-900">اختر الباقة</h3>
+              <h3 className="text-xl font-bold text-gray-900">اختر المنتج</h3>
               <div className="grid gap-3">
                 {packages.map((pkg) => (
                   <button
@@ -330,7 +330,7 @@ Phone: ${customerInfo.phone}`
 
             {/* Order Summary */}
             <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">ملخص الطلب</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">ملخص الطلب - العطور</h3>
               <div className="space-y-3">
                 <div className="flex justify-between">
                   <span className="text-gray-700">الباقة المختارة:</span>
@@ -348,7 +348,7 @@ Phone: ${customerInfo.phone}`
                 )}
                 <div className="flex justify-between">
                   <span className="text-gray-700">التسليم:</span>
-                  <span className="font-semibold text-green-600">رقمي فوري</span>
+                  <span className="font-semibold text-green-600">رقمي فوري 24h</span>
                 </div>
                 <hr className="border-gray-300" />
                 <div className="flex justify-between text-lg">

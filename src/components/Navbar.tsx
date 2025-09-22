@@ -38,12 +38,6 @@ const Navbar = () => {
               Perfumes
             </Link>
             <Link 
-              to="/pricing" 
-              className={`transition-colors ${location.pathname === '/pricing' ? 'parfumerie-orange-text' : 'parfumerie-text hover:parfumerie-orange-text'}`}
-            >
-              Pricing
-            </Link>
-            <Link 
               to="/contact" 
               className={`transition-colors ${location.pathname === '/contact' ? 'parfumerie-orange-text' : 'parfumerie-text hover:parfumerie-orange-text'}`}
             >
@@ -83,13 +77,6 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Perfumes
-              </Link>
-              <Link 
-                to="/pricing" 
-                className={`block px-3 py-2 transition-colors ${location.pathname === '/pricing' ? 'parfumerie-orange-text' : 'parfumerie-text hover:parfumerie-orange-text'}`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Pricing
               </Link>
               <Link 
                 to="/contact" 

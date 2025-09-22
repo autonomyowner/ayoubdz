@@ -26,27 +26,27 @@ const ProductDetail = () => {
   const packages = [
     {
       id: 'single',
-      name: 'Template واحد',
+      name: 'عطر واحد',
       price: template.price,
       originalPrice: template.originalPrice || template.price,
       discount: template.discount,
-      description: 'قالب واحد كامل'
+      description: 'عطر واحد كامل'
     },
     {
       id: 'double',
-      name: 'Template اثنين',
+      name: 'عطرين',
       price: Math.round(template.price * 1.6), // 20% discount
       originalPrice: template.price * 2,
       discount: 20,
-      description: 'قالبين مع خصم 20%'
+      description: 'عطرين مع خصم 20%'
     },
     {
       id: 'triple',
-      name: 'Template ثلاثة',
+      name: 'ثلاثة عطور',
       price: Math.round(template.price * 2.4), // 20% discount
       originalPrice: template.price * 3,
       discount: 20,
-      description: 'ثلاثة قوالب مع خصم 20%'
+      description: 'ثلاثة عطور مع خصم 20%'
     }
   ]
 
@@ -227,7 +227,7 @@ Phone: ${customerInfo.phone}`
 
             {/* Package Selection */}
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-gray-900">اختر الباقة</h3>
+              <h3 className="text-xl font-bold text-gray-900">اختر المنتج</h3>
               <div className="grid gap-3">
                 {packages.map((pkg) => (
                   <button
@@ -325,7 +325,7 @@ Phone: ${customerInfo.phone}`
 
             {/* Order Summary */}
             <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">ملخص الطلب</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">ملخص الطلب - العطور</h3>
               <div className="space-y-3">
                 <div className="flex justify-between">
                   <span className="text-gray-700">الباقة المختارة:</span>
@@ -343,7 +343,7 @@ Phone: ${customerInfo.phone}`
                 )}
                 <div className="flex justify-between">
                   <span className="text-gray-700">التسليم:</span>
-                  <span className="font-semibold text-green-600">رقمي فوري</span>
+                  <span className="font-semibold text-green-600">رقمي فوري 24h</span>
                 </div>
                 <hr className="border-gray-300" />
                 <div className="flex justify-between text-lg">

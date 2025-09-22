@@ -18,6 +18,7 @@ const Popular = () => {
     let startX = 0
     let scrollLeft = 0
     let animationId: number
+    let isUserInteractingRef = false
 
     // Function to handle seamless loop reset
     const handleSeamlessLoop = () => {
@@ -34,7 +35,7 @@ const Popular = () => {
 
     // Auto-scroll function
     const autoScroll = () => {
-      if (!isUserInteracting && container) {
+      if (!isUserInteractingRef && container) {
         container.scrollLeft += 0.5 // Smooth scroll speed
         handleSeamlessLoop()
         animationId = requestAnimationFrame(autoScroll)
@@ -43,7 +44,7 @@ const Popular = () => {
 
     // Start auto-scroll
     const startAutoScroll = () => {
-      if (!isUserInteracting) {
+      if (!isUserInteractingRef) {
         autoScroll()
       }
     }
@@ -57,6 +58,7 @@ const Popular = () => {
 
     const handleTouchStart = (e: TouchEvent) => {
       isScrolling = true
+      isUserInteractingRef = true
       setIsUserInteracting(true)
       startX = e.touches[0].pageX - container.offsetLeft
       scrollLeft = container.scrollLeft
@@ -75,6 +77,7 @@ const Popular = () => {
       isScrolling = false
       // Resume auto-scroll after a delay
       setTimeout(() => {
+        isUserInteractingRef = false
         setIsUserInteracting(false)
         startAutoScroll()
       }, 3000)
@@ -83,6 +86,7 @@ const Popular = () => {
     // Mouse events for desktop
     const handleMouseDown = (e: MouseEvent) => {
       isScrolling = true
+      isUserInteractingRef = true
       setIsUserInteracting(true)
       startX = e.pageX - container.offsetLeft
       scrollLeft = container.scrollLeft
@@ -102,6 +106,7 @@ const Popular = () => {
       isScrolling = false
       container.style.cursor = 'grab'
       setTimeout(() => {
+        isUserInteractingRef = false
         setIsUserInteracting(false)
         startAutoScroll()
       }, 3000)
@@ -134,7 +139,7 @@ const Popular = () => {
       container.removeEventListener('mouseup', handleMouseUp)
       container.removeEventListener('mouseleave', handleMouseLeave)
     }
-  }, [isUserInteracting])
+  }, [])
 
   return (
     <section id="popular" className="py-16 px-4 md:px-0 parfumerie-bg overflow-hidden">

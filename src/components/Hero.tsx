@@ -82,7 +82,7 @@ const Hero = () => {
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = 'linear-gradient(to right, #03045e, #023e8a)';
               }}
-              onClick={() => window.open('/pricing', '_self')}
+              onClick={() => window.open('/services', '_self')}
             >
               View Collections
             </button>

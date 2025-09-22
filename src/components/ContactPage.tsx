@@ -506,11 +506,11 @@ const ContactPage = () => {
                 🚀 Book Free Consultation
               </a>
               <a 
-                href="/pricing" 
+                href="/services" 
                 className="luxora-button text-base px-8 py-3"
               >
                 <span className="mr-2">G</span>
-                Grow My Business
+                View Perfumes
               </a>
             </div>
             <div className="mt-4 text-gray-600 text-sm">Delivered in 5 days · 24/7 WhatsApp Support</div>
