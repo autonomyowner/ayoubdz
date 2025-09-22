@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { trackContact, trackViewContent, trackFormSubmission, trackSchedule, trackButtonClick } from '../utils/facebookPixel'
+import DeliveryPriceSelector from './DeliveryPriceSelector'
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -416,6 +417,10 @@ const ContactPage = () => {
             </div>
           </div>
 
+          {/* Delivery Price Selector */}
+          <div className="mb-8 sm:mb-12 md:mb-16">
+            <DeliveryPriceSelector />
+          </div>
 
           {/* CTA Section */}
           <div className="text-center">
