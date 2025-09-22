@@ -1,11 +1,10 @@
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { templates } from '../data/templates'
 
 const Popular = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const navigate = useNavigate()
-  const [isUserInteracting, setIsUserInteracting] = useState(false)
 
   // Create exactly 2 copies for perfect seamless loop
   const duplicatedTemplates = [...templates, ...templates]
@@ -59,7 +58,6 @@ const Popular = () => {
     const handleTouchStart = (e: TouchEvent) => {
       isScrolling = true
       isUserInteractingRef = true
-      setIsUserInteracting(true)
       startX = e.touches[0].pageX - container.offsetLeft
       scrollLeft = container.scrollLeft
       stopAutoScroll()
@@ -78,7 +76,6 @@ const Popular = () => {
       // Resume auto-scroll after a delay
       setTimeout(() => {
         isUserInteractingRef = false
-        setIsUserInteracting(false)
         startAutoScroll()
       }, 3000)
     }
@@ -87,7 +84,6 @@ const Popular = () => {
     const handleMouseDown = (e: MouseEvent) => {
       isScrolling = true
       isUserInteractingRef = true
-      setIsUserInteracting(true)
       startX = e.pageX - container.offsetLeft
       scrollLeft = container.scrollLeft
       container.style.cursor = 'grabbing'
@@ -107,7 +103,6 @@ const Popular = () => {
       container.style.cursor = 'grab'
       setTimeout(() => {
         isUserInteractingRef = false
-        setIsUserInteracting(false)
         startAutoScroll()
       }, 3000)
     }
