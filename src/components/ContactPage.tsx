@@ -111,48 +111,55 @@ const ContactPage = () => {
     {
       title: "Email Us",
       value: "autonomy.owner@gmail.com",
-      description: "Send us your project requirements",
+      description: "Ask about our premium fragrances",
       link: "mailto:autonomy.owner@gmail.com"
     },
     {
       title: "Call Us",
-      value: "0797339451",
-      description: "Speak directly with our team",
-      link: "tel:+213797339451"
+      value: "+213 559 94 82 46",
+      description: "Speak with our fragrance experts",
+      link: "tel:+213559948246"
     },
     {
       title: "WhatsApp",
-      value: "0797339451",
-      description: "Quick chat about your project",
-      link: "https://wa.me/+213797339451"
+      value: "+213 559 94 82 46",
+      description: "Quick consultation about scents",
+      link: "https://wa.me/+213559948246"
     },
     {
       title: "Location",
       value: "Algeria",
-      description: "Serving clients nationwide",
+      description: "Premium perfumes delivered nationwide",
       link: "#"
     }
   ]
 
   return (
-    <section id="contact-page" className="py-16 px-4 luxora-bg">
-      <div className="max-w-7xl mx-auto">
+    <section id="contact-page" className="py-16 px-4 relative overflow-hidden" style={{
+      backgroundImage: "url('/pics/templates/bg price (2).jpg')",
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    }}>
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center">
           {/* Badge */}
-          <div className="inline-flex items-center px-3 sm:px-4 py-2 luxora-card rounded-full luxora-text text-xs sm:text-sm font-medium mb-6 sm:mb-8">
-            <span className="text-center">Get In Touch - We're Here to Help</span>
+          <div className="inline-flex items-center px-3 sm:px-4 py-2 bg-white bg-opacity-90 rounded-full text-gray-800 text-xs sm:text-sm font-medium mb-6 sm:mb-8 shadow-lg">
+            <span className="text-center">✨ Premium Perfumes & Luxury Fragrances</span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold luxora-text mb-4 sm:mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-lg">
             Contact
-            <span className="block luxora-green-text">Our Agency</span>
+            <span className="block text-amber-400">Allouna Perfum</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0">
-            Ready to start your web development project? Get in touch with our agency. 
-            We're here to discuss your needs and bring your vision to life.
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0 drop-shadow-md">
+            Ready to discover your perfect signature scent? Get in touch with us to explore our premium collection of luxury fragrances. 
+            We're here to help you find the ideal perfume that matches your personality and style.
           </p>
 
           {/* Contact Methods Grid */}
@@ -163,15 +170,15 @@ const ContactPage = () => {
                 href={method.link}
                 target={method.link.startsWith('http') ? "_blank" : undefined}
                 rel={method.link.startsWith('http') ? "noopener noreferrer" : undefined}
-                className="luxora-card p-4 sm:p-6 text-center hover:transform hover:scale-105 transition-all duration-300"
+                className="bg-white bg-opacity-90 backdrop-blur-sm p-4 sm:p-6 text-center hover:transform hover:scale-105 transition-all duration-300 rounded-lg shadow-lg"
                 onClick={() => {
                   trackContact({ method: method.title, value: method.value })
                   trackButtonClick(`Contact ${method.title}`, 'contact_methods_grid')
                 }}
               >
-                <h3 className="text-base sm:text-lg md:text-xl font-bold luxora-text mb-1 sm:mb-2">{method.title}</h3>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-800 mb-1 sm:mb-2">{method.title}</h3>
                 <p className="text-gray-600 text-xs sm:text-sm mb-1 sm:mb-2">{method.description}</p>
-                <div className="luxora-green-text font-semibold text-sm sm:text-base">{method.value}</div>
+                <div className="text-amber-600 font-semibold text-sm sm:text-base">{method.value}</div>
               </a>
             ))}
           </div>
@@ -179,8 +186,17 @@ const ContactPage = () => {
           {/* Contact Form Section */}
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-12 md:mb-16">
             {/* Contact Form */}
-            <div className="luxora-card p-4 sm:p-6 md:p-8">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold luxora-text mb-4 sm:mb-6 text-center">Send Us a Message</h2>
+            <div className="bg-white bg-opacity-95 backdrop-blur-sm p-6 sm:p-8 md:p-10 rounded-2xl shadow-2xl border border-gray-100">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-amber-100 to-orange-100 rounded-full text-amber-800 text-sm font-semibold mb-4">
+                  <span className="mr-2">🌸</span>
+                  Personal Fragrance Consultation
+                </div>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">Find Your Perfect Scent</h2>
+                <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
+                  Tell us about your preferences and let our experts help you discover the ideal fragrance that matches your personality and style.
+                </p>
+              </div>
               
               {/* Success Message */}
               {submitStatus === 'success' && (
@@ -209,112 +225,113 @@ const ContactPage = () => {
               )}
 
               <form className="space-y-6" onSubmit={handleFormSubmit}>
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block luxora-text font-semibold mb-2">First Name</label>
+                    <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">First Name</label>
                     <input
                       type="text"
                       name="firstName"
                       value={formData.firstName}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-400"
-                      placeholder="Your first name"
+                      className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200"
+                      placeholder="Enter your first name"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block luxora-text font-semibold mb-2">Last Name</label>
+                    <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">Last Name</label>
                     <input
                       type="text"
                       name="lastName"
                       value={formData.lastName}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-400"
-                      placeholder="Your last name"
+                      className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200"
+                      placeholder="Enter your last name"
                       required
                     />
                   </div>
                 </div>
                 
                 <div>
-                  <label className="block luxora-text font-semibold mb-2">Email Address</label>
+                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">Email Address</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-400"
+                    className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200"
                     placeholder="your.email@example.com"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block luxora-text font-semibold mb-2">Phone Number</label>
+                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">Phone Number</label>
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-400"
-                    placeholder="Your phone number"
+                    className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200"
+                    placeholder="+213 559 94 82 46"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block luxora-text font-semibold mb-2">Project Type</label>
+                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">Fragrance Preference</label>
                   <select 
                     name="projectType"
                     value={formData.projectType}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-gray-400"
+                    className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200"
                     required
                   >
-                    <option value="">Select project type</option>
-                    <option value="clinic">Clinic Website</option>
-                    <option value="travel">Travel Agency Website</option>
-                    <option value="real-estate">Real Estate Website</option>
-                    <option value="ecommerce">E-commerce Website</option>
-                    <option value="custom">Custom Website</option>
-                    <option value="other">Other</option>
+                    <option value="">Choose your preferred fragrance type</option>
+                    <option value="fresh">🌸 Fresh & Citrus</option>
+                    <option value="woody">🌲 Woody & Oriental</option>
+                    <option value="floral">🌹 Floral & Romantic</option>
+                    <option value="spicy">🌶️ Spicy & Warm</option>
+                    <option value="aquatic">🌊 Aquatic & Marine</option>
+                    <option value="gourmand">🍰 Gourmand & Sweet</option>
+                    <option value="consultation">💫 Need Personal Consultation</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block luxora-text font-semibold mb-2">Budget Range</label>
+                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">Budget Range</label>
                   <select 
                     name="budget"
                     value={formData.budget}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-gray-400"
+                    className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200"
                     required
                   >
-                    <option value="">Select budget range</option>
-                    <option value="5k-15k">5,000 - 15,000 DA</option>
-                    <option value="15k-30k">15,000 - 30,000 DA</option>
-                    <option value="30k-100k">30,000 - 100,000 DA</option>
-                    <option value="100k+">100,000+ DA</option>
-                    <option value="discuss">Let's discuss</option>
+                    <option value="">Select your budget range</option>
+                    <option value="5k-15k">💰 5,000 - 15,000 DA</option>
+                    <option value="15k-30k">💎 15,000 - 30,000 DA</option>
+                    <option value="30k-100k">👑 30,000 - 100,000 DA</option>
+                    <option value="100k+">✨ 100,000+ DA</option>
+                    <option value="discuss">💬 Let's discuss options</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block luxora-text font-semibold mb-2">Project Description</label>
+                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">Fragrance Consultation Details</label>
                   <textarea
                     name="description"
                     value={formData.description}
                     onChange={handleInputChange}
-                    rows={4}
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-400"
-                    placeholder="Tell us about your project requirements, goals, and any specific features you need..."
+                    rows={5}
+                    className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 resize-none"
+                    placeholder="Tell us about your fragrance preferences, occasions you wear perfume for, and any specific scents you love or want to avoid..."
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`luxora-green-button w-full text-base sm:text-lg py-3 sm:py-4 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+                  className={`w-full text-white font-semibold text-lg py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${isSubmitting ? 'opacity-50 cursor-not-allowed bg-gray-400' : 'bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600'}`}
                   onClick={() => {
                     console.log('Button clicked!')
                     console.log('Form data before submit:', formData)
@@ -324,11 +341,11 @@ const ContactPage = () => {
                   {isSubmitting ? (
                     <>
                       <span className="animate-spin mr-2">⏳</span>
-                      Sending...
+                      Sending Your Request...
                     </>
                   ) : (
                     <>
-                      🚀 Send Message
+                      🌸 Get My Perfect Fragrance Consultation
                     </>
                   )}
                 </button>
@@ -373,147 +390,59 @@ const ContactPage = () => {
               </form>
             </div>
 
-            {/* Contact Information */}
+            {/* Why Choose Allouna Perfum */}
             <div className="space-y-8">
-              <div className="luxora-card p-4 sm:p-6 md:p-8">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold luxora-text mb-4 sm:mb-6">Contact Information</h3>
-                
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 luxora-green-bg rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 shadow-lg">
-                      <span className="text-white text-base sm:text-lg md:text-xl font-bold">L</span>
-                    </div>
-                    <div>
-                      <h4 className="luxora-text font-semibold mb-1 text-sm sm:text-base">Location</h4>
-                      <p className="text-gray-600 text-xs sm:text-sm">
-                        Algeria - Serving clients nationwide
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 luxora-green-bg rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 shadow-lg">
-                      <span className="text-white text-base sm:text-lg md:text-xl">⏰</span>
-                    </div>
-                    <div>
-                      <h4 className="luxora-text font-semibold mb-1 text-sm sm:text-base">Business Hours</h4>
-                      <p className="text-gray-600 text-xs sm:text-sm">
-                        Monday - Friday: 9:00 AM - 6:00 PM
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 luxora-green-bg rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 shadow-lg">
-                      <span className="text-white text-base sm:text-lg md:text-xl">💼</span>
-                    </div>
-                    <div>
-                      <h4 className="luxora-text font-semibold mb-1 text-sm sm:text-base">Services</h4>
-                      <p className="text-gray-600 text-xs sm:text-sm">
-                        Custom websites, E-commerce, Booking systems
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 luxora-green-bg rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 shadow-lg">
-                      <span className="text-white text-base sm:text-lg md:text-xl font-bold">R</span>
-                    </div>
-                    <div>
-                      <h4 className="luxora-text font-semibold mb-1 text-sm sm:text-base">Response Time</h4>
-                      <p className="text-gray-600 text-xs sm:text-sm">
-                        Within 24 hours for all inquiries
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
               <div className="luxora-green-bg p-4 sm:p-6 md:p-8 rounded-2xl shadow-2xl">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4">Why Choose Our Agency?</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4">Why Choose Allouna Perfum?</h3>
                 <ul className="space-y-2 sm:space-y-3 text-white text-sm sm:text-base">
                   <li className="flex items-center">
                     <span className="mr-3">•</span>
-                    Expert team of professional developers
+                    Expert fragrance consultants with years of experience
                   </li>
                   <li className="flex items-center">
                     <span className="mr-3">•</span>
-                    Modern, responsive design approach
+                    Authentic premium perfumes from top brands
                   </li>
                   <li className="flex items-center">
                     <span className="mr-3">•</span>
-                    Complete project management
+                    Personal scent matching and consultation
                   </li>
                   <li className="flex items-center">
                     <span className="mr-3">•</span>
-                    Ongoing support and maintenance
+                    Nationwide delivery with care and expertise
                   </li>
                 </ul>
               </div>
             </div>
           </div>
 
-          {/* Quick Contact Section */}
-          <div className="luxora-card p-6 md:p-8 mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold luxora-text text-center mb-8">Quick Contact Options</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <a 
-                href="mailto:autonomy.owner@gmail.com?subject=Project Inquiry" 
-                className="luxora-card p-6 text-center hover:transform hover:scale-105 transition-all duration-300"
-              >
-                <div className="text-3xl mb-4 font-bold">E</div>
-                <h3 className="text-lg md:text-xl font-bold luxora-text mb-2">Email Us</h3>
-                <p className="text-gray-600 text-sm">Send us your project details</p>
-              </a>
-              
-              <a 
-                href="https://wa.me/+213797339451?text=Hi! I'm interested in your web development services. Can you tell me more?" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="luxora-card p-6 text-center hover:transform hover:scale-105 transition-all duration-300"
-              >
-                <div className="text-3xl mb-4 font-bold">W</div>
-                <h3 className="text-lg md:text-xl font-bold luxora-text mb-2">WhatsApp</h3>
-                <p className="text-gray-600 text-sm">Quick chat with us</p>
-              </a>
-              
-              <a 
-                href="tel:+213797339451" 
-                className="luxora-card p-6 text-center hover:transform hover:scale-105 transition-all duration-300"
-              >
-                <div className="text-3xl mb-4 font-bold">C</div>
-                <h3 className="text-lg md:text-xl font-bold luxora-text mb-2">Call Us</h3>
-                <p className="text-gray-600 text-sm">Speak directly with us</p>
-              </a>
-            </div>
-          </div>
 
           {/* CTA Section */}
           <div className="text-center">
-            <h3 className="text-2xl md:text-3xl font-bold luxora-text mb-6">Ready to Start Your Project?</h3>
-            <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-              Not sure yet? Get a free 30-minute consultation — no obligation.
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 drop-shadow-lg">Ready to Find Your Signature Scent?</h3>
+            <p className="text-lg text-white mb-8 max-w-3xl mx-auto drop-shadow-md">
+              Not sure which fragrance suits you? Get a free 30-minute fragrance consultation — no obligation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="mailto:autonomy.owner@gmail.com?subject=Free Consultation Request" 
+                href="mailto:autonomy.owner@gmail.com?subject=Free Fragrance Consultation Request" 
                 className="luxora-green-button text-base px-8 py-3"
                 onClick={() => {
                   trackSchedule('Free Consultation')
                   trackButtonClick('Book Free Consultation', 'cta_section')
                 }}
               >
-                🚀 Book Free Consultation
+                🌸 Book Free Fragrance Consultation
               </a>
               <a 
                 href="/services" 
                 className="luxora-button text-base px-8 py-3"
               >
-                <span className="mr-2">G</span>
+                <span className="mr-2">🌸</span>
                 View Perfumes
               </a>
             </div>
-            <div className="mt-4 text-gray-600 text-sm">Delivered in 5 days · 24/7 WhatsApp Support</div>
+            <div className="mt-4 text-white text-sm drop-shadow-md">Premium fragrances delivered nationwide · 24/7 WhatsApp Support</div>
           </div>
         </div>
       </div>

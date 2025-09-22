@@ -68,6 +68,57 @@ const Services = () => {
             </div>
           ))}
         </div>
+
+        {/* Premium Collection Showcase Section */}
+        <div className="relative overflow-hidden rounded-3xl shadow-2xl mb-16">
+          <div 
+            className="relative h-96 md:h-[500px] bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: "url('/pics/templates/bg price (1).jpg')",
+              backgroundAttachment: 'fixed'
+            }}
+          >
+            {/* Overlay for better text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
+            
+            {/* Content */}
+            <div className="relative z-10 h-full flex items-center justify-center">
+              <div className="text-center max-w-4xl mx-auto px-6">
+                <div className="inline-flex items-center px-6 py-3 bg-white/90 backdrop-blur-sm rounded-full text-gray-800 text-sm font-semibold mb-6 shadow-lg">
+                  <span className="text-center">✨ Premium Collection Showcase</span>
+                </div>
+                
+                <h3 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+                  Discover Our
+                  <span className="block text-amber-400">Luxury Fragrance Collection</span>
+                </h3>
+                
+                <p className="text-lg md:text-xl text-white mb-8 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+                  Experience the finest selection of premium perfumes from world-renowned brands. 
+                  Each fragrance is carefully curated to bring you the ultimate luxury scent experience.
+                </p>
+                
+                <div className="flex justify-center">
+                  <button 
+                    className="text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 border border-white/30"
+                    style={{
+                      background: 'linear-gradient(to right, #03045e, #023e8a)',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = 'linear-gradient(to right, #023e8a, #0077b6)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = 'linear-gradient(to right, #03045e, #023e8a)';
+                    }}
+                    onClick={() => window.open('/services', '_self')}
+                  >
+                    Shop Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

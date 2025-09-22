@@ -22,10 +22,10 @@ const Footer = () => {
         {/* Bottom Footer */}
         <div className="border-t border-gray-200 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            {/* Developer Note */}
+            {/* Website Services Note */}
             <div className="text-center md:text-left mb-4 md:mb-0">
               <p className="text-xs text-gray-500">
-                Made by <a href="https://www.sitedz.store" target="_blank" rel="noopener noreferrer" className="text-orange-500 hover:text-orange-600 transition-colors">www.sitedz.store</a>
+                Need a website? Contact <a href="tel:+213797339451" className="text-orange-500 hover:text-orange-600 transition-colors">0797339451</a>
               </p>
             </div>
             
