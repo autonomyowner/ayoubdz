@@ -12,15 +12,15 @@ const Contact = () => {
               Lets Chat
             </h2>
             <p className="text-gray-700 text-lg leading-relaxed mb-8">
-              Ready to transform your business with a professional website? 
-              We'd love to discuss your project and help you establish a strong digital presence. 
-              Get in touch with us today and let's start building your success story together.
+              Ready to discover your perfect signature scent? 
+              We'd love to help you find the ideal fragrance that matches your personality and style. 
+              Get in touch with us today and let's explore the world of luxury perfumes together.
             </p>
             <button 
-              className="maroon-button"
+              className="orange-button"
               onClick={() => window.open('/contact', '_self')}
             >
-              GET QUOTE
+              SHOP NOW
             </button>
           </div>
 

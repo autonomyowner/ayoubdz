@@ -1,27 +1,43 @@
 import Typewriter from './Typewriter'
 
 const Hero = () => {
+  const backgroundImagePath = "/pics/templates/background image.jpg"
+  
   const typewriterWords = [
-    "Premium Websites",
-    "E-commerce Stores", 
-    "Business Portals",
-    "Mobile Apps",
-    "Digital Solutions"
+    "Premium Perfumes",
+    "Luxury Fragrances", 
+    "Exotic Scents",
+    "Designer Brands",
+    "Signature Collections"
   ]
 
   return (
-    <section id="home" className="py-16 px-4 luxora-bg">
-      <div className="max-w-7xl mx-auto text-center">
+    <section id="home" className="relative min-h-screen flex items-center justify-center py-16 px-4 overflow-hidden">
+      {/* Enhanced Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat transform transition-transform duration-1000 hover:scale-105"
+        style={{
+          backgroundImage: `url("${backgroundImagePath}")`,
+          backgroundAttachment: 'fixed',
+          filter: 'brightness(0.8) contrast(1.1)',
+        }}
+      />
+      {/* Gradient Overlay for sophistication */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-purple-900/30 to-amber-900/40"></div>
+      {/* Additional overlay for text readability */}
+      <div className="absolute inset-0 bg-black/20"></div>
+      
+      <div className="max-w-7xl mx-auto text-center relative z-10">
         <div className="max-w-4xl mx-auto">
-          {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 luxora-card rounded-full luxora-text text-sm font-medium mb-8">
-            Premier Tech Solutions in Algeria
+          {/* Enhanced Badge */}
+          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-amber-400/90 to-orange-500/90 backdrop-blur-sm rounded-full text-white text-sm font-semibold mb-8 shadow-xl border border-white/20">
+            ✨ Premium Perfumes & Fragrances in Algeria
           </div>
 
-          {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl font-bold luxora-text mb-6 leading-tight">
-            We Build
-            <span className="block luxora-green-text">
+          {/* Enhanced Main Heading */}
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
+            Discover
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-500 to-amber-600">
               <Typewriter 
                 words={typewriterWords}
                 typeSpeed={150}
@@ -32,52 +48,44 @@ const Hero = () => {
             </span>
           </h1>
 
-          {/* Subtitle */}
-          <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Specialized in creating stunning websites for Algerian e-commerce businesses and businesses in general. 
-            We transform your digital presence into a powerful business tool.
+          {/* Enhanced Subtitle */}
+          <p className="text-xl text-gray-100 mb-10 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
+            Specialized in premium perfumes and luxury fragrances for discerning customers in Algeria. 
+            We bring you the finest scents from around the world to enhance your personal style.
           </p>
 
-          {/* Features */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="text-center luxora-card p-6">
-              <div className="text-2xl md:text-3xl font-bold luxora-green-text mb-2">Fast Delivery</div>
-              <div className="text-gray-600 text-sm md:text-base">Your website ready in just 5 days</div>
-            </div>
-            <div className="text-center luxora-card p-6">
-              <div className="text-2xl md:text-3xl font-bold luxora-green-text mb-2">Modern Design</div>
-              <div className="text-gray-600 text-sm md:text-base">Beautiful, responsive websites</div>
-            </div>
-            <div className="text-center luxora-card p-6">
-              <div className="text-2xl md:text-3xl font-bold luxora-green-text mb-2">Local Support</div>
-              <div className="text-gray-600 text-sm md:text-base">Algerian team, Arabic & French support</div>
-            </div>
-          </div>
-
-          {/* CTA Buttons */}
+          {/* Enhanced CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
-              className="luxora-green-button"
-              onClick={() => window.open('/contact', '_self')}
+              className="text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 border border-[#03045e]/30"
+              style={{
+                background: 'linear-gradient(to right, #03045e, #023e8a)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'linear-gradient(to right, #023e8a, #0077b6)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'linear-gradient(to right, #03045e, #023e8a)';
+              }}
+              onClick={() => window.open('/services', '_self')}
             >
-              Start My Project
+              Shop Perfumes
             </button>
             <button 
-              className="luxora-button"
+              className="text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 border border-[#03045e]/30"
+              style={{
+                background: 'linear-gradient(to right, #03045e, #023e8a)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'linear-gradient(to right, #023e8a, #0077b6)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'linear-gradient(to right, #03045e, #023e8a)';
+              }}
               onClick={() => window.open('/pricing', '_self')}
             >
-              View Pricing
+              View Collections
             </button>
-          </div>
-
-          {/* Speed & Support Promises */}
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm">
-              Delivered in 5 days
-            </div>
-            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm">
-              24/7 WhatsApp Support
-            </div>
           </div>
         </div>
       </div>

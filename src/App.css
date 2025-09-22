@@ -1,4 +1,4 @@
-/* Custom styles for Luxora Home Decor */
+/* Custom styles for Parfumerie Allouani */
 #root {
   width: 100%;
   margin: 0;
@@ -26,61 +26,65 @@ html {
   animation: fadeInUp 0.6s ease-out;
 }
 
-/* Luxora Color Scheme */
+/* Parfumerie Allouani Color Scheme */
 :root {
-  --luxora-beige: #F5F5DC;
-  --luxora-light-brown: #D2B48C;
-  --luxora-brown: #8B4513;
-  --luxora-dark-brown: #654321;
-  --luxora-off-white: #FFF8DC;
-  --luxora-luxury-green: #2D5016;
-  --luxora-light-green: #4A7C59;
-  --luxora-accent-green: #6B8E23;
-  --luxora-mint-green: #98FB98;
+  --parfumerie-blue: #03045e;
+  --parfumerie-orange: #ca6702;
+  --parfumerie-light-blue: #023e8a;
+  --parfumerie-light-orange: #f77f00;
+  --parfumerie-off-white: #ffffff;
+  --parfumerie-light-gray: #f8f9fa;
+  --parfumerie-text: #03045e;
+  --parfumerie-accent-blue: #0077b6;
+  --parfumerie-accent-orange: #ff8500;
 }
 
-/* Custom utility classes for Luxora theme */
-.luxora-bg {
-  background-color: var(--luxora-beige);
+/* Custom utility classes for Parfumerie Allouani theme */
+.parfumerie-bg {
+  background-color: var(--parfumerie-off-white);
 }
 
-.luxora-text {
-  color: var(--luxora-dark-brown);
+.parfumerie-text {
+  color: var(--parfumerie-text);
 }
 
-.luxora-card {
-  background-color: var(--luxora-off-white);
-  border: 1px solid var(--luxora-light-brown);
+.parfumerie-card {
+  background-color: var(--parfumerie-off-white);
+  border: 1px solid #e9ecef;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(139, 69, 19, 0.1);
+  box-shadow: 0 4px 6px rgba(3, 4, 94, 0.1);
 }
 
-.luxora-button {
+.parfumerie-button {
   background-color: transparent;
-  border: 2px solid var(--luxora-light-brown);
-  color: var(--luxora-dark-brown);
+  border: 2px solid var(--parfumerie-orange);
+  color: var(--parfumerie-orange);
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 600;
   transition: all 0.3s ease;
 }
 
-.luxora-button:hover {
-  background-color: var(--luxora-light-brown);
-  color: var(--luxora-off-white);
+.parfumerie-button:hover {
+  background-color: var(--parfumerie-orange);
+  color: white;
 }
 
-.luxora-green-text {
-  color: var(--luxora-luxury-green);
+.parfumerie-orange-text {
+  color: var(--parfumerie-orange);
 }
 
-.luxora-green-bg {
-  background-color: var(--luxora-luxury-green);
+.parfumerie-blue-text {
+  color: var(--parfumerie-blue);
 }
 
-.luxora-green-button {
-  background-color: var(--luxora-luxury-green);
-  border: 2px solid var(--luxora-luxury-green);
+.parfumerie-blue-bg {
+  background-color: var(--parfumerie-blue);
+}
+
+.parfumerie-blue-button {
+  background-color: var(--parfumerie-blue);
+  border: 2px solid var(--parfumerie-blue);
   color: white;
   padding: 12px 24px;
   border-radius: 8px;
@@ -88,16 +92,16 @@ html {
   transition: all 0.3s ease;
 }
 
-.luxora-green-button:hover {
-  background-color: var(--luxora-light-green);
-  border-color: var(--luxora-light-green);
+.parfumerie-blue-button:hover {
+  background-color: var(--parfumerie-light-blue);
+  border-color: var(--parfumerie-light-blue);
   color: white;
 }
 
-/* Maroon button styles for GET QUOTE */
-.maroon-button {
-  background: linear-gradient(135deg, #8B0000 0%, #A52A2A 100%);
-  border: 2px solid #8B0000;
+/* Orange button styles for GET QUOTE */
+.orange-button {
+  background: linear-gradient(135deg, var(--parfumerie-orange) 0%, var(--parfumerie-light-orange) 100%);
+  border: 2px solid var(--parfumerie-orange);
   color: white;
   padding: 14px 28px;
   border-radius: 10px;
@@ -106,12 +110,12 @@ html {
   letter-spacing: 1px;
   font-size: 14px;
   transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(139, 0, 0, 0.4);
+  box-shadow: 0 6px 20px rgba(202, 103, 2, 0.4);
   position: relative;
   overflow: hidden;
 }
 
-.maroon-button::before {
+.orange-button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -122,20 +126,20 @@ html {
   transition: left 0.5s;
 }
 
-.maroon-button:hover::before {
+.orange-button:hover::before {
   left: 100%;
 }
 
-.maroon-button:hover {
-  background: linear-gradient(135deg, #A52A2A 0%, #DC143C 100%);
-  border-color: #A52A2A;
+.orange-button:hover {
+  background: linear-gradient(135deg, var(--parfumerie-light-orange) 0%, #ff9f1a 100%);
+  border-color: var(--parfumerie-light-orange);
   color: white;
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(139, 0, 0, 0.6);
+  box-shadow: 0 8px 25px rgba(202, 103, 2, 0.6);
 }
 
-.luxora-accent-green {
-  color: var(--luxora-accent-green);
+.parfumerie-accent-orange {
+  color: var(--parfumerie-accent-orange);
 }
 
 /* Semi-circular background */
@@ -151,7 +155,7 @@ html {
   left: -50%;
   width: 200%;
   height: 100%;
-  background-color: var(--luxora-light-brown);
+  background-color: var(--parfumerie-light-gray);
   border-radius: 0 0 50% 50%;
   z-index: -1;
 }

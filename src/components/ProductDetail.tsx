@@ -179,10 +179,10 @@ Phone: ${customerInfo.phone}`
                 </span>
               </div>
               <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
-                {template.nameAr}
+                {template.name}
               </h1>
               <p className="text-lg text-gray-600">
-                {template.name}
+                {template.nameAr}
               </p>
             </div>
 

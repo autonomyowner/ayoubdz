@@ -57,17 +57,9 @@
   }
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-25%);
-  }
-}
-
-.animate-scroll {
-  animation: scroll 40s linear infinite;
+/* Smooth scrolling for horizontal containers */
+.smooth-scroll {
+  scroll-behavior: smooth;
 }
 
 /* Hide scrollbar for horizontal scroll */
@@ -81,8 +73,8 @@
 
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
-  .animate-scroll {
-    animation-duration: 60s; /* Slower on mobile for better UX */
+  .smooth-scroll {
+    scroll-behavior: smooth;
   }
 }
 
