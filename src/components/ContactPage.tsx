@@ -347,26 +347,40 @@ const ContactPage = () => {
 
             {/* Why Choose Allouna Perfum */}
             <div className="space-y-8">
-              <div className="luxora-green-bg p-4 sm:p-6 md:p-8 rounded-2xl shadow-2xl">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4">Why Choose Allouna Perfum?</h3>
-                <ul className="space-y-2 sm:space-y-3 text-white text-sm sm:text-base">
-                  <li className="flex items-center">
-                    <span className="mr-3">•</span>
-                    Expert fragrance consultants with years of experience
-                  </li>
-                  <li className="flex items-center">
-                    <span className="mr-3">•</span>
-                    Authentic premium perfumes from top brands
-                  </li>
-                  <li className="flex items-center">
-                    <span className="mr-3">•</span>
-                    Personal scent matching and consultation
-                  </li>
-                  <li className="flex items-center">
-                    <span className="mr-3">•</span>
-                    Nationwide delivery with care and expertise
-                  </li>
-                </ul>
+              <div 
+                className="relative p-6 sm:p-8 md:p-12 rounded-2xl shadow-2xl overflow-hidden min-h-[500px] md:min-h-[600px]"
+                style={{
+                  backgroundImage: "url('/pics/templates/guy.jpg')",
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
+                }}
+              >
+                {/* Overlay for better text readability */}
+                <div className="absolute inset-0 bg-black bg-opacity-50 rounded-2xl"></div>
+                
+                {/* Content */}
+                <div className="relative z-10 h-full flex flex-col justify-center">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 sm:mb-8">Why Choose Allouna Perfum?</h3>
+                  <ul className="space-y-3 sm:space-y-4 text-white text-base sm:text-lg md:text-xl">
+                    <li className="flex items-center">
+                      <span className="mr-4 text-2xl">•</span>
+                      Expert fragrance consultants with years of experience
+                    </li>
+                    <li className="flex items-center">
+                      <span className="mr-4 text-2xl">•</span>
+                      Authentic premium perfumes from top brands
+                    </li>
+                    <li className="flex items-center">
+                      <span className="mr-4 text-2xl">•</span>
+                      Personal scent matching and consultation
+                    </li>
+                    <li className="flex items-center">
+                      <span className="mr-4 text-2xl">•</span>
+                      Nationwide delivery with care and expertise
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
