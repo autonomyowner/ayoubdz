@@ -1,17 +1,21 @@
 import { useEffect, useState } from 'react'
 import { trackViewContent, trackFormSubmission, trackSchedule, trackButtonClick } from '../utils/facebookPixel'
 import DeliveryPriceSelector from './DeliveryPriceSelector'
+import { API_CONFIG } from '../config/api'
+import { deliveryPricingData } from '../data/deliveryPricing'
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
-    email: '',
     phone: '',
-    projectType: '',
-    budget: '',
-    description: ''
+    product: '',
+    quantity: '1'
   })
+
+  const [wilayaSearch, setWilayaSearch] = useState('')
+  const [selectedWilaya, setSelectedWilaya] = useState('')
+  const selectedWilayaData = deliveryPricingData.find(item => item.wilaya === selectedWilaya)
 
   useEffect(() => {
     // Track that user viewed the contact page
@@ -36,31 +40,25 @@ const ContactPage = () => {
     console.log('All required fields filled:', {
       firstName: !!formData.firstName,
       lastName: !!formData.lastName,
-      email: !!formData.email,
       phone: !!formData.phone,
-      projectType: !!formData.projectType,
-      budget: !!formData.budget
+      product: !!formData.product,
+      wilaya: !!selectedWilaya,
+      quantity: !!formData.quantity
     })
     setIsSubmitting(true)
     setSubmitStatus('idle')
     
     try {
       // Track form submission
-      trackFormSubmission('Contact Form', {
-        project_type: formData.projectType,
-        budget_range: formData.budget,
-        has_description: formData.description.length > 0
-      })
-      
-      // Track lead generation
-      trackFormSubmission('Lead Generation', {
-        lead_source: 'contact_form',
-        project_type: formData.projectType,
-        budget_range: formData.budget
+      trackFormSubmission('Quick Order', {
+        product: formData.product,
+        wilaya: selectedWilaya,
+        delivery_price: selectedWilayaData ? selectedWilayaData.price : undefined,
+        quantity: formData.quantity
       })
       
       // Submit directly to Google Apps Script using form data (avoids CORS)
-      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxcTJsZzOps9jtqm-fcQS0sEIeofbTht101LwWYhGjtmorVt1a4tQpv-QmhEdHfLiVotg/exec'
+      const GOOGLE_SCRIPT_URL = API_CONFIG.GOOGLE_APPS_SCRIPT_URL
       
       console.log('Sending request to:', GOOGLE_SCRIPT_URL)
       
@@ -68,11 +66,11 @@ const ContactPage = () => {
       const formDataToSend = new FormData()
       formDataToSend.append('firstName', formData.firstName)
       formDataToSend.append('lastName', formData.lastName)
-      formDataToSend.append('email', formData.email)
       formDataToSend.append('phone', formData.phone)
-      formDataToSend.append('projectType', formData.projectType)
-      formDataToSend.append('budget', formData.budget)
-      formDataToSend.append('description', formData.description)
+      formDataToSend.append('product', formData.product)
+      formDataToSend.append('quantity', formData.quantity)
+      formDataToSend.append('wilaya', selectedWilaya)
+      if (selectedWilayaData) formDataToSend.append('deliveryPrice', String(selectedWilayaData.price))
       formDataToSend.append('timestamp', new Date().toISOString())
       formDataToSend.append('source', 'website_contact_form')
       
@@ -91,12 +89,12 @@ const ContactPage = () => {
         setFormData({
           firstName: '',
           lastName: '',
-          email: '',
           phone: '',
-          projectType: '',
-          budget: '',
-          description: ''
+          product: '',
+          quantity: '1'
         })
+        setSelectedWilaya('')
+        setWilayaSearch('')
       } else {
         console.log('Form submission failed with status:', response.status)
         throw new Error('Failed to submit form')
@@ -141,16 +139,16 @@ const ContactPage = () => {
           {/* Contact Form Section */}
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-12 md:mb-16">
             {/* Contact Form */}
-            <div className="bg-white bg-opacity-95 backdrop-blur-sm p-6 sm:p-8 md:p-10 rounded-2xl shadow-2xl border border-gray-100">
+              <div className="bg-white bg-opacity-95 backdrop-blur-sm p-6 sm:p-8 md:p-10 rounded-2xl shadow-2xl border border-gray-100">
               <div className="text-center mb-8">
                 <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-amber-100 to-orange-100 rounded-full text-amber-800 text-sm font-semibold mb-4">
-                  <span className="mr-2">🌸</span>
-                  Personal Fragrance Consultation
+                  <span className="mr-2">🛒</span>
+                  Quick Order Form
                 </div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">Find Your Perfect Scent</h2>
-                <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
-                  Tell us about your preferences and let our experts help you discover the ideal fragrance that matches your personality and style.
-                </p>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">Order Your Perfume</h2>
+                  <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
+                  Enter your details, choose your wilaya, and see delivery price instantly.
+                  </p>
               </div>
               
               {/* Success Message */}
@@ -208,19 +206,6 @@ const ContactPage = () => {
                 </div>
                 
                 <div>
-                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">Email Address</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200"
-                    placeholder="your.email@example.com"
-                    required
-                  />
-                </div>
-
-                <div>
                   <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">Phone Number</label>
                   <input
                     type="tel"
@@ -234,53 +219,69 @@ const ContactPage = () => {
                 </div>
 
                 <div>
-                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">Fragrance Preference</label>
-                  <select 
-                    name="projectType"
-                    value={formData.projectType}
+                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">Product</label>
+                  <input
+                    type="text"
+                    name="product"
+                    value={formData.product}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200"
+                    placeholder="Product name or link"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">Quantity</label>
+                  <select
+                    name="quantity"
+                    value={formData.quantity}
                     onChange={handleInputChange}
                     className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200"
                     required
                   >
-                    <option value="">Choose your preferred fragrance type</option>
-                    <option value="fresh">🌸 Fresh & Citrus</option>
-                    <option value="woody">🌲 Woody & Oriental</option>
-                    <option value="floral">🌹 Floral & Romantic</option>
-                    <option value="spicy">🌶️ Spicy & Warm</option>
-                    <option value="aquatic">🌊 Aquatic & Marine</option>
-                    <option value="gourmand">🍰 Gourmand & Sweet</option>
-                    <option value="consultation">💫 Need Personal Consultation</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
                   </select>
                 </div>
 
+                {/* Wilaya + Delivery Price */}
                 <div>
-                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">Budget Range</label>
-                  <select 
-                    name="budget"
-                    value={formData.budget}
-                    onChange={handleInputChange}
+                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">Search Wilaya</label>
+                  <input
+                    type="text"
+                    value={wilayaSearch}
+                    onChange={(e) => setWilayaSearch(e.target.value)}
+                    placeholder="Type wilaya name..."
+                    className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200"
+                  />
+                </div>
+                <div>
+                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">Choose Your Wilaya</label>
+                  <select
+                    value={selectedWilaya}
+                    onChange={(e) => setSelectedWilaya(e.target.value)}
                     className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200"
                     required
                   >
-                    <option value="">Select your budget range</option>
-                    <option value="5k-15k">💰 5,000 - 15,000 DA</option>
-                    <option value="15k-30k">💎 15,000 - 30,000 DA</option>
-                    <option value="30k-100k">👑 30,000 - 100,000 DA</option>
-                    <option value="100k+">✨ 100,000+ DA</option>
-                    <option value="discuss">💬 Let's discuss options</option>
+                    <option value="">Select your wilaya</option>
+                    {deliveryPricingData
+                      .filter(item => item.wilaya.toLowerCase().includes(wilayaSearch.toLowerCase()))
+                      .map(item => (
+                        <option key={item.wilayaCode} value={item.wilaya}>{item.wilaya}</option>
+                      ))}
                   </select>
-                </div>
-
-                <div>
-                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">Fragrance Consultation Details</label>
-                  <textarea
-                    name="description"
-                    value={formData.description}
-                    onChange={handleInputChange}
-                    rows={5}
-                    className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 resize-none"
-                    placeholder="Tell us about your fragrance preferences, occasions you wear perfume for, and any specific scents you love or want to avoid..."
-                  ></textarea>
+                  {selectedWilayaData && (
+                    <div className="mt-3 text-sm text-gray-700">
+                      <div className="font-semibold text-amber-600">
+                        Delivery Price: {selectedWilayaData.price === 0 ? 'FREE' : `${selectedWilayaData.price.toLocaleString()} DA`}
+                      </div>
+                      <div>Estimated delivery: <span className="font-medium">{selectedWilayaData.deliveryTime}</span></div>
+                    </div>
+                  )}
                 </div>
 
                 <button
@@ -289,18 +290,18 @@ const ContactPage = () => {
                   className={`w-full text-white font-semibold text-lg py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${isSubmitting ? 'opacity-50 cursor-not-allowed bg-gray-400' : 'bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600'}`}
                   onClick={() => {
                     console.log('Button clicked!')
-                    console.log('Form data before submit:', formData)
+                    console.log('Form data before submit:', { ...formData, wilaya: selectedWilaya, deliveryPrice: selectedWilayaData?.price })
                     trackButtonClick('Send Message', 'contact_form')
                   }}
                 >
                   {isSubmitting ? (
                     <>
                       <span className="animate-spin mr-2">⏳</span>
-                      Sending Your Request...
+                      Sending Your Order...
                     </>
                   ) : (
                     <>
-                      🌸 Get My Perfect Fragrance Consultation
+                      🛒 Place Order
                     </>
                   )}
                 </button>
@@ -328,12 +329,12 @@ const ContactPage = () => {
                         setFormData({
                           firstName: 'Test',
                           lastName: 'User',
-                          email: 'test@example.com',
                           phone: '1234567890',
-                          projectType: 'clinic',
-                          budget: '200k-400k',
-                          description: 'Test submission'
+                          product: 'Test Product',
+                          quantity: '1'
                         })
+                        setSelectedWilaya('Alger')
+                        setWilayaSearch('Alger')
                         console.log('Form filled with test data')
                       }}
                       className="w-full bg-blue-500 text-white py-2 px-4 rounded text-sm"
