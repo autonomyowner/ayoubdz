@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { trackContact, trackViewContent, trackFormSubmission, trackSchedule, trackButtonClick } from '../utils/facebookPixel'
+import { trackViewContent, trackFormSubmission, trackSchedule, trackButtonClick } from '../utils/facebookPixel'
 import DeliveryPriceSelector from './DeliveryPriceSelector'
 
 const ContactPage = () => {
@@ -108,36 +108,10 @@ const ContactPage = () => {
       setIsSubmitting(false)
     }
   }
-  const contactMethods = [
-    {
-      title: "Email Us",
-      value: "autonomy.owner@gmail.com",
-      description: "Ask about our premium fragrances",
-      link: "mailto:autonomy.owner@gmail.com"
-    },
-    {
-      title: "Call Us",
-      value: "+213 559 94 82 46",
-      description: "Speak with our fragrance experts",
-      link: "tel:+213559948246"
-    },
-    {
-      title: "WhatsApp",
-      value: "+213 559 94 82 46",
-      description: "Quick consultation about scents",
-      link: "https://wa.me/+213559948246"
-    },
-    {
-      title: "Location",
-      value: "Algeria",
-      description: "Premium perfumes delivered nationwide",
-      link: "#"
-    }
-  ]
 
   return (
     <section id="contact-page" className="py-16 px-4 relative overflow-hidden" style={{
-      backgroundImage: "url('/pics/templates/bg price (2).jpg')",
+      backgroundImage: "url('/pics/templates/bg contact.webp')",
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
@@ -163,26 +137,6 @@ const ContactPage = () => {
             We're here to help you find the ideal perfume that matches your personality and style.
           </p>
 
-          {/* Contact Methods Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-12 md:mb-16">
-            {contactMethods.map((method, index) => (
-              <a
-                key={index}
-                href={method.link}
-                target={method.link.startsWith('http') ? "_blank" : undefined}
-                rel={method.link.startsWith('http') ? "noopener noreferrer" : undefined}
-                className="bg-white bg-opacity-90 backdrop-blur-sm p-4 sm:p-6 text-center hover:transform hover:scale-105 transition-all duration-300 rounded-lg shadow-lg"
-                onClick={() => {
-                  trackContact({ method: method.title, value: method.value })
-                  trackButtonClick(`Contact ${method.title}`, 'contact_methods_grid')
-                }}
-              >
-                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-800 mb-1 sm:mb-2">{method.title}</h3>
-                <p className="text-gray-600 text-xs sm:text-sm mb-1 sm:mb-2">{method.description}</p>
-                <div className="text-amber-600 font-semibold text-sm sm:text-base">{method.value}</div>
-              </a>
-            ))}
-          </div>
 
           {/* Contact Form Section */}
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-12 md:mb-16">

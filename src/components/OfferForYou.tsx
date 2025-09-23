@@ -61,7 +61,7 @@ const Services = () => {
               {/* Button */}
               <button 
                 className="parfumerie-blue-button"
-                onClick={() => window.open('/services', '_self')}
+                onClick={() => window.open('/contact', '_self')}
               >
                 Shop Now
               </button>
@@ -110,7 +110,7 @@ const Services = () => {
                     onMouseLeave={(e) => {
                       e.currentTarget.style.background = 'linear-gradient(to right, #03045e, #023e8a)';
                     }}
-                    onClick={() => window.open('/services', '_self')}
+                    onClick={() => window.open('/contact', '_self')}
                   >
                     Shop Now
                   </button>

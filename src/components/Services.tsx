@@ -129,7 +129,10 @@ const Services = () => {
                 </ul>
                 
                 {/* Shop Now Button */}
-                <button className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                <button 
+                  className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  onClick={() => window.open('/contact', '_self')}
+                >
                   Shop Now
                 </button>
               </div>
