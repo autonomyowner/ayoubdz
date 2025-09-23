@@ -398,7 +398,7 @@ const ContactPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="mailto:autonomy.owner@gmail.com?subject=Free Fragrance Consultation Request" 
+                href="mailto:allouaniparfumerie9@gmail.com?subject=Free Fragrance Consultation Request" 
                 className="luxora-green-button text-base px-8 py-3"
                 onClick={() => {
                   trackSchedule('Free Consultation')

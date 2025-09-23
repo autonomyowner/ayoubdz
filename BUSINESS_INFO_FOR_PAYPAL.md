@@ -51,7 +51,7 @@
 ## Business Information
 
 ### Contact Details
-- **Email**: autonomy.owner@gmail.com
+- **Email**: allouaniparfumerie9@gmail.com
 - **WhatsApp**: +213797339451
 - **Website**: [www.sitedz.store]
 - **Business Address**: [algeria]
@@ -125,7 +125,7 @@
 
 **Document Purpose**: This information is provided to PayPal for business verification and account setup purposes.
 
-**Contact for Verification**: autonomy.owner@gmail.com  
+**Contact for Verification**: allouaniparfumerie9@gmail.com  
 **Phone**: +213797339451  
 **Business Website**: sitedz.store
 
