@@ -10,7 +10,7 @@ const ProductGros = () => {
       image: "/pics/templates/tom ford tobaco vanila.jpg",
       price: "From 15,000 DA per unit",
       minOrder: "Minimum 10 units",
-      features: ["Authentic designer brands", "Bulk pricing available", "Original packaging", "Wholesale certificates", "Fast delivery"]
+      features: ["Authentic designer brands", "Bulk pricing available", "Original packaging", "Wholesale certificates", "Free delivery"]
     },
     {
       title: "Niche Fragrances - Bulk",
@@ -18,7 +18,7 @@ const ProductGros = () => {
       image: "/pics/templates/initio.jpg",
       price: "From 18,000 DA per unit",
       minOrder: "Minimum 5 units",
-      features: ["Artisanal craftsmanship", "Limited editions", "Unique compositions", "Bulk discounts", "Expert consultation"]
+      features: ["Artisanal craftsmanship", "Limited editions", "Unique compositions", "Bulk discounts", "Free delivery"]
     },
     {
       title: "Signature Collections - Wholesale",
@@ -26,7 +26,7 @@ const ProductGros = () => {
       image: "/pics/templates/by the fireplace.jpg",
       price: "From 12,000 DA per unit",
       minOrder: "Minimum 15 units",
-      features: ["Seasonal collections", "Themed fragrances", "Bulk packaging", "Marketing support", "Display materials"]
+      features: ["Seasonal collections", "Themed fragrances", "Bulk packaging", "Marketing support", "Free delivery"]
     },
     {
       title: "Men's Luxury Collection - Bulk",
@@ -34,7 +34,7 @@ const ProductGros = () => {
       image: "/pics/templates/oud aud.jpg",
       price: "From 14,000 DA per unit",
       minOrder: "Minimum 8 units",
-      features: ["Masculine elegance", "Modern classics", "Bulk pricing", "Retail support", "Marketing materials"]
+      features: ["Masculine elegance", "Modern classics", "Bulk pricing", "Retail support", "Free delivery"]
     },
     {
       title: "Women's Essence - Wholesale",
@@ -42,7 +42,7 @@ const ProductGros = () => {
       image: "/pics/templates/armani you intensli.jpg",
       price: "From 16,000 DA per unit",
       minOrder: "Minimum 8 units",
-      features: ["Feminine sophistication", "Floral compositions", "Bulk discounts", "Display support", "Training materials"]
+      features: ["Feminine sophistication", "Floral compositions", "Bulk discounts", "Display support", "Free delivery"]
     },
     {
       title: "Unisex Masterpieces - Bulk",
@@ -50,7 +50,7 @@ const ProductGros = () => {
       image: "/pics/templates/ganymede.jpg",
       price: "From 17,000 DA per unit",
       minOrder: "Minimum 6 units",
-      features: ["Gender-neutral appeal", "Modern sophistication", "Bulk packaging", "Marketing support", "Expert training"]
+      features: ["Gender-neutral appeal", "Modern sophistication", "Bulk packaging", "Marketing support", "Free delivery"]
     },
     {
       title: "Vintage Classics - Wholesale",
@@ -58,7 +58,7 @@ const ProductGros = () => {
       image: "/pics/templates/santal royal.jpg",
       price: "From 20,000 DA per unit",
       minOrder: "Minimum 5 units",
-      features: ["Timeless elegance", "Classic compositions", "Collector's items", "Bulk certificates", "Historical documentation"]
+      features: ["Timeless elegance", "Classic compositions", "Collector's items", "Bulk certificates", "Free delivery"]
     },
     {
       title: "Oriental Treasures - Bulk",
@@ -66,7 +66,7 @@ const ProductGros = () => {
       image: "/pics/templates/naxos.jpg",
       price: "From 19,000 DA per unit",
       minOrder: "Minimum 6 units",
-      features: ["Exotic compositions", "Oriental notes", "Cultural authenticity", "Bulk packaging", "Cultural guides"]
+      features: ["Exotic compositions", "Oriental notes", "Cultural authenticity", "Bulk packaging", "Free delivery"]
     },
     {
       title: "Fresh & Aquatic - Wholesale",
@@ -74,7 +74,7 @@ const ProductGros = () => {
       image: "/pics/templates/hacivat.jpg",
       price: "From 11,000 DA per unit",
       minOrder: "Minimum 20 units",
-      features: ["Fresh compositions", "Aquatic notes", "Bulk pricing", "Retail support", "Marketing materials"]
+      features: ["Fresh compositions", "Aquatic notes", "Bulk pricing", "Retail support", "Free delivery"]
     },
     {
       title: "Gourmand Delights - Bulk",
@@ -82,7 +82,7 @@ const ProductGros = () => {
       image: "/pics/templates/devotion 2.jpg",
       price: "From 13,000 DA per unit",
       minOrder: "Minimum 12 units",
-      features: ["Sweet compositions", "Edible inspirations", "Bulk discounts", "Display support", "Sensory marketing"]
+      features: ["Sweet compositions", "Edible inspirations", "Bulk discounts", "Display support", "Free delivery"]
     }
   ]
 
@@ -121,9 +121,6 @@ const ProductGros = () => {
                   alt={product.title}
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
-                <div className="absolute top-4 right-4 bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                  {product.price}
-                </div>
                 <div className="absolute bottom-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
                   {product.minOrder}
                 </div>
