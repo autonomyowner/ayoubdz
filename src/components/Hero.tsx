@@ -49,7 +49,7 @@ const Hero = () => {
           </h1>
 
           {/* Enhanced Subtitle */}
-          <p className="text-xl text-gray-100 mb-10 max-w-3xl mx-auto leading-relaxed drop-shadow-lg subtitle-mobile">
+          <p className="text-xl text-gray-100 mb-10 max-w-3xl mx-auto leading-relaxed drop-shadow-lg subtitle-mobile text-center md:text-left">
             Specialized in premium perfumes and luxury fragrances for discerning customers in Algeria. 
             We bring you the finest scents from around the world to enhance your personal style.
           </p>

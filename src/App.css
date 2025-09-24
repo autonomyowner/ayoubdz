@@ -182,18 +182,23 @@ html {
     min-height: 100vh;
     padding: 4rem 1rem 2rem;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .hero-section-mobile h1 {
     font-size: 2.5rem;
     line-height: 1.2;
     margin-bottom: 1rem;
+    text-align: center;
   }
   
   .hero-section-mobile p {
     font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 2rem;
+    text-align: center;
   }
   
   /* Mobile button optimizations */
