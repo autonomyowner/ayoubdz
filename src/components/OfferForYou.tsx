@@ -18,20 +18,20 @@ const Services = () => {
   ]
 
   return (
-    <section id="services" className="py-16 px-4 parfumerie-bg">
+    <section id="services" className="py-16 px-4 parfumerie-bg section-mobile">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold parfumerie-text mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold parfumerie-text mb-6 title-mobile">
             Our Collections
           </h2>
           
           {/* Professional Mission Statement */}
-          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed subtitle-mobile">
             We are passionate about bringing you the finest fragrances from around the world, carefully curated for the discerning Algerian customer!
           </p>
           
           {/* Quality Badge */}
-          <div className="inline-flex items-center px-6 py-3 parfumerie-card rounded-full parfumerie-text text-sm font-medium mb-8">
+          <div className="inline-flex items-center px-6 py-3 parfumerie-card rounded-full parfumerie-text text-sm font-medium mb-8 badge-mobile">
             <span className="text-center">
               ✨ Authentic & Premium Quality Guaranteed: 
               <span className="parfumerie-orange-text mx-1 font-semibold">Only Original Products</span>
@@ -41,12 +41,40 @@ const Services = () => {
           </div>
         </div>
 
-          {/* Services Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          {/* Services Grid - Desktop */}
+        <div className="hidden md:grid md:grid-cols-3 gap-8 mb-16">
             {services.map((service, index) => (
             <div key={index} className="text-center">
               {/* Circular Image */}
               <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden shadow-lg">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover"
+                />
+          </div>
+
+              {/* Content */}
+              <h3 className="text-xl font-bold parfumerie-text mb-4">{service.title}</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+              
+              {/* Button */}
+              <button 
+                className="parfumerie-blue-button"
+                onClick={() => window.open('/contact', '_self')}
+              >
+                Shop Now
+              </button>
+            </div>
+          ))}
+        </div>
+
+        {/* Services Grid - Mobile */}
+        <div className="md:hidden grid-mobile mb-16">
+            {services.map((service, index) => (
+            <div key={index} className="service-card-mobile">
+              {/* Circular Image */}
+              <div className="service-image-mobile">
                 <img 
                   src={service.image} 
                   alt={service.title}

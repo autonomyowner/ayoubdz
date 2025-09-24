@@ -141,7 +141,7 @@ const Popular = () => {
       {/* Title section with container */}
       <div className="max-w-7xl mx-auto mb-16">
         <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-bold parfumerie-text mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold parfumerie-text mb-6 title-mobile">
             Our most popular perfumes
           </h2>
           <p className="text-gray-400 text-sm md:hidden">
@@ -150,8 +150,8 @@ const Popular = () => {
         </div>
       </div>
 
-      {/* Edge-to-edge cards section */}
-      <div className="relative w-full">
+      {/* Desktop: Edge-to-edge cards section */}
+      <div className="relative w-full hidden md:block">
         <div 
           ref={scrollContainerRef}
           className="flex overflow-x-auto scrollbar-hide cursor-grab select-none"
@@ -184,6 +184,43 @@ const Popular = () => {
               {/* Price Badge */}
               <div className="text-center mt-2">
                 <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                  {template.price.toLocaleString()} DA
+                </span>
+                {template.discount && (
+                  <div className="text-xs text-gray-600 mt-1">خصم {template.discount}%</div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile: Stacked cards section */}
+      <div className="md:hidden">
+        <div className="product-grid-mobile">
+          {templates.map((template, index) => (
+            <div 
+              key={`${template.id}-${index}`} 
+              className="product-card-mobile group cursor-pointer"
+              onClick={() => navigate(`/template/${template.id}`)}
+            >
+              {/* Image */}
+              <div className="product-image-mobile overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                <img 
+                  src={template.image} 
+                  alt={template.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              
+              {/* Title */}
+              <h3 className="text-lg font-bold parfumerie-orange-text text-center mb-2">
+                {template.name}
+              </h3>
+              
+              {/* Price Badge */}
+              <div className="text-center">
+                <span className="badge-mobile">
                   {template.price.toLocaleString()} DA
                 </span>
                 {template.discount && (

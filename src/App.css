@@ -159,3 +159,220 @@ html {
   border-radius: 0 0 50% 50%;
   z-index: -1;
 }
+
+/* Mobile-specific optimizations for existing components */
+@media (max-width: 768px) {
+  /* Mobile navbar improvements */
+  .navbar-mobile {
+    height: 60px;
+    padding: 0 1rem;
+  }
+  
+  .navbar-mobile .logo {
+    height: 40px;
+    width: 40px;
+  }
+  
+  .navbar-mobile h1 {
+    font-size: 1.125rem;
+  }
+  
+  /* Mobile hero section optimizations */
+  .hero-section-mobile {
+    min-height: 100vh;
+    padding: 4rem 1rem 2rem;
+    text-align: center;
+  }
+  
+  .hero-section-mobile h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-section-mobile p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+  
+  /* Mobile button optimizations */
+  .parfumerie-button,
+  .parfumerie-blue-button,
+  .orange-button {
+    min-height: 44px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+    margin: 0.5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Mobile product cards */
+  .product-card-mobile {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 1.5rem 0;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: white;
+  }
+  
+  .product-image-mobile {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Mobile service cards */
+  .service-card-mobile {
+    text-align: center;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-image-mobile {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  /* Mobile form optimizations */
+  .form-mobile {
+    padding: 1rem;
+  }
+  
+  .form-mobile input,
+  .form-mobile textarea,
+  .form-mobile select {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 2px solid #e5e7eb;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .form-mobile textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  /* Mobile section spacing */
+  .section-mobile {
+    padding: 2rem 1rem;
+  }
+  
+  /* Mobile text optimizations */
+  .title-mobile {
+    font-size: 2rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .subtitle-mobile {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  /* Mobile price display */
+  .price-mobile {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--parfumerie-orange);
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+  
+  /* Mobile badge */
+  .badge-mobile {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--parfumerie-orange);
+    color: white;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+  
+  /* Mobile horizontal scroll container */
+  .scroll-container-mobile {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 1rem 0;
+  }
+  
+  .scroll-container-mobile::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scroll-item-mobile {
+    flex-shrink: 0;
+    width: 280px;
+    margin-right: 1rem;
+  }
+  
+  /* Mobile grid layouts */
+  .grid-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  /* Mobile contact section */
+  .contact-mobile {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  /* Mobile footer */
+  .footer-mobile {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+}
+
+/* Extra small devices (phones in portrait) */
+@media (max-width: 480px) {
+  .hero-section-mobile h1 {
+    font-size: 2rem;
+  }
+  
+  .title-mobile {
+    font-size: 1.75rem;
+  }
+  
+  .scroll-item-mobile {
+    width: 250px;
+  }
+  
+  .service-image-mobile {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .product-image-mobile {
+    height: 180px;
+  }
+}

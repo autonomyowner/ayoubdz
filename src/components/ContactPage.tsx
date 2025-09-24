@@ -108,7 +108,7 @@ const ContactPage = () => {
   }
 
   return (
-    <section id="contact-page" className="py-16 px-4 relative overflow-hidden" style={{
+    <section id="contact-page" className="py-16 px-4 relative overflow-hidden section-mobile" style={{
       backgroundImage: "url('/pics/templates/bg contact.webp')",
       backgroundSize: 'cover',
       backgroundPosition: 'center',
@@ -119,18 +119,18 @@ const ContactPage = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center">
           {/* Badge */}
-          <div className="inline-flex items-center px-3 sm:px-4 py-2 bg-white bg-opacity-90 rounded-full text-gray-800 text-xs sm:text-sm font-medium mb-6 sm:mb-8 shadow-lg">
+          <div className="inline-flex items-center px-3 sm:px-4 py-2 bg-white bg-opacity-90 rounded-full text-gray-800 text-xs sm:text-sm font-medium mb-6 sm:mb-8 shadow-lg badge-mobile">
             <span className="text-center">✨ Premium Perfumes & Luxury Fragrances</span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-lg">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-lg title-mobile">
             Contact
             <span className="block text-amber-400">Allouna Perfum</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0 drop-shadow-md">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0 drop-shadow-md subtitle-mobile">
             Ready to discover your perfect signature scent? Get in touch with us to explore our premium collection of luxury fragrances. 
             We're here to help you find the ideal perfume that matches your personality and style.
           </p>
@@ -177,7 +177,7 @@ const ContactPage = () => {
                 </div>
               )}
 
-              <form className="space-y-6" onSubmit={handleFormSubmit}>
+              <form className="space-y-6 form-mobile" onSubmit={handleFormSubmit}>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">First Name</label>
@@ -186,7 +186,7 @@ const ContactPage = () => {
                       name="firstName"
                       value={formData.firstName}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200"
+                      className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 mobile-input"
                       placeholder="Enter your first name"
                       required
                     />
@@ -198,7 +198,7 @@ const ContactPage = () => {
                       name="lastName"
                       value={formData.lastName}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200"
+                      className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 mobile-input"
                       placeholder="Enter your last name"
                       required
                     />
@@ -212,7 +212,7 @@ const ContactPage = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200"
+                    className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 mobile-input"
                     placeholder="+213 559 94 82 46"
                     required
                   />
@@ -225,7 +225,7 @@ const ContactPage = () => {
                     name="product"
                     value={formData.product}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200"
+                    className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 mobile-input"
                     placeholder="Product name or link"
                     required
                   />
@@ -237,7 +237,7 @@ const ContactPage = () => {
                     name="quantity"
                     value={formData.quantity}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200"
+                    className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 mobile-input"
                     required
                   >
                     <option value="1">1</option>
@@ -256,7 +256,7 @@ const ContactPage = () => {
                     value={wilayaSearch}
                     onChange={(e) => setWilayaSearch(e.target.value)}
                     placeholder="Type wilaya name..."
-                    className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200"
+                    className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 mobile-input"
                   />
                 </div>
                 <div>
@@ -264,7 +264,7 @@ const ContactPage = () => {
                   <select
                     value={selectedWilaya}
                     onChange={(e) => setSelectedWilaya(e.target.value)}
-                    className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200"
+                    className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 mobile-input"
                     required
                   >
                     <option value="">Select your wilaya</option>
@@ -287,7 +287,7 @@ const ContactPage = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full text-white font-semibold text-lg py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${isSubmitting ? 'opacity-50 cursor-not-allowed bg-gray-400' : 'bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600'}`}
+                  className={`w-full text-white font-semibold text-lg py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl mobile-button ${isSubmitting ? 'opacity-50 cursor-not-allowed bg-gray-400' : 'bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600'}`}
                   onClick={() => {
                     console.log('Button clicked!')
                     console.log('Form data before submit:', { ...formData, wilaya: selectedWilaya, deliveryPrice: selectedWilayaData?.price })
