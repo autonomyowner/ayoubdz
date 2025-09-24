@@ -110,7 +110,7 @@ const ContactPage = () => {
   }
 
   return (
-    <section id="contact-page" className="py-16 px-4 relative overflow-hidden section-mobile" style={{
+    <section id="contact-page" className="py-8 sm:py-12 md:py-16 px-3 sm:px-4 relative overflow-hidden section-mobile" style={{
       backgroundImage: "url('/pics/templates/background image.jpg')",
       backgroundSize: 'cover',
       backgroundPosition: 'center',
@@ -125,32 +125,32 @@ const ContactPage = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center">
           {/* Badge */}
-          <div className="inline-flex items-center px-3 sm:px-4 py-2 bg-white bg-opacity-90 rounded-full text-gray-800 text-xs sm:text-sm font-medium mb-6 sm:mb-8 shadow-lg badge-mobile">
+          <div className="inline-flex items-center px-3 py-2 bg-white bg-opacity-90 rounded-full text-gray-800 text-xs font-medium mb-4 sm:mb-6 shadow-lg">
             <span className="text-center">{t('contactPage.badge')}</span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-lg title-mobile">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight drop-shadow-lg px-2">
             {t('contactPage.title')}
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0 drop-shadow-md subtitle-mobile">
+          <p className="text-sm sm:text-base md:text-lg text-white mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-3 sm:px-0 drop-shadow-md">
             {t('contactPage.subtitle')}
           </p>
 
 
           {/* Contact Form Section */}
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-12 md:mb-16">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 md:mb-12">
             {/* Contact Form */}
-              <div className="bg-white bg-opacity-95 backdrop-blur-sm p-4 sm:p-6 md:p-6 rounded-xl shadow-xl border border-gray-100">
-              <div className="text-center mb-6">
-                <div className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-amber-100 to-orange-100 rounded-full text-amber-800 text-xs font-semibold mb-3">
+              <div className="bg-white bg-opacity-95 backdrop-blur-sm p-3 sm:p-4 md:p-6 rounded-lg shadow-xl border border-gray-100">
+              <div className="text-center mb-4 sm:mb-6">
+                <div className="inline-flex items-center px-2 py-1 bg-gradient-to-r from-amber-100 to-orange-100 rounded-full text-amber-800 text-xs font-semibold mb-2">
                   <span className="mr-1">🛒</span>
                   {t('contactPage.form.badge')}
                 </div>
-                  <h2 className="text-xl sm:text-2xl md:text-2xl font-bold text-gray-800 mb-3">{t('contactPage.form.title')}</h2>
-                  <p className="text-gray-600 text-sm leading-relaxed max-w-2xl mx-auto">
+                  <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-2">{t('contactPage.form.title')}</h2>
+                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
                   {t('contactPage.form.subtitle')}
                   </p>
               </div>
@@ -181,16 +181,16 @@ const ContactPage = () => {
                 </div>
               )}
 
-              <form className="space-y-4 form-mobile" onSubmit={handleFormSubmit}>
-                <div className="grid md:grid-cols-2 gap-4">
+              <form className="space-y-3 sm:space-y-4" onSubmit={handleFormSubmit}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div>
-                    <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">{t('contactPage.form.firstName')}</label>
+                    <label className="block text-gray-800 font-semibold mb-2 text-xs sm:text-sm uppercase tracking-wide">{t('contactPage.form.firstName')}</label>
                     <input
                       type="text"
                       name="firstName"
                       value={formData.firstName}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 mobile-input"
+                      className="w-full px-3 py-2 sm:py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 text-sm sm:text-base"
                       placeholder={t('contactPage.form.firstNamePlaceholder')}
                       required
                     />
@@ -202,7 +202,7 @@ const ContactPage = () => {
                       name="lastName"
                       value={formData.lastName}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 mobile-input"
+                      className="w-full px-3 py-2 sm:py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 text-sm sm:text-base"
                       placeholder={t('contactPage.form.lastNamePlaceholder')}
                       required
                     />
@@ -291,7 +291,7 @@ const ContactPage = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full text-white font-semibold text-lg py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl mobile-button ${isSubmitting ? 'opacity-50 cursor-not-allowed bg-gray-400' : 'bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600'}`}
+                  className={`w-full text-white font-semibold text-sm sm:text-base py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${isSubmitting ? 'opacity-50 cursor-not-allowed bg-gray-400' : 'bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600'}`}
                   onClick={() => {
                     console.log('Button clicked!')
                     console.log('Form data before submit:', { ...formData, wilaya: selectedWilaya, deliveryPrice: selectedWilayaData?.price })
@@ -351,9 +351,9 @@ const ContactPage = () => {
             </div>
 
             {/* Why Choose Allouani Perfum */}
-            <div className="space-y-8">
+            <div className="space-y-4 sm:space-y-6">
               <div 
-                className="relative p-6 sm:p-8 md:p-12 rounded-2xl shadow-2xl overflow-hidden min-h-[500px] md:min-h-[600px]"
+                className="relative p-4 sm:p-6 md:p-8 rounded-lg shadow-xl overflow-hidden min-h-[400px] sm:min-h-[450px] md:min-h-[500px]"
                 style={{
                   backgroundImage: "url('/pics/templates/guy.jpg')",
                   backgroundSize: 'cover',
@@ -362,26 +362,26 @@ const ContactPage = () => {
                 }}
               >
                 {/* Overlay for better text readability */}
-                <div className="absolute inset-0 bg-black bg-opacity-50 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
                 
                 {/* Content */}
                 <div className="relative z-10 h-full flex flex-col justify-center">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 sm:mb-8">{t('contactPage.whyChoose.title')}</h3>
-                  <ul className="space-y-3 sm:space-y-4 text-white text-base sm:text-lg md:text-xl">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-4 sm:mb-6">{t('contactPage.whyChoose.title')}</h3>
+                  <ul className="space-y-2 sm:space-y-3 text-white text-sm sm:text-base">
                     <li className="flex items-center">
-                      <span className="mr-4 text-2xl">•</span>
+                      <span className="mr-3 text-lg sm:text-xl">•</span>
                       {t('contactPage.whyChoose.expert')}
                     </li>
                     <li className="flex items-center">
-                      <span className="mr-4 text-2xl">•</span>
+                      <span className="mr-3 text-lg sm:text-xl">•</span>
                       {t('contactPage.whyChoose.authentic')}
                     </li>
                     <li className="flex items-center">
-                      <span className="mr-4 text-2xl">•</span>
+                      <span className="mr-3 text-lg sm:text-xl">•</span>
                       {t('contactPage.whyChoose.personal')}
                     </li>
                     <li className="flex items-center">
-                      <span className="mr-4 text-2xl">•</span>
+                      <span className="mr-3 text-lg sm:text-xl">•</span>
                       {t('contactPage.whyChoose.delivery')}
                     </li>
                   </ul>
@@ -391,20 +391,20 @@ const ContactPage = () => {
           </div>
 
           {/* Delivery Price Selector */}
-          <div className="mb-8 sm:mb-12 md:mb-16">
+          <div className="mb-6 sm:mb-8 md:mb-12">
             <DeliveryPriceSelector />
           </div>
 
           {/* CTA Section */}
-          <div className="text-center">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 drop-shadow-lg">{t('contactPage.cta.title')}</h3>
-            <p className="text-lg text-white mb-8 max-w-3xl mx-auto drop-shadow-md">
+          <div className="text-center px-3 sm:px-0">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-4 drop-shadow-lg">{t('contactPage.cta.title')}</h3>
+            <p className="text-sm sm:text-base text-white mb-6 max-w-2xl mx-auto drop-shadow-md">
               {t('contactPage.cta.description')}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <a 
                 href="mailto:allouaniparfumerie9@gmail.com?subject=Free Fragrance Consultation Request" 
-                className="luxora-green-button text-base px-8 py-3"
+                className="text-sm sm:text-base px-6 sm:px-8 py-2 sm:py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors"
                 onClick={() => {
                   trackSchedule('Free Consultation')
                   trackButtonClick('Book Free Consultation', 'cta_section')
@@ -414,13 +414,13 @@ const ContactPage = () => {
               </a>
               <a 
                 href="/services" 
-                className="luxora-button text-base px-8 py-3"
+                className="text-sm sm:text-base px-6 sm:px-8 py-2 sm:py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
               >
-                <span className="mr-2">🌸</span>
+                <span className="mr-1 sm:mr-2">🌸</span>
                 {t('contactPage.cta.viewPerfumes')}
               </a>
             </div>
-            <div className="mt-4 text-white text-sm drop-shadow-md">{t('contactPage.cta.support')}</div>
+            <div className="mt-3 text-white text-xs sm:text-sm drop-shadow-md">{t('contactPage.cta.support')}</div>
           </div>
         </div>
       </div>
