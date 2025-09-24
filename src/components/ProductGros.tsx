@@ -1,4 +1,8 @@
+import { useLanguage } from '../contexts/LanguageContext'
+
 const ProductGros = () => {
+  const { t } = useLanguage()
+  
   const wholesaleProducts = [
     {
       title: "Luxury Perfumes - Wholesale",
@@ -89,23 +93,19 @@ const ProductGros = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-amber-100 rounded-full text-amber-800 text-sm font-semibold mb-6 shadow-lg">
             <span className="mr-2">🏪</span>
-            Wholesale Perfume Products
+            {t('productGros.badge')}
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            Product <span className="text-amber-600">Gros</span> - Wholesale
+            {t('productGros.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
-            Discover our exclusive wholesale perfume collections designed for retailers, boutiques, and business owners. 
-            Get competitive bulk pricing, authentic products, and comprehensive business support.
+            {t('productGros.subtitle')}
           </p>
           
           {/* Wholesale Badge */}
           <div className="inline-flex items-center px-6 py-3 bg-amber-500 rounded-full text-white text-sm font-semibold mb-8 shadow-lg">
             <span className="text-center">
-              🏢 <span className="font-bold">Wholesale Benefits:</span> 
-              <span className="mx-2">Bulk Pricing</span> • 
-              <span className="mx-2">Business Support</span> • 
-              <span className="mx-2">Fast Delivery</span>
+              {t('productGros.benefitsBadge')}
             </span>
           </div>
         </div>
@@ -149,7 +149,7 @@ const ProductGros = () => {
                   className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                   onClick={() => window.open('/contact', '_self')}
                 >
-                  Contact for Wholesale
+                  {t('productGros.contactWholesale')}
                 </button>
               </div>
             </div>
@@ -161,17 +161,15 @@ const ProductGros = () => {
         <div className="bg-gradient-to-r from-amber-500 to-orange-500 rounded-3xl shadow-2xl p-8 md:p-12">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-semibold mb-6 shadow-lg">
-              <span className="text-center">🏢 Start Your Wholesale Business Today</span>
+              <span className="text-center">{t('productGros.cta.badge')}</span>
             </div>
             
             <h3 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              Ready to Start Your
-              <span className="block text-amber-100">Perfume Business?</span>
+              {t('productGros.cta.title')}
             </h3>
             
             <p className="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Join hundreds of successful retailers who trust us for their perfume wholesale needs. 
-              Get started with competitive pricing, authentic products, and comprehensive business support.
+              {t('productGros.cta.description')}
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -179,14 +177,14 @@ const ProductGros = () => {
                 className="bg-white text-amber-600 px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 hover:bg-amber-50"
                 onClick={() => window.open('/contact', '_self')}
               >
-                Get Wholesale Pricing
+                {t('productGros.cta.getPricing')}
               </button>
               
               <button 
                 className="bg-amber-600 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 hover:bg-amber-700"
                 onClick={() => window.open('tel:+213671389113', '_self')}
               >
-                Call Now: +213 671 38 91 13
+                {t('productGros.cta.callNow')}
               </button>
             </div>
           </div>

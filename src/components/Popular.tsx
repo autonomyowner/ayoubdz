@@ -1,10 +1,12 @@
 import { useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { templates } from '../data/templates'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Popular = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const navigate = useNavigate()
+  const { t } = useLanguage()
 
   // Create exactly 2 copies for perfect seamless loop
   const duplicatedTemplates = [...templates, ...templates]
@@ -142,10 +144,10 @@ const Popular = () => {
       <div className="max-w-7xl mx-auto mb-16">
         <div className="text-center">
           <h2 className="text-4xl md:text-5xl font-bold parfumerie-text mb-6 title-mobile">
-            Our most popular perfumes
+            {t('popular.title')}
           </h2>
           <p className="text-gray-400 text-sm md:hidden">
-            Swipe left or right to browse • Tap and drag to scroll
+            {t('popular.mobileHint')}
           </p>
         </div>
       </div>

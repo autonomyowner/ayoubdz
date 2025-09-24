@@ -1,6 +1,6 @@
-# Allouna Perfum Template
+# Allouani Perfum Template
 
-A modern, responsive e-commerce website template for Allouna Perfum - featuring premium fragrance products with PayPal integration and Facebook Pixel tracking.
+A modern, responsive e-commerce website template for Allouani Perfum - featuring premium fragrance products with PayPal integration and Facebook Pixel tracking.
 
 ## 🚀 Features
 
@@ -73,7 +73,7 @@ The built files will be in the `dist` folder, ready for deployment.
 
 ## 📊 Business Information
 
-### Allouna Perfum Details
+### Allouani Perfum Details
 
 - **Business Type**: Premium fragrance e-commerce
 - **Target Audience**: Fragrance enthusiasts, luxury shoppers
@@ -137,8 +137,8 @@ All content is easily editable in the component files:
 
 ## 📄 License
 
-This project is created for Allouna Perfum. All rights reserved.
+This project is created for Allouani Perfum. All rights reserved.
 
 ---
 
-Built with ❤️ for Allouna Perfum e-commerce
+Built with ❤️ for Allouani Perfum e-commerce

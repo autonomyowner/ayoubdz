@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { useLanguage } from '../contexts/LanguageContext'
+import LanguageSwitcher from './LanguageSwitcher'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const location = useLocation()
+  const { t } = useLanguage()
 
   return (
     <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
@@ -29,31 +32,32 @@ const Navbar = () => {
               to="/" 
               className={`transition-colors ${location.pathname === '/' ? 'parfumerie-orange-text' : 'parfumerie-text hover:parfumerie-orange-text'}`}
             >
-              Home
+              {t('nav.home')}
             </Link>
             <Link 
               to="/services" 
               className={`transition-colors ${location.pathname === '/services' ? 'parfumerie-orange-text' : 'parfumerie-text hover:parfumerie-orange-text'}`}
             >
-              Perfumes
+              {t('nav.perfumes')}
             </Link>
             <Link 
               to="/product-gros" 
               className={`transition-colors ${location.pathname === '/product-gros' ? 'parfumerie-orange-text' : 'parfumerie-text hover:parfumerie-orange-text'}`}
             >
-              Product Gros
+              {t('nav.productGros')}
             </Link>
             <Link 
               to="/contact" 
               className={`transition-colors ${location.pathname === '/contact' ? 'parfumerie-orange-text' : 'parfumerie-text hover:parfumerie-orange-text'}`}
             >
-              Contact
+              {t('nav.contact')}
             </Link>
+            <LanguageSwitcher />
             <button 
               className="orange-button"
               onClick={() => window.open('/contact', '_self')}
             >
-              SHOP NOW
+              {t('nav.shopNow')}
             </button>
           </div>
 
@@ -75,29 +79,32 @@ const Navbar = () => {
                 className={`block px-3 py-2 transition-colors ${location.pathname === '/' ? 'parfumerie-orange-text' : 'parfumerie-text hover:parfumerie-orange-text'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Home
+                {t('nav.home')}
               </Link>
               <Link 
                 to="/services" 
                 className={`block px-3 py-2 transition-colors ${location.pathname === '/services' ? 'parfumerie-orange-text' : 'parfumerie-text hover:parfumerie-orange-text'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Perfumes
+                {t('nav.perfumes')}
               </Link>
               <Link 
                 to="/product-gros" 
                 className={`block px-3 py-2 transition-colors ${location.pathname === '/product-gros' ? 'parfumerie-orange-text' : 'parfumerie-text hover:parfumerie-orange-text'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Product Gros
+                {t('nav.productGros')}
               </Link>
               <Link 
                 to="/contact" 
                 className={`block px-3 py-2 transition-colors ${location.pathname === '/contact' ? 'parfumerie-orange-text' : 'parfumerie-text hover:parfumerie-orange-text'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Contact
+                {t('nav.contact')}
               </Link>
+              <div className="px-3 py-2">
+                <LanguageSwitcher />
+              </div>
               <button 
                 className="block mx-3 my-2 orange-button w-full text-center"
                 onClick={() => {
@@ -105,7 +112,7 @@ const Navbar = () => {
                   setIsMenuOpen(false)
                 }}
               >
-                SHOP NOW
+                {t('nav.shopNow')}
               </button>
             </div>
           </div>

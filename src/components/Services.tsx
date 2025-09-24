@@ -143,7 +143,7 @@ const Services = () => {
         {/* Why Choose Us Section */}
         <div className="bg-white bg-opacity-95 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-gray-100">
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-gray-800 mb-4">Why Choose Allouna Perfum?</h3>
+            <h3 className="text-3xl font-bold text-gray-800 mb-4">Why Choose Allouani Perfum?</h3>
             <p className="text-gray-600 text-lg">We guarantee authenticity, quality, and exceptional service</p>
           </div>
 

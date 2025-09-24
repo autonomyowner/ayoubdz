@@ -1,14 +1,16 @@
 import Typewriter from './Typewriter'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Hero = () => {
   const backgroundImagePath = "/pics/templates/background image.jpg"
+  const { t } = useLanguage()
   
   const typewriterWords = [
-    "Premium Perfumes",
-    "Luxury Fragrances", 
-    "Exotic Scents",
-    "Designer Brands",
-    "Signature Collections"
+    t('hero.typewriter.premium'),
+    t('hero.typewriter.luxury'), 
+    t('hero.typewriter.exotic'),
+    t('hero.typewriter.designer'),
+    t('hero.typewriter.signature')
   ]
 
   return (
@@ -31,12 +33,12 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           {/* Enhanced Badge */}
           <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-amber-400/90 to-orange-500/90 backdrop-blur-sm rounded-full text-white text-sm font-semibold mb-8 shadow-xl border border-white/20 badge-mobile">
-            ✨ Premium Perfumes & Fragrances in Algeria
+            {t('hero.badge')}
           </div>
 
           {/* Enhanced Main Heading */}
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl hero-mobile">
-            Discover
+            {t('hero.title')}
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-500 to-amber-600">
               <Typewriter 
                 words={typewriterWords}
@@ -50,8 +52,7 @@ const Hero = () => {
 
           {/* Enhanced Subtitle */}
           <p className="text-xl text-gray-100 mb-10 max-w-3xl mx-auto leading-relaxed drop-shadow-lg subtitle-mobile">
-            Specialized in premium perfumes and luxury fragrances for discerning customers in Algeria. 
-            We bring you the finest scents from around the world to enhance your personal style.
+            {t('hero.subtitle')}
           </p>
 
           {/* Enhanced CTA Buttons */}
@@ -69,7 +70,7 @@ const Hero = () => {
               }}
               onClick={() => window.open('/services', '_self')}
             >
-              Shop Perfumes
+              {t('hero.shopPerfumes')}
             </button>
             <button 
               className="text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 border border-[#03045e]/30 mobile-button"
@@ -84,7 +85,7 @@ const Hero = () => {
               }}
               onClick={() => window.open('/services', '_self')}
             >
-              View Collections
+              {t('hero.viewCollections')}
             </button>
           </div>
         </div>

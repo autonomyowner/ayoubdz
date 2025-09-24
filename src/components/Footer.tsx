@@ -1,12 +1,16 @@
+import { useLanguage } from '../contexts/LanguageContext'
+
 const Footer = () => {
+  const { t } = useLanguage()
+  
   return (
     <footer className="parfumerie-bg border-t border-gray-200">
       <div className="max-w-7xl mx-auto py-12 px-4">
         {/* Top Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="text-center md:text-left mb-6 md:mb-0">
-            <h3 className="text-3xl font-bold parfumerie-text mb-2">Parfumerie Allouani</h3>
-            <p className="text-gray-600">Premium Perfumes & Fragrances For Algerian Customers</p>
+            <h3 className="text-3xl font-bold parfumerie-text mb-2">{t('footer.company')}</h3>
+            <p className="text-gray-600">{t('footer.description')}</p>
           </div>
           <div className="text-center md:text-right">
             <p className="parfumerie-text mb-4">Monday to Friday 9am to 6pm</p>
@@ -14,7 +18,7 @@ const Footer = () => {
               className="orange-button"
               onClick={() => window.open('/contact', '_self')}
             >
-              SHOP NOW
+              {t('nav.shopNow')}
             </button>
           </div>
         </div>

@@ -1,19 +1,23 @@
+import { useLanguage } from '../contexts/LanguageContext'
+
 const Services = () => {
+  const { t } = useLanguage()
+  
   const services = [
     {
       image: "/pics/templates/tom ford tobaco vanila.jpg",
-      title: "Luxury Perfumes",
-      description: "Premium designer fragrances from top brands like Tom Ford, Armani, and Dior. Authentic products with guaranteed quality and elegant presentation."
+      title: t('services.luxuryPerfumes.title'),
+      description: t('services.luxuryPerfumes.description')
     },
     {
       image: "/pics/templates/initio.jpg",
-      title: "Niche Fragrances",
-      description: "Exclusive and rare perfumes from artisanal houses like Initio, Xerjoff, and Maison Francis Kurkdjian. Unique scents for discerning customers."
+      title: t('services.nicheFragrances.title'),
+      description: t('services.nicheFragrances.description')
     },
     {
       image: "/pics/templates/by the fireplace.jpg",
-      title: "Signature Collections",
-      description: "Curated collections of seasonal and themed fragrances. From warm winter scents to fresh summer perfumes, we have the perfect scent for every occasion."
+      title: t('services.signatureCollections.title'),
+      description: t('services.signatureCollections.description')
     }
   ]
 
@@ -22,21 +26,18 @@ const Services = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold parfumerie-text mb-6 title-mobile">
-            Our Collections
+            {t('services.title')}
           </h2>
           
           {/* Professional Mission Statement */}
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed subtitle-mobile">
-            We are passionate about bringing you the finest fragrances from around the world, carefully curated for the discerning Algerian customer!
+            {t('services.subtitle')}
           </p>
           
           {/* Quality Badge */}
           <div className="inline-flex items-center px-6 py-3 parfumerie-card rounded-full parfumerie-text text-sm font-medium mb-8 badge-mobile">
             <span className="text-center">
-              ✨ Authentic & Premium Quality Guaranteed: 
-              <span className="parfumerie-orange-text mx-1 font-semibold">Only Original Products</span>
-              with 
-              <span className="parfumerie-orange-text mx-1 font-semibold">Expert Fragrance Advice</span>
+              {t('services.qualityBadge')}
             </span>
           </div>
         </div>
@@ -63,7 +64,7 @@ const Services = () => {
                 className="parfumerie-blue-button"
                 onClick={() => window.open('/contact', '_self')}
               >
-                Shop Now
+                {t('services.shopNow')}
               </button>
             </div>
           ))}
@@ -91,7 +92,7 @@ const Services = () => {
                 className="parfumerie-blue-button"
                 onClick={() => window.open('/contact', '_self')}
               >
-                Shop Now
+                {t('services.shopNow')}
               </button>
             </div>
           ))}
@@ -113,17 +114,15 @@ const Services = () => {
             <div className="relative z-10 h-full flex items-center justify-center">
               <div className="text-center max-w-4xl mx-auto px-6">
                 <div className="inline-flex items-center px-6 py-3 bg-white/90 backdrop-blur-sm rounded-full text-gray-800 text-sm font-semibold mb-6 shadow-lg">
-                  <span className="text-center">✨ Premium Collection Showcase</span>
+                  <span className="text-center">{t('services.showcase.badge')}</span>
                 </div>
                 
                 <h3 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-                  Discover Our
-                  <span className="block text-amber-400">Luxury Fragrance Collection</span>
+                  {t('services.showcase.title')}
                 </h3>
                 
                 <p className="text-lg md:text-xl text-white mb-8 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
-                  Experience the finest selection of premium perfumes from world-renowned brands. 
-                  Each fragrance is carefully curated to bring you the ultimate luxury scent experience.
+                  {t('services.showcase.description')}
                 </p>
                 
                 <div className="flex justify-center">
@@ -140,7 +139,7 @@ const Services = () => {
                     }}
                     onClick={() => window.open('/contact', '_self')}
                   >
-                    Shop Now
+                    {t('services.showcase.shopNow')}
                   </button>
                 </div>
               </div>

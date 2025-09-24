@@ -1,4 +1,8 @@
+import { useLanguage } from '../contexts/LanguageContext'
+
 const About = () => {
+  const { t } = useLanguage()
+  
   return (
     <section id="about" className="py-16 px-4 bg-gray-50">
       <div className="max-w-7xl mx-auto">
@@ -6,18 +10,16 @@ const About = () => {
           {/* Left Content */}
           <div className="text-center md:text-left">
             <h2 className="text-4xl md:text-5xl font-bold parfumerie-text mb-6">
-              Luxury fragrances meet authentic craftsmanship
+              {t('about.title')}
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              We specialize in curating premium perfumes and luxury fragrances for discerning customers in Algeria. 
-              Our collection combines authentic brands with expert knowledge to deliver scents that enhance your 
-              personal style, create lasting impressions, and reflect your unique personality.
+              {t('about.description')}
             </p>
             <button 
               className="parfumerie-blue-button"
               onClick={() => window.open('/services', '_self')}
             >
-              SHOP PERFUMES
+              {t('about.shopButton')}
             </button>
           </div>
 

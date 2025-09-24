@@ -1,4 +1,8 @@
+import { useLanguage } from '../contexts/LanguageContext'
+
 const Contact = () => {
+  const { t } = useLanguage()
+  
   return (
     <section id="contact" className="py-16 px-4 relative overflow-hidden section-mobile">
       {/* Semi-circular background */}
@@ -9,18 +13,16 @@ const Contact = () => {
           {/* Left Content - Text */}
           <div className="text-center md:text-left px-8 py-12 contact-mobile">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 title-mobile">
-              Lets Chat
+              {t('contact.title')}
             </h2>
             <p className="text-gray-700 text-lg leading-relaxed mb-8 subtitle-mobile">
-              Ready to discover your perfect signature scent? 
-              We'd love to help you find the ideal fragrance that matches your personality and style. 
-              Get in touch with us today and let's explore the world of luxury perfumes together.
+              {t('contact.description')}
             </p>
             <button 
               className="orange-button mobile-button"
               onClick={() => window.open('/contact', '_self')}
             >
-              SHOP NOW
+              {t('contact.shopNow')}
             </button>
           </div>
 

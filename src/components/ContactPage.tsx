@@ -3,8 +3,10 @@ import { trackViewContent, trackFormSubmission, trackSchedule, trackButtonClick 
 import DeliveryPriceSelector from './DeliveryPriceSelector'
 import { API_CONFIG } from '../config/api'
 import { deliveryPricingData } from '../data/deliveryPricing'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const ContactPage = () => {
+  const { t } = useLanguage()
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -120,19 +122,17 @@ const ContactPage = () => {
         <div className="text-center">
           {/* Badge */}
           <div className="inline-flex items-center px-3 sm:px-4 py-2 bg-white bg-opacity-90 rounded-full text-gray-800 text-xs sm:text-sm font-medium mb-6 sm:mb-8 shadow-lg badge-mobile">
-            <span className="text-center">✨ Premium Perfumes & Luxury Fragrances</span>
+            <span className="text-center">{t('contactPage.badge')}</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-lg title-mobile">
-            Contact
-            <span className="block text-amber-400">Allouna Perfum</span>
+            {t('contactPage.title')}
           </h1>
 
           {/* Subtitle */}
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0 drop-shadow-md subtitle-mobile">
-            Ready to discover your perfect signature scent? Get in touch with us to explore our premium collection of luxury fragrances. 
-            We're here to help you find the ideal perfume that matches your personality and style.
+            {t('contactPage.subtitle')}
           </p>
 
 
@@ -143,11 +143,11 @@ const ContactPage = () => {
               <div className="text-center mb-8">
                 <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-amber-100 to-orange-100 rounded-full text-amber-800 text-sm font-semibold mb-4">
                   <span className="mr-2">🛒</span>
-                  Quick Order Form
+                  {t('contactPage.form.badge')}
                 </div>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">Order Your Perfume</h2>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">{t('contactPage.form.title')}</h2>
                   <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
-                  Enter your details, choose your wilaya, and see delivery price instantly.
+                  {t('contactPage.form.subtitle')}
                   </p>
               </div>
               
@@ -157,8 +157,8 @@ const ContactPage = () => {
                   <div className="flex items-center">
                     <span className="text-green-600 text-xl mr-2">✅</span>
                     <div>
-                      <strong>Message sent successfully!</strong>
-                      <p className="text-sm mt-1">We'll get back to you within 24 hours.</p>
+                      <strong>{t('contactPage.form.success.title')}</strong>
+                      <p className="text-sm mt-1">{t('contactPage.form.success.message')}</p>
                     </div>
                   </div>
                 </div>
@@ -170,8 +170,8 @@ const ContactPage = () => {
                   <div className="flex items-center">
                     <span className="text-red-600 text-xl mr-2">❌</span>
                     <div>
-                      <strong>Failed to send message</strong>
-                      <p className="text-sm mt-1">Please try again or contact us directly.</p>
+                      <strong>{t('contactPage.form.error.title')}</strong>
+                      <p className="text-sm mt-1">{t('contactPage.form.error.message')}</p>
                     </div>
                   </div>
                 </div>
@@ -180,59 +180,59 @@ const ContactPage = () => {
               <form className="space-y-6 form-mobile" onSubmit={handleFormSubmit}>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">First Name</label>
+                    <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">{t('contactPage.form.firstName')}</label>
                     <input
                       type="text"
                       name="firstName"
                       value={formData.firstName}
                       onChange={handleInputChange}
                       className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 mobile-input"
-                      placeholder="Enter your first name"
+                      placeholder={t('contactPage.form.firstNamePlaceholder')}
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">Last Name</label>
+                    <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">{t('contactPage.form.lastName')}</label>
                     <input
                       type="text"
                       name="lastName"
                       value={formData.lastName}
                       onChange={handleInputChange}
                       className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 mobile-input"
-                      placeholder="Enter your last name"
+                      placeholder={t('contactPage.form.lastNamePlaceholder')}
                       required
                     />
                   </div>
                 </div>
                 
                 <div>
-                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">Phone Number</label>
+                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">{t('contactPage.form.phone')}</label>
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
                     className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 mobile-input"
-                    placeholder="+213 559 94 82 46"
+                    placeholder={t('contactPage.form.phonePlaceholder')}
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">Product</label>
+                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">{t('contactPage.form.product')}</label>
                   <input
                     type="text"
                     name="product"
                     value={formData.product}
                     onChange={handleInputChange}
                     className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 mobile-input"
-                    placeholder="Product name or link"
+                    placeholder={t('contactPage.form.productPlaceholder')}
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">Quantity</label>
+                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">{t('contactPage.form.quantity')}</label>
                   <select
                     name="quantity"
                     value={formData.quantity}
@@ -250,24 +250,24 @@ const ContactPage = () => {
 
                 {/* Wilaya + Delivery Price */}
                 <div>
-                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">Search Wilaya</label>
+                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">{t('contactPage.form.searchWilaya')}</label>
                   <input
                     type="text"
                     value={wilayaSearch}
                     onChange={(e) => setWilayaSearch(e.target.value)}
-                    placeholder="Type wilaya name..."
+                    placeholder={t('contactPage.form.searchWilayaPlaceholder')}
                     className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 mobile-input"
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">Choose Your Wilaya</label>
+                  <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">{t('contactPage.form.chooseWilaya')}</label>
                   <select
                     value={selectedWilaya}
                     onChange={(e) => setSelectedWilaya(e.target.value)}
                     className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 mobile-input"
                     required
                   >
-                    <option value="">Select your wilaya</option>
+                    <option value="">{t('contactPage.form.chooseWilayaPlaceholder')}</option>
                     {deliveryPricingData
                       .filter(item => item.wilaya.toLowerCase().includes(wilayaSearch.toLowerCase()))
                       .map(item => (
@@ -277,9 +277,9 @@ const ContactPage = () => {
                   {selectedWilayaData && (
                     <div className="mt-3 text-sm text-gray-700">
                       <div className="font-semibold text-amber-600">
-                        Delivery Price: {selectedWilayaData.price === 0 ? 'FREE' : `${selectedWilayaData.price.toLocaleString()} DA`}
+                        {t('contactPage.form.deliveryPrice').replace('{price}', selectedWilayaData.price === 0 ? 'FREE' : `${selectedWilayaData.price.toLocaleString()} DA`)}
                       </div>
-                      <div>Estimated delivery: <span className="font-medium">{selectedWilayaData.deliveryTime}</span></div>
+                      <div>{t('contactPage.form.deliveryTime').replace('{time}', selectedWilayaData.deliveryTime)}</div>
                     </div>
                   )}
                 </div>
@@ -297,11 +297,11 @@ const ContactPage = () => {
                   {isSubmitting ? (
                     <>
                       <span className="animate-spin mr-2">⏳</span>
-                      Sending Your Order...
+                      {t('contactPage.form.sendingOrder')}
                     </>
                   ) : (
                     <>
-                      🛒 Place Order
+                      {t('contactPage.form.placeOrder')}
                     </>
                   )}
                 </button>
@@ -346,7 +346,7 @@ const ContactPage = () => {
               </form>
             </div>
 
-            {/* Why Choose Allouna Perfum */}
+            {/* Why Choose Allouani Perfum */}
             <div className="space-y-8">
               <div 
                 className="relative p-6 sm:p-8 md:p-12 rounded-2xl shadow-2xl overflow-hidden min-h-[500px] md:min-h-[600px]"
@@ -362,23 +362,23 @@ const ContactPage = () => {
                 
                 {/* Content */}
                 <div className="relative z-10 h-full flex flex-col justify-center">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 sm:mb-8">Why Choose Allouna Perfum?</h3>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 sm:mb-8">{t('contactPage.whyChoose.title')}</h3>
                   <ul className="space-y-3 sm:space-y-4 text-white text-base sm:text-lg md:text-xl">
                     <li className="flex items-center">
                       <span className="mr-4 text-2xl">•</span>
-                      Expert fragrance consultants with years of experience
+                      {t('contactPage.whyChoose.expert')}
                     </li>
                     <li className="flex items-center">
                       <span className="mr-4 text-2xl">•</span>
-                      Authentic premium perfumes from top brands
+                      {t('contactPage.whyChoose.authentic')}
                     </li>
                     <li className="flex items-center">
                       <span className="mr-4 text-2xl">•</span>
-                      Personal scent matching and consultation
+                      {t('contactPage.whyChoose.personal')}
                     </li>
                     <li className="flex items-center">
                       <span className="mr-4 text-2xl">•</span>
-                      Nationwide delivery with care and expertise
+                      {t('contactPage.whyChoose.delivery')}
                     </li>
                   </ul>
                 </div>
@@ -393,9 +393,9 @@ const ContactPage = () => {
 
           {/* CTA Section */}
           <div className="text-center">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 drop-shadow-lg">Ready to Find Your Signature Scent?</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 drop-shadow-lg">{t('contactPage.cta.title')}</h3>
             <p className="text-lg text-white mb-8 max-w-3xl mx-auto drop-shadow-md">
-              Not sure which fragrance suits you? Get a free 30-minute fragrance consultation — no obligation.
+              {t('contactPage.cta.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
@@ -406,17 +406,17 @@ const ContactPage = () => {
                   trackButtonClick('Book Free Consultation', 'cta_section')
                 }}
               >
-                🌸 Book Free Fragrance Consultation
+                {t('contactPage.cta.bookConsultation')}
               </a>
               <a 
                 href="/services" 
                 className="luxora-button text-base px-8 py-3"
               >
                 <span className="mr-2">🌸</span>
-                View Perfumes
+                {t('contactPage.cta.viewPerfumes')}
               </a>
             </div>
-            <div className="mt-4 text-white text-sm drop-shadow-md">Premium fragrances delivered nationwide · 24/7 WhatsApp Support</div>
+            <div className="mt-4 text-white text-sm drop-shadow-md">{t('contactPage.cta.support')}</div>
           </div>
         </div>
       </div>
