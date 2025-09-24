@@ -69,22 +69,29 @@ const ProductDetail = () => {
 
     setIsSubmitting(true)
     try {
-      // Prepare order data
+      // Prepare order data with automatic product name detection
       const orderData = {
         timestamp: new Date().toISOString(),
         firstName: customerInfo.name.split(' ')[0] || customerInfo.name,
         lastName: customerInfo.name.split(' ').slice(1).join(' ') || '',
         email: customerInfo.email,
         phone: customerInfo.phone,
-        projectType: `${template.name} - ${selectedPackageData.name}`,
+        projectType: `طلب عطر: ${template.name} - ${selectedPackageData.name}`,
         budget: `${selectedPackageData.price} DA`,
-        description: `Order Details:
-Template: ${template.name} (${template.nameAr})
-Package: ${selectedPackageData.name}
-Price: ${selectedPackageData.price.toLocaleString()} DA
-${selectedPackageData.discount ? `Discount: ${selectedPackageData.discount}%` : ''}
-Customer Email: ${customerInfo.email}
-Phone: ${customerInfo.phone}`
+        description: `تفاصيل الطلب - طلب عطر:
+اسم العطر: ${template.name} (${template.nameAr})
+العلامة التجارية: ${template.brand}
+الفئة: ${template.category}
+الباقة المختارة: ${selectedPackageData.name}
+السعر: ${selectedPackageData.price.toLocaleString()} DA
+${selectedPackageData.discount ? `الخصم: ${selectedPackageData.discount}%` : ''}
+الحجم: ${template.size}
+الملاحظات العطرية: ${template.notes.join(', ')}
+معلومات العميل:
+- الاسم: ${customerInfo.name}
+- البريد الإلكتروني: ${customerInfo.email}
+- الهاتف: ${customerInfo.phone}
+- وقت الطلب: ${new Date().toLocaleString('ar-DZ')}`
       }
 
       // Send to Google Apps Script using form data to avoid CORS issues
@@ -327,6 +334,14 @@ Phone: ${customerInfo.phone}`
             <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg">
               <h3 className="text-xl font-bold text-gray-900 mb-4">ملخص الطلب - العطور</h3>
               <div className="space-y-3">
+                <div className="flex justify-between">
+                  <span className="text-gray-700">اسم العطر:</span>
+                  <span className="font-semibold text-amber-600">{template.name}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-700">العلامة التجارية:</span>
+                  <span className="font-semibold">{template.brand}</span>
+                </div>
                 <div className="flex justify-between">
                   <span className="text-gray-700">الباقة المختارة:</span>
                   <span className="font-semibold">{selectedPackageData.name}</span>
