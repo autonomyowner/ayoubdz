@@ -27,7 +27,7 @@ const About = () => {
           <div className="relative">
             <div className="w-full h-96 md:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
               <img 
-                src="/pics/templates/armani you intensli.jpg"
+                src="/pics/templates/laura-chouette-gbT2KAq1V5c-unsplash.jpg"
                 alt="Premium luxury perfumes"
                 className="w-full h-full object-cover"
               />
