@@ -143,14 +143,14 @@ const ContactPage = () => {
           {/* Contact Form Section */}
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-12 md:mb-16">
             {/* Contact Form */}
-              <div className="bg-white bg-opacity-95 backdrop-blur-sm p-6 sm:p-8 md:p-10 rounded-2xl shadow-2xl border border-gray-100">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-amber-100 to-orange-100 rounded-full text-amber-800 text-sm font-semibold mb-4">
-                  <span className="mr-2">🛒</span>
+              <div className="bg-white bg-opacity-95 backdrop-blur-sm p-4 sm:p-6 md:p-6 rounded-xl shadow-xl border border-gray-100">
+              <div className="text-center mb-6">
+                <div className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-amber-100 to-orange-100 rounded-full text-amber-800 text-xs font-semibold mb-3">
+                  <span className="mr-1">🛒</span>
                   {t('contactPage.form.badge')}
                 </div>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">{t('contactPage.form.title')}</h2>
-                  <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
+                  <h2 className="text-xl sm:text-2xl md:text-2xl font-bold text-gray-800 mb-3">{t('contactPage.form.title')}</h2>
+                  <p className="text-gray-600 text-sm leading-relaxed max-w-2xl mx-auto">
                   {t('contactPage.form.subtitle')}
                   </p>
               </div>
@@ -181,8 +181,8 @@ const ContactPage = () => {
                 </div>
               )}
 
-              <form className="space-y-6 form-mobile" onSubmit={handleFormSubmit}>
-                <div className="grid md:grid-cols-2 gap-6">
+              <form className="space-y-4 form-mobile" onSubmit={handleFormSubmit}>
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide">{t('contactPage.form.firstName')}</label>
                     <input
@@ -190,7 +190,7 @@ const ContactPage = () => {
                       name="firstName"
                       value={formData.firstName}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 mobile-input"
+                      className="w-full px-3 py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 mobile-input"
                       placeholder={t('contactPage.form.firstNamePlaceholder')}
                       required
                     />
@@ -202,7 +202,7 @@ const ContactPage = () => {
                       name="lastName"
                       value={formData.lastName}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 mobile-input"
+                      className="w-full px-3 py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-all duration-200 mobile-input"
                       placeholder={t('contactPage.form.lastNamePlaceholder')}
                       required
                     />
