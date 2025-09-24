@@ -35,7 +35,7 @@ const Hero = () => {
           </div>
 
           {/* Enhanced Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl hero-mobile">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl hero-mobile" style={{marginBottom: '0.5rem'}}>
             Discover
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-500 to-amber-600">
               <Typewriter 
@@ -49,7 +49,7 @@ const Hero = () => {
           </h1>
 
           {/* Enhanced Subtitle */}
-          <p className="text-xl text-gray-100 mb-10 max-w-3xl mx-auto leading-relaxed drop-shadow-lg subtitle-mobile text-center md:text-left">
+          <p className="text-xl text-gray-100 mb-10 max-w-3xl mx-auto leading-relaxed drop-shadow-lg subtitle-mobile">
             Specialized in premium perfumes and luxury fragrances for discerning customers in Algeria. 
             We bring you the finest scents from around the world to enhance your personal style.
           </p>
