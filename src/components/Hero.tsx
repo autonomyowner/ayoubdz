@@ -35,7 +35,7 @@ const Hero = () => {
           </div>
 
           {/* Enhanced Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl hero-mobile" style={{marginBottom: '0.5rem'}}>
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl hero-mobile">
             Discover
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-500 to-amber-600">
               <Typewriter 

@@ -187,14 +187,7 @@ html {
   .hero-section-mobile h1 {
     font-size: 2.5rem;
     line-height: 1.2;
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Reduce spacing between Discover and subtitle on mobile only */
-  @media (max-width: 768px) {
-    .hero-mobile {
-      margin-bottom: 0.5rem !important;
-    }
+    margin-bottom: 1rem;
   }
   
   .hero-section-mobile p {
