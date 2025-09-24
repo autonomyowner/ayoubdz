@@ -111,13 +111,17 @@ const ContactPage = () => {
 
   return (
     <section id="contact-page" className="py-16 px-4 relative overflow-hidden section-mobile" style={{
-      backgroundImage: "url('/pics/templates/bg contact.webp')",
+      backgroundImage: "url('/pics/templates/background image.jpg')",
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat'
+      backgroundRepeat: 'no-repeat',
+      backgroundAttachment: 'fixed',
+      filter: 'brightness(0.8) contrast(1.1)'
     }}>
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+      {/* Gradient Overlay for sophistication */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-purple-900/30 to-amber-900/40"></div>
+      {/* Additional overlay for text readability */}
+      <div className="absolute inset-0 bg-black/20"></div>
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center">
           {/* Badge */}
