@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { getTemplateById } from '../data/templates'
+import { getTemplateById } from '../data/shoes'
 import { API_CONFIG } from '../config/api'
 
 const ProductDetail = () => {
@@ -26,27 +26,27 @@ const ProductDetail = () => {
   const packages = [
     {
       id: 'single',
-      name: 'عطر واحد',
+      name: 'Une paire',
       price: template.price,
       originalPrice: template.originalPrice || template.price,
       discount: template.discount,
-      description: 'عطر واحد كامل'
+      description: 'Une paire de chaussures'
     },
     {
       id: 'double',
-      name: 'عطرين',
+      name: 'Deux paires',
       price: Math.round(template.price * 1.6), // 20% discount
       originalPrice: template.price * 2,
       discount: 20,
-      description: 'عطرين مع خصم 20%'
+      description: 'Deux paires avec 20% de réduction'
     },
     {
       id: 'triple',
-      name: 'ثلاثة عطور',
+      name: 'Trois paires',
       price: Math.round(template.price * 2.4), // 20% discount
       originalPrice: template.price * 3,
       discount: 20,
-      description: 'ثلاثة عطور مع خصم 20%'
+      description: 'Trois paires avec 20% de réduction'
     }
   ]
 
@@ -76,22 +76,22 @@ const ProductDetail = () => {
         lastName: customerInfo.name.split(' ').slice(1).join(' ') || '',
         email: customerInfo.email,
         phone: customerInfo.phone,
-        projectType: `طلب عطر: ${template.name} - ${selectedPackageData.name}`,
+        projectType: `Commande chaussures: ${template.name} - ${selectedPackageData.name}`,
         budget: `${selectedPackageData.price} DA`,
-        description: `تفاصيل الطلب - طلب عطر:
-اسم العطر: ${template.name} (${template.nameAr})
-العلامة التجارية: ${template.brand}
-الفئة: ${template.category}
-الباقة المختارة: ${selectedPackageData.name}
-السعر: ${selectedPackageData.price.toLocaleString()} DA
-${selectedPackageData.discount ? `الخصم: ${selectedPackageData.discount}%` : ''}
-الحجم: ${template.size}
-الملاحظات العطرية: ${template.notes.join(', ')}
-معلومات العميل:
-- الاسم: ${customerInfo.name}
-- البريد الإلكتروني: ${customerInfo.email}
-- الهاتف: ${customerInfo.phone}
-- وقت الطلب: ${new Date().toLocaleString('ar-DZ')}`
+        description: `Détails de la commande - Commande de chaussures:
+Nom du produit: ${template.name} (${template.nameAr})
+Marque: ${template.brand}
+Catégorie: ${template.category}
+Package sélectionné: ${selectedPackageData.name}
+Prix: ${selectedPackageData.price.toLocaleString()} DA
+${selectedPackageData.discount ? `Remise: ${selectedPackageData.discount}%` : ''}
+Taille: ${template.size}
+Couleurs disponibles: ${template.colors.join(', ')}
+Informations client:
+- Nom: ${customerInfo.name}
+- Email: ${customerInfo.email}
+- Téléphone: ${customerInfo.phone}
+- Heure de commande: ${new Date().toLocaleString('fr-DZ')}`
       }
 
       // Send to Google Apps Script using form data to avoid CORS issues

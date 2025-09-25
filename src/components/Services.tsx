@@ -74,7 +74,7 @@ const Services = () => {
 
   return (
     <section id="services" className="py-16 px-4 relative overflow-hidden" style={{
-      backgroundImage: "url('/pics/templates/bg price (1).jpg')",
+      backgroundImage: "url('/pics/replacementimages/albert-hyseni-wAEDRX8KsKo-unsplash.jpg')",
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
@@ -143,7 +143,7 @@ const Services = () => {
         {/* Why Choose Us Section */}
         <div className="bg-white bg-opacity-95 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-gray-100">
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-gray-800 mb-4">Why Choose Allouani Perfum?</h3>
+            <h3 className="text-3xl font-bold text-gray-800 mb-4">Why Choose AyoubDz?</h3>
             <p className="text-gray-600 text-lg">We guarantee authenticity, quality, and exceptional service</p>
           </div>
 

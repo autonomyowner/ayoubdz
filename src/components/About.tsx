@@ -26,12 +26,9 @@ const About = () => {
           {/* Right Content - Image */}
           <div className="relative">
             <div className="w-full h-96 md:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
-              <video 
-                src="/pics/templates/sidzz.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
+              <img 
+                src="/pics/replacementimages/cloth.jpg"
+                alt="Premium clothing collection"
                 className="w-full h-full object-cover"
               />
             </div>

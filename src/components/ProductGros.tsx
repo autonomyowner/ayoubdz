@@ -1,90 +1,17 @@
 import { useLanguage } from '../contexts/LanguageContext'
+import { shoes } from '../data/shoes'
 
 const ProductGros = () => {
   const { t } = useLanguage()
   
-  const wholesaleProducts = [
-    {
-      title: "Luxury Perfumes - Wholesale",
-      description: "Premium designer fragrances in bulk quantities. Perfect for retailers, boutiques, and luxury stores looking to offer authentic high-end perfumes.",
-      image: "/pics/templates/tom ford tobaco vanila.jpg",
-      price: "From 15,000 DA per unit",
-      minOrder: "Minimum 10 units",
-      features: ["Authentic designer brands", "Bulk pricing available", "Original packaging", "Wholesale certificates", "Free delivery"]
-    },
-    {
-      title: "Niche Fragrances - Bulk",
-      description: "Exclusive artisanal perfumes in wholesale quantities. Ideal for specialty stores and fragrance boutiques seeking unique, rare scents.",
-      image: "/pics/templates/initio.jpg",
-      price: "From 18,000 DA per unit",
-      minOrder: "Minimum 5 units",
-      features: ["Artisanal craftsmanship", "Limited editions", "Unique compositions", "Bulk discounts", "Free delivery"]
-    },
-    {
-      title: "Signature Collections - Wholesale",
-      description: "Curated seasonal and themed fragrance collections in bulk. Perfect for stores wanting to offer diverse, seasonal perfume selections.",
-      image: "/pics/templates/by the fireplace.jpg",
-      price: "From 12,000 DA per unit",
-      minOrder: "Minimum 15 units",
-      features: ["Seasonal collections", "Themed fragrances", "Bulk packaging", "Marketing support", "Free delivery"]
-    },
-    {
-      title: "Men's Luxury Collection - Bulk",
-      description: "Sophisticated men's fragrances in wholesale quantities. Ideal for men's boutiques, barbershops, and luxury retailers.",
-      image: "/pics/templates/oud aud.jpg",
-      price: "From 14,000 DA per unit",
-      minOrder: "Minimum 8 units",
-      features: ["Masculine elegance", "Modern classics", "Bulk pricing", "Retail support", "Free delivery"]
-    },
-    {
-      title: "Women's Essence - Wholesale",
-      description: "Feminine and sophisticated fragrances in bulk quantities. Perfect for women's boutiques, beauty stores, and luxury retailers.",
-      image: "/pics/templates/armani you intensli.jpg",
-      price: "From 16,000 DA per unit",
-      minOrder: "Minimum 8 units",
-      features: ["Feminine sophistication", "Floral compositions", "Bulk discounts", "Display support", "Free delivery"]
-    },
-    {
-      title: "Unisex Masterpieces - Bulk",
-      description: "Gender-neutral fragrances in wholesale quantities. Great for modern retailers and contemporary boutiques.",
-      image: "/pics/templates/ganymede.jpg",
-      price: "From 17,000 DA per unit",
-      minOrder: "Minimum 6 units",
-      features: ["Gender-neutral appeal", "Modern sophistication", "Bulk packaging", "Marketing support", "Free delivery"]
-    },
-    {
-      title: "Vintage Classics - Wholesale",
-      description: "Timeless vintage fragrances in bulk quantities. Perfect for antique stores, vintage boutiques, and collectors.",
-      image: "/pics/templates/santal royal.jpg",
-      price: "From 20,000 DA per unit",
-      minOrder: "Minimum 5 units",
-      features: ["Timeless elegance", "Classic compositions", "Collector's items", "Bulk certificates", "Free delivery"]
-    },
-    {
-      title: "Oriental Treasures - Bulk",
-      description: "Rich, exotic oriental fragrances in wholesale quantities. Ideal for specialty stores and cultural boutiques.",
-      image: "/pics/templates/naxos.jpg",
-      price: "From 19,000 DA per unit",
-      minOrder: "Minimum 6 units",
-      features: ["Exotic compositions", "Oriental notes", "Cultural authenticity", "Bulk packaging", "Free delivery"]
-    },
-    {
-      title: "Fresh & Aquatic - Wholesale",
-      description: "Clean, refreshing fragrances in bulk quantities. Perfect for everyday retailers and casual boutiques.",
-      image: "/pics/templates/hacivat.jpg",
-      price: "From 11,000 DA per unit",
-      minOrder: "Minimum 20 units",
-      features: ["Fresh compositions", "Aquatic notes", "Bulk pricing", "Retail support", "Free delivery"]
-    },
-    {
-      title: "Gourmand Delights - Bulk",
-      description: "Sweet, edible-inspired fragrances in wholesale quantities. Great for specialty stores and gourmet boutiques.",
-      image: "/pics/templates/devotion 2.jpg",
-      price: "From 13,000 DA per unit",
-      minOrder: "Minimum 12 units",
-      features: ["Sweet compositions", "Edible inspirations", "Bulk discounts", "Display support", "Free delivery"]
-    }
-  ]
+  const wholesaleProducts = shoes.map(shoe => ({
+    title: `${shoe.name} - Gros`,
+    description: shoe.description,
+    image: shoe.image,
+    price: `À partir de ${shoe.price.toLocaleString()} DA`,
+    minOrder: `Commande minimum 5 paires`,
+    features: shoe.features
+  }))
 
 
   return (

@@ -111,7 +111,7 @@ const ContactPage = () => {
 
   return (
     <section id="contact-page" className="py-8 sm:py-12 md:py-16 px-3 sm:px-4 relative overflow-hidden section-mobile" style={{
-      backgroundImage: "url('/pics/templates/background image.jpg')",
+      backgroundImage: "url('/pics/replacementimages/jins.jpg')",
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
@@ -350,44 +350,6 @@ const ContactPage = () => {
               </form>
             </div>
 
-            {/* Why Choose Allouani Perfum */}
-            <div className="space-y-4 sm:space-y-6">
-              <div 
-                className="relative p-4 sm:p-6 md:p-8 rounded-lg shadow-xl overflow-hidden min-h-[400px] sm:min-h-[450px] md:min-h-[500px]"
-                style={{
-                  backgroundImage: "url('/pics/templates/guy.jpg')",
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat'
-                }}
-              >
-                {/* Overlay for better text readability */}
-                <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
-                
-                {/* Content */}
-                <div className="relative z-10 h-full flex flex-col justify-center">
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-4 sm:mb-6">{t('contactPage.whyChoose.title')}</h3>
-                  <ul className="space-y-2 sm:space-y-3 text-white text-sm sm:text-base">
-                    <li className="flex items-center">
-                      <span className="mr-3 text-lg sm:text-xl">•</span>
-                      {t('contactPage.whyChoose.expert')}
-                    </li>
-                    <li className="flex items-center">
-                      <span className="mr-3 text-lg sm:text-xl">•</span>
-                      {t('contactPage.whyChoose.authentic')}
-                    </li>
-                    <li className="flex items-center">
-                      <span className="mr-3 text-lg sm:text-xl">•</span>
-                      {t('contactPage.whyChoose.personal')}
-                    </li>
-                    <li className="flex items-center">
-                      <span className="mr-3 text-lg sm:text-xl">•</span>
-                      {t('contactPage.whyChoose.delivery')}
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Delivery Price Selector */}
@@ -403,7 +365,7 @@ const ContactPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <a 
-                href="mailto:allouaniparfumerie9@gmail.com?subject=Free Fragrance Consultation Request" 
+                href="mailto:contact@ayoubdz.com?subject=Consultation Mode Gratuite" 
                 className="text-sm sm:text-base px-6 sm:px-8 py-2 sm:py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors"
                 onClick={() => {
                   trackSchedule('Free Consultation')

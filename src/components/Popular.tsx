@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { templates } from '../data/templates'
+import { templates } from '../data/shoes'
 import { useLanguage } from '../contexts/LanguageContext'
 
 const Popular = () => {

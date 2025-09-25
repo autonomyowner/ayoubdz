@@ -2,7 +2,7 @@ import Typewriter from './Typewriter'
 import { useLanguage } from '../contexts/LanguageContext'
 
 const Hero = () => {
-  const backgroundImagePath = "/pics/templates/background image.jpg"
+  const backgroundImagePath = "/pics/replacementimages/david-lezcano-C326pGy86bc-unsplash.jpg"
   const { t } = useLanguage()
   
   const typewriterWords = [
@@ -21,7 +21,6 @@ const Hero = () => {
         style={{
           backgroundImage: `url("${backgroundImagePath}")`,
           backgroundAttachment: 'fixed',
-          filter: 'brightness(0.8) contrast(1.1)',
         }}
       />
       {/* Gradient Overlay for sophistication */}

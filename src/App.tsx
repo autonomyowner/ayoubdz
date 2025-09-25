@@ -2,7 +2,6 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
-import Services from './components/OfferForYou'
 import ContactPage from './components/ContactPage'
 import EcommerceTemplate from './components/EcommerceTemplate'
 import ProductDetail from './components/ProductDetail'
@@ -25,7 +24,6 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
             <Route path="/product-gros" element={<ProductGros />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/ecommerce-template" element={<EcommerceTemplate />} />
