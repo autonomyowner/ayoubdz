@@ -11,9 +11,13 @@ const Navbar = () => {
     <nav className="fixed w-full z-50 bg-black/95 backdrop-blur-md border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Company Name */}
+          {/* Company Logo */}
           <div className="flex items-center flex-shrink-0">
-            <h1 className="text-white font-bold text-lg sm:text-xl">AyoubDz</h1>
+            <img 
+              src="/pics/replacementimages/99.webp" 
+              alt="AyoubDz Logo" 
+              className="h-10 w-auto"
+            />
           </div>
 
           {/* Desktop Menu */}

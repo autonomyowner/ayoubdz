@@ -9,7 +9,14 @@ const Footer = () => {
         {/* Top Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="text-center md:text-left mb-6 md:mb-0">
-            <h3 className="text-3xl font-bold parfumerie-text mb-2">{t('footer.company')}</h3>
+            <div className="flex flex-col items-center md:items-start mb-4">
+              <img 
+                src="/pics/replacementimages/99.webp" 
+                alt="AyoubDz Logo" 
+                className="h-16 w-auto mb-2"
+              />
+              <h3 className="text-3xl font-bold parfumerie-text">{t('footer.company')}</h3>
+            </div>
             <p className="text-gray-600">{t('footer.description')}</p>
           </div>
           <div className="text-center md:text-right">
