@@ -2,7 +2,6 @@ import Typewriter from './Typewriter'
 import { useLanguage } from '../contexts/LanguageContext'
 
 const Hero = () => {
-  const backgroundImagePath = "/pics/replacementimages/david-lezcano-C326pGy86bc-unsplash.jpg"
   const { t } = useLanguage()
   
   const typewriterWords = [
@@ -15,18 +14,17 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center py-16 px-4 overflow-hidden hero-section-mobile">
-      {/* Enhanced Background Image */}
+      {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transform transition-transform duration-1000 hover:scale-105"
+        className="absolute inset-0 hero-background"
         style={{
-          backgroundImage: `url("${backgroundImagePath}")`,
-          backgroundAttachment: 'fixed',
+          backgroundImage: `url("/pics/replacementimages/hero image.jpg")`,
         }}
       />
-      {/* Gradient Overlay for sophistication */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-purple-900/30 to-amber-900/40"></div>
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/70 to-amber-900/80"></div>
       {/* Additional overlay for text readability */}
-      <div className="absolute inset-0 bg-black/20"></div>
+      <div className="absolute inset-0 bg-black/30"></div>
       
       <div className="max-w-7xl mx-auto text-center relative z-10">
         <div className="max-w-4xl mx-auto">
@@ -67,9 +65,9 @@ const Hero = () => {
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = 'linear-gradient(to right, #03045e, #023e8a)';
               }}
-              onClick={() => window.open('/services', '_self')}
+              onClick={() => window.open('/product-gros', '_self')}
             >
-              {t('hero.shopPerfumes')}
+              التسوق ب الجملة
             </button>
             <button 
               className="text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 border border-[#03045e]/30 mobile-button"
@@ -84,7 +82,7 @@ const Hero = () => {
               }}
               onClick={() => window.open('/services', '_self')}
             >
-              {t('hero.viewCollections')}
+              التسوق العادي
             </button>
           </div>
         </div>

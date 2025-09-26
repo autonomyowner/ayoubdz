@@ -360,3 +360,43 @@
 .typewriter-cursor {
   animation: blink 1s infinite;
 }
+
+/* Scrolling banner animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 15s linear infinite;
+  width: 300%;
+}
+
+/* Smooth scrolling and navbar improvements */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar scroll improvements */
+.navbar-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hero background improvements */
+.hero-background {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Mobile optimizations for hero background */
+@media (max-width: 768px) {
+  .hero-background {
+    background-attachment: scroll;
+  }
+}
